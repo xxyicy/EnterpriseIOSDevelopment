@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6F2051CC1DF76CC400FB6605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2051CB1DF76CC400FB6605 /* AppDelegate.swift */; };
+		6F2051CE1DF76CC400FB6605 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2051CD1DF76CC400FB6605 /* ViewController.swift */; };
+		6F2051D11DF76CC400FB6605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F2051CF1DF76CC400FB6605 /* Main.storyboard */; };
+		6F2051D41DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F2051D21DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld */; };
+		6F2051D61DF76CC400FB6605 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F2051D51DF76CC400FB6605 /* Assets.xcassets */; };
+		6F2051D91DF76CC400FB6605 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F2051D71DF76CC400FB6605 /* LaunchScreen.storyboard */; };
+		6F2051E41DF76CC400FB6605 /* RoseCoffeeIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2051E31DF76CC400FB6605 /* RoseCoffeeIOSTests.swift */; };
+		6F2051EF1DF76CC400FB6605 /* RoseCoffeeIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2051EE1DF76CC400FB6605 /* RoseCoffeeIOSUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6F2051E01DF76CC400FB6605 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6F2051C01DF76CC400FB6605 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F2051C71DF76CC400FB6605;
+			remoteInfo = RoseCoffeeIOS;
+		};
+		6F2051EB1DF76CC400FB6605 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6F2051C01DF76CC400FB6605 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F2051C71DF76CC400FB6605;
+			remoteInfo = RoseCoffeeIOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6F2051C81DF76CC400FB6605 /* RoseCoffeeIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoseCoffeeIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F2051CB1DF76CC400FB6605 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6F2051CD1DF76CC400FB6605 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6F2051D01DF76CC400FB6605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6F2051D31DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RoseCoffeeIOS.xcdatamodel; sourceTree = "<group>"; };
+		6F2051D51DF76CC400FB6605 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6F2051D81DF76CC400FB6605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6F2051DA1DF76CC400FB6605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F2051DF1DF76CC400FB6605 /* RoseCoffeeIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoseCoffeeIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F2051E31DF76CC400FB6605 /* RoseCoffeeIOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoseCoffeeIOSTests.swift; sourceTree = "<group>"; };
+		6F2051E51DF76CC400FB6605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F2051EA1DF76CC400FB6605 /* RoseCoffeeIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoseCoffeeIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F2051EE1DF76CC400FB6605 /* RoseCoffeeIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoseCoffeeIOSUITests.swift; sourceTree = "<group>"; };
+		6F2051F01DF76CC400FB6605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6F2051C51DF76CC400FB6605 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F2051DC1DF76CC400FB6605 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F2051E71DF76CC400FB6605 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6F2051BF1DF76CC400FB6605 = {
+			isa = PBXGroup;
+			children = (
+				6F2051CA1DF76CC400FB6605 /* RoseCoffeeIOS */,
+				6F2051E21DF76CC400FB6605 /* RoseCoffeeIOSTests */,
+				6F2051ED1DF76CC400FB6605 /* RoseCoffeeIOSUITests */,
+				6F2051C91DF76CC400FB6605 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6F2051C91DF76CC400FB6605 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6F2051C81DF76CC400FB6605 /* RoseCoffeeIOS.app */,
+				6F2051DF1DF76CC400FB6605 /* RoseCoffeeIOSTests.xctest */,
+				6F2051EA1DF76CC400FB6605 /* RoseCoffeeIOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6F2051CA1DF76CC400FB6605 /* RoseCoffeeIOS */ = {
+			isa = PBXGroup;
+			children = (
+				6F2051CB1DF76CC400FB6605 /* AppDelegate.swift */,
+				6F2051CD1DF76CC400FB6605 /* ViewController.swift */,
+				6F2051CF1DF76CC400FB6605 /* Main.storyboard */,
+				6F2051D51DF76CC400FB6605 /* Assets.xcassets */,
+				6F2051D71DF76CC400FB6605 /* LaunchScreen.storyboard */,
+				6F2051DA1DF76CC400FB6605 /* Info.plist */,
+				6F2051D21DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld */,
+			);
+			path = RoseCoffeeIOS;
+			sourceTree = "<group>";
+		};
+		6F2051E21DF76CC400FB6605 /* RoseCoffeeIOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				6F2051E31DF76CC400FB6605 /* RoseCoffeeIOSTests.swift */,
+				6F2051E51DF76CC400FB6605 /* Info.plist */,
+			);
+			path = RoseCoffeeIOSTests;
+			sourceTree = "<group>";
+		};
+		6F2051ED1DF76CC400FB6605 /* RoseCoffeeIOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6F2051EE1DF76CC400FB6605 /* RoseCoffeeIOSUITests.swift */,
+				6F2051F01DF76CC400FB6605 /* Info.plist */,
+			);
+			path = RoseCoffeeIOSUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6F2051C71DF76CC400FB6605 /* RoseCoffeeIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F2051F31DF76CC400FB6605 /* Build configuration list for PBXNativeTarget "RoseCoffeeIOS" */;
+			buildPhases = (
+				6F2051C41DF76CC400FB6605 /* Sources */,
+				6F2051C51DF76CC400FB6605 /* Frameworks */,
+				6F2051C61DF76CC400FB6605 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RoseCoffeeIOS;
+			productName = RoseCoffeeIOS;
+			productReference = 6F2051C81DF76CC400FB6605 /* RoseCoffeeIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6F2051DE1DF76CC400FB6605 /* RoseCoffeeIOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F2051F61DF76CC400FB6605 /* Build configuration list for PBXNativeTarget "RoseCoffeeIOSTests" */;
+			buildPhases = (
+				6F2051DB1DF76CC400FB6605 /* Sources */,
+				6F2051DC1DF76CC400FB6605 /* Frameworks */,
+				6F2051DD1DF76CC400FB6605 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6F2051E11DF76CC400FB6605 /* PBXTargetDependency */,
+			);
+			name = RoseCoffeeIOSTests;
+			productName = RoseCoffeeIOSTests;
+			productReference = 6F2051DF1DF76CC400FB6605 /* RoseCoffeeIOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6F2051E91DF76CC400FB6605 /* RoseCoffeeIOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F2051F91DF76CC400FB6605 /* Build configuration list for PBXNativeTarget "RoseCoffeeIOSUITests" */;
+			buildPhases = (
+				6F2051E61DF76CC400FB6605 /* Sources */,
+				6F2051E71DF76CC400FB6605 /* Frameworks */,
+				6F2051E81DF76CC400FB6605 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6F2051EC1DF76CC400FB6605 /* PBXTargetDependency */,
+			);
+			name = RoseCoffeeIOSUITests;
+			productName = RoseCoffeeIOSUITests;
+			productReference = 6F2051EA1DF76CC400FB6605 /* RoseCoffeeIOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6F2051C01DF76CC400FB6605 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Xinyu Xiao";
+				TargetAttributes = {
+					6F2051C71DF76CC400FB6605 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = N6QJ9S57D2;
+						ProvisioningStyle = Automatic;
+					};
+					6F2051DE1DF76CC400FB6605 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = N6QJ9S57D2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6F2051C71DF76CC400FB6605;
+					};
+					6F2051E91DF76CC400FB6605 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = N6QJ9S57D2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6F2051C71DF76CC400FB6605;
+					};
+				};
+			};
+			buildConfigurationList = 6F2051C31DF76CC400FB6605 /* Build configuration list for PBXProject "RoseCoffeeIOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6F2051BF1DF76CC400FB6605;
+			productRefGroup = 6F2051C91DF76CC400FB6605 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6F2051C71DF76CC400FB6605 /* RoseCoffeeIOS */,
+				6F2051DE1DF76CC400FB6605 /* RoseCoffeeIOSTests */,
+				6F2051E91DF76CC400FB6605 /* RoseCoffeeIOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6F2051C61DF76CC400FB6605 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F2051D91DF76CC400FB6605 /* LaunchScreen.storyboard in Resources */,
+				6F2051D61DF76CC400FB6605 /* Assets.xcassets in Resources */,
+				6F2051D11DF76CC400FB6605 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F2051DD1DF76CC400FB6605 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F2051E81DF76CC400FB6605 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6F2051C41DF76CC400FB6605 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F2051D41DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld in Sources */,
+				6F2051CE1DF76CC400FB6605 /* ViewController.swift in Sources */,
+				6F2051CC1DF76CC400FB6605 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F2051DB1DF76CC400FB6605 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F2051E41DF76CC400FB6605 /* RoseCoffeeIOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F2051E61DF76CC400FB6605 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F2051EF1DF76CC400FB6605 /* RoseCoffeeIOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6F2051E11DF76CC400FB6605 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6F2051C71DF76CC400FB6605 /* RoseCoffeeIOS */;
+			targetProxy = 6F2051E01DF76CC400FB6605 /* PBXContainerItemProxy */;
+		};
+		6F2051EC1DF76CC400FB6605 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6F2051C71DF76CC400FB6605 /* RoseCoffeeIOS */;
+			targetProxy = 6F2051EB1DF76CC400FB6605 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6F2051CF1DF76CC400FB6605 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F2051D01DF76CC400FB6605 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6F2051D71DF76CC400FB6605 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F2051D81DF76CC400FB6605 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6F2051F11DF76CC400FB6605 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6F2051F21DF76CC400FB6605 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6F2051F41DF76CC400FB6605 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N6QJ9S57D2;
+				INFOPLIST_FILE = RoseCoffeeIOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rosehulman.RoseCoffeeIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6F2051F51DF76CC400FB6605 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N6QJ9S57D2;
+				INFOPLIST_FILE = RoseCoffeeIOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rosehulman.RoseCoffeeIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		6F2051F71DF76CC400FB6605 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = N6QJ9S57D2;
+				INFOPLIST_FILE = RoseCoffeeIOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rosehulman.RoseCoffeeIOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoseCoffeeIOS.app/RoseCoffeeIOS";
+			};
+			name = Debug;
+		};
+		6F2051F81DF76CC400FB6605 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = N6QJ9S57D2;
+				INFOPLIST_FILE = RoseCoffeeIOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rosehulman.RoseCoffeeIOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoseCoffeeIOS.app/RoseCoffeeIOS";
+			};
+			name = Release;
+		};
+		6F2051FA1DF76CC400FB6605 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = N6QJ9S57D2;
+				INFOPLIST_FILE = RoseCoffeeIOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rosehulman.RoseCoffeeIOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = RoseCoffeeIOS;
+			};
+			name = Debug;
+		};
+		6F2051FB1DF76CC400FB6605 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = N6QJ9S57D2;
+				INFOPLIST_FILE = RoseCoffeeIOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rosehulman.RoseCoffeeIOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = RoseCoffeeIOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6F2051C31DF76CC400FB6605 /* Build configuration list for PBXProject "RoseCoffeeIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F2051F11DF76CC400FB6605 /* Debug */,
+				6F2051F21DF76CC400FB6605 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6F2051F31DF76CC400FB6605 /* Build configuration list for PBXNativeTarget "RoseCoffeeIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F2051F41DF76CC400FB6605 /* Debug */,
+				6F2051F51DF76CC400FB6605 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6F2051F61DF76CC400FB6605 /* Build configuration list for PBXNativeTarget "RoseCoffeeIOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F2051F71DF76CC400FB6605 /* Debug */,
+				6F2051F81DF76CC400FB6605 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6F2051F91DF76CC400FB6605 /* Build configuration list for PBXNativeTarget "RoseCoffeeIOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F2051FA1DF76CC400FB6605 /* Debug */,
+				6F2051FB1DF76CC400FB6605 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6F2051D21DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6F2051D31DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodel */,
+			);
+			currentVersion = 6F2051D31DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodel */;
+			path = RoseCoffeeIOS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6F2051C01DF76CC400FB6605 /* Project object */;
+}
