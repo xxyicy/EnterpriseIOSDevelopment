@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F2051CC1DF76CC400FB6605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2051CB1DF76CC400FB6605 /* AppDelegate.swift */; };
-		6F2051CE1DF76CC400FB6605 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2051CD1DF76CC400FB6605 /* ViewController.swift */; };
 		6F2051D11DF76CC400FB6605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F2051CF1DF76CC400FB6605 /* Main.storyboard */; };
 		6F2051D41DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F2051D21DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld */; };
-		6F2051D61DF76CC400FB6605 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F2051D51DF76CC400FB6605 /* Assets.xcassets */; };
 		6F2051D91DF76CC400FB6605 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F2051D71DF76CC400FB6605 /* LaunchScreen.storyboard */; };
 		6F2051E41DF76CC400FB6605 /* RoseCoffeeIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2051E31DF76CC400FB6605 /* RoseCoffeeIOSTests.swift */; };
 		6F2051EF1DF76CC400FB6605 /* RoseCoffeeIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2051EE1DF76CC400FB6605 /* RoseCoffeeIOSUITests.swift */; };
+		6F2052131DFA1AC200FB6605 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F2052121DFA1AC200FB6605 /* Images.xcassets */; };
+		6F2052181DFA1AEC00FB6605 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2052171DFA1AEC00FB6605 /* SWRevealViewController.m */; };
+		6F20521B1DFA1B0300FB6605 /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2052191DFA1B0300FB6605 /* AccountInfoViewController.swift */; };
+		6F20521C1DFA1B0300FB6605 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F20521A1DFA1B0300FB6605 /* MenuController.swift */; };
+		6F20521E1DFA1B9900FB6605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F20521D1DFA1B9900FB6605 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +38,8 @@
 
 /* Begin PBXFileReference section */
 		6F2051C81DF76CC400FB6605 /* RoseCoffeeIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoseCoffeeIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F2051CB1DF76CC400FB6605 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6F2051CD1DF76CC400FB6605 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6F2051D01DF76CC400FB6605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6F2051D31DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RoseCoffeeIOS.xcdatamodel; sourceTree = "<group>"; };
-		6F2051D51DF76CC400FB6605 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F2051D81DF76CC400FB6605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F2051DA1DF76CC400FB6605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F2051DF1DF76CC400FB6605 /* RoseCoffeeIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoseCoffeeIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +48,13 @@
 		6F2051EA1DF76CC400FB6605 /* RoseCoffeeIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoseCoffeeIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F2051EE1DF76CC400FB6605 /* RoseCoffeeIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoseCoffeeIOSUITests.swift; sourceTree = "<group>"; };
 		6F2051F01DF76CC400FB6605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F2052121DFA1AC200FB6605 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6F2052151DFA1AEB00FB6605 /* RoseCoffeeIOS-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RoseCoffeeIOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		6F2052161DFA1AEC00FB6605 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		6F2052171DFA1AEC00FB6605 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		6F2052191DFA1B0300FB6605 /* AccountInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
+		6F20521A1DFA1B0300FB6605 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		6F20521D1DFA1B9900FB6605 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../../../.Trash/EnterpriseIOSDevelopment/RoseCoffeeIOS/RoseCoffeeIOS/AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +105,12 @@
 		6F2051CA1DF76CC400FB6605 /* RoseCoffeeIOS */ = {
 			isa = PBXGroup;
 			children = (
-				6F2051CB1DF76CC400FB6605 /* AppDelegate.swift */,
-				6F2051CD1DF76CC400FB6605 /* ViewController.swift */,
+				6F2052141DFA1AC600FB6605 /* SWRealViewController */,
+				6F2052121DFA1AC200FB6605 /* Images.xcassets */,
+				6F2052191DFA1B0300FB6605 /* AccountInfoViewController.swift */,
+				6F20521A1DFA1B0300FB6605 /* MenuController.swift */,
+				6F20521D1DFA1B9900FB6605 /* AppDelegate.swift */,
 				6F2051CF1DF76CC400FB6605 /* Main.storyboard */,
-				6F2051D51DF76CC400FB6605 /* Assets.xcassets */,
 				6F2051D71DF76CC400FB6605 /* LaunchScreen.storyboard */,
 				6F2051DA1DF76CC400FB6605 /* Info.plist */,
 				6F2051D21DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld */,
@@ -126,6 +134,16 @@
 				6F2051F01DF76CC400FB6605 /* Info.plist */,
 			);
 			path = RoseCoffeeIOSUITests;
+			sourceTree = "<group>";
+		};
+		6F2052141DFA1AC600FB6605 /* SWRealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6F2052161DFA1AEC00FB6605 /* SWRevealViewController.h */,
+				6F2052171DFA1AEC00FB6605 /* SWRevealViewController.m */,
+				6F2052151DFA1AEB00FB6605 /* RoseCoffeeIOS-Bridging-Header.h */,
+			);
+			name = SWRealViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +215,7 @@
 					6F2051C71DF76CC400FB6605 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = N6QJ9S57D2;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					6F2051DE1DF76CC400FB6605 = {
@@ -238,8 +257,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F2052131DFA1AC200FB6605 /* Images.xcassets in Resources */,
 				6F2051D91DF76CC400FB6605 /* LaunchScreen.storyboard in Resources */,
-				6F2051D61DF76CC400FB6605 /* Assets.xcassets in Resources */,
 				6F2051D11DF76CC400FB6605 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,9 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F20521E1DFA1B9900FB6605 /* AppDelegate.swift in Sources */,
+				6F20521B1DFA1B0300FB6605 /* AccountInfoViewController.swift in Sources */,
 				6F2051D41DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld in Sources */,
-				6F2051CE1DF76CC400FB6605 /* ViewController.swift in Sources */,
-				6F2051CC1DF76CC400FB6605 /* AppDelegate.swift in Sources */,
+				6F20521C1DFA1B0300FB6605 /* MenuController.swift in Sources */,
+				6F2052181DFA1AEC00FB6605 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,11 +440,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = N6QJ9S57D2;
 				INFOPLIST_FILE = RoseCoffeeIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rosehulman.RoseCoffeeIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RoseCoffeeIOS/RoseCoffeeIOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -432,11 +456,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = N6QJ9S57D2;
 				INFOPLIST_FILE = RoseCoffeeIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rosehulman.RoseCoffeeIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RoseCoffeeIOS/RoseCoffeeIOS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -518,6 +544,7 @@
 				6F2051F51DF76CC400FB6605 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6F2051F61DF76CC400FB6605 /* Build configuration list for PBXNativeTarget "RoseCoffeeIOSTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +553,7 @@
 				6F2051F81DF76CC400FB6605 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6F2051F91DF76CC400FB6605 /* Build configuration list for PBXNativeTarget "RoseCoffeeIOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +562,7 @@
 				6F2051FB1DF76CC400FB6605 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
