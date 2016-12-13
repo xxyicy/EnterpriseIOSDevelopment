@@ -421,6 +421,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N6QJ9S57D2;
 				INFOPLIST_FILE = RoseCoffeeIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rosehulman.RoseCoffeeIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -434,6 +435,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N6QJ9S57D2;
 				INFOPLIST_FILE = RoseCoffeeIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rosehulman.RoseCoffeeIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,6 +450,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = N6QJ9S57D2;
 				INFOPLIST_FILE = RoseCoffeeIOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rosehulman.RoseCoffeeIOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -463,6 +466,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = N6QJ9S57D2;
 				INFOPLIST_FILE = RoseCoffeeIOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rosehulman.RoseCoffeeIOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -477,6 +481,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = N6QJ9S57D2;
 				INFOPLIST_FILE = RoseCoffeeIOSUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rosehulman.RoseCoffeeIOSUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -491,6 +496,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = N6QJ9S57D2;
 				INFOPLIST_FILE = RoseCoffeeIOSUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rosehulman.RoseCoffeeIOSUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -518,6 +524,7 @@
 				6F2051F51DF76CC400FB6605 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6F2051F61DF76CC400FB6605 /* Build configuration list for PBXNativeTarget "RoseCoffeeIOSTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +533,7 @@
 				6F2051F81DF76CC400FB6605 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6F2051F91DF76CC400FB6605 /* Build configuration list for PBXNativeTarget "RoseCoffeeIOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +542,7 @@
 				6F2051FB1DF76CC400FB6605 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
