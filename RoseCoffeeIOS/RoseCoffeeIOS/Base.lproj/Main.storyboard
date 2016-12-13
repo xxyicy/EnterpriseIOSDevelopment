@@ -1,41 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <deployment version="4112" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RoseCoffeeIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignUpViewController" customModule="RoseCoffeeIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ok-b5-RGS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="  Rose Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z3V-AA-EJS">
+                                <rect key="frame" x="35" y="244" width="250" height="45"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="mGS-cf-Bob"/>
+                                    <constraint firstAttribute="height" constant="45" id="qIx-e1-30Q"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="  Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="heF-b2-NFY">
+                                <rect key="frame" x="35" y="287" width="250" height="45"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="3z1-1o-5sb"/>
+                                    <constraint firstAttribute="width" constant="250" id="Jsr-s0-m90"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NH7-xl-qhO">
+                                <rect key="frame" x="35" y="432" width="250" height="45"/>
+                                <color key="backgroundColor" red="0.37254901960784315" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="36b-az-YXz"/>
+                                    <constraint firstAttribute="width" constant="250" id="5QA-br-CST"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uf0-OY-cV1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="P2y-tK-6nr"/>
+                                    <navigationItem title="Title" id="Jrf-Ub-d6r"/>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLk-Bg-eeh">
+                                <rect key="frame" x="50.5" y="101" width="219" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="219" id="GS1-u7-znz"/>
+                                    <constraint firstAttribute="height" constant="63" id="wEU-jB-X3k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.49019607843137253" green="0.074509803921568626" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rLk-Bg-eeh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5r6-kw-Lyv"/>
+                            <constraint firstItem="Z3V-AA-EJS" firstAttribute="top" secondItem="rLk-Bg-eeh" secondAttribute="bottom" constant="80" id="Fq4-d9-dEc"/>
+                            <constraint firstItem="NH7-xl-qhO" firstAttribute="top" secondItem="heF-b2-NFY" secondAttribute="bottom" constant="100" id="G8n-we-5aM"/>
+                            <constraint firstItem="heF-b2-NFY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O8P-Cf-4Au"/>
+                            <constraint firstItem="NH7-xl-qhO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V9F-dF-Ubn"/>
+                            <constraint firstItem="heF-b2-NFY" firstAttribute="top" secondItem="Z3V-AA-EJS" secondAttribute="bottom" constant="-2" id="dfh-rg-PiB"/>
+                            <constraint firstItem="rLk-Bg-eeh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="81" id="jpa-sS-lIk"/>
+                            <constraint firstItem="Z3V-AA-EJS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xJS-DR-mYE"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="MLI-EY-09I"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102" y="-7"/>
+            <point key="canvasLocation" x="1087.2" y="22.03898050974513"/>
         </scene>
     </scenes>
 </document>
