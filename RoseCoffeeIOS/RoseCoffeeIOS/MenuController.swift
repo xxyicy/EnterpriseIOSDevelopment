@@ -27,5 +27,9 @@ class MenuController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func SignOutAction(_ sender: UIButton) {
+        
+    }
+    
 }
 
