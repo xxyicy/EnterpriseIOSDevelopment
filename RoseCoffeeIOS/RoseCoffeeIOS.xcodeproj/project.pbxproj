@@ -54,7 +54,7 @@
 		6F2052171DFA1AEC00FB6605 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		6F2052191DFA1B0300FB6605 /* AccountInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
 		6F20521A1DFA1B0300FB6605 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
-		6F20521D1DFA1B9900FB6605 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../../../.Trash/EnterpriseIOSDevelopment/RoseCoffeeIOS/RoseCoffeeIOS/AppDelegate.swift; sourceTree = "<group>"; };
+		6F20521D1DFA1B9900FB6605 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +214,7 @@
 				TargetAttributes = {
 					6F2051C71DF76CC400FB6605 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = N6QJ9S57D2;
+						DevelopmentTeam = GSEF3KE5GL;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -441,10 +441,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = N6QJ9S57D2;
+				DEVELOPMENT_TEAM = GSEF3KE5GL;
 				INFOPLIST_FILE = RoseCoffeeIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = rosehulman.RoseCoffeeIOS;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.rosehulman.RoseCoffeeIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RoseCoffeeIOS/RoseCoffeeIOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -457,10 +457,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = N6QJ9S57D2;
+				DEVELOPMENT_TEAM = GSEF3KE5GL;
 				INFOPLIST_FILE = RoseCoffeeIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = rosehulman.RoseCoffeeIOS;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.rosehulman.RoseCoffeeIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RoseCoffeeIOS/RoseCoffeeIOS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
