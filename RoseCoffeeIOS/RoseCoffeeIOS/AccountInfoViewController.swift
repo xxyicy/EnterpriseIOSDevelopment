@@ -24,7 +24,7 @@ class AccountInfoViewController: UIViewController, UIImagePickerControllerDelega
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
-         imagePicker.delegate = self
+        imagePicker.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
