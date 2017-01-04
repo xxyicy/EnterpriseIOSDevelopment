@@ -22,7 +22,7 @@ class SignInViewController: UIViewController {
         if usernameTextField.text != "" {
             if passwordTextField.text == "1234" {
                 let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let navController: UINavigationController = storyboard.instantiateViewController(withIdentifier: "AccountInfoNav") as! UINavigationController
+                let navController: UINavigationController = storyboard.instantiateViewController(withIdentifier: "customerMainNav") as! UINavigationController
                 
                 self.revealViewController().pushFrontViewController(navController, animated: true)
                 
