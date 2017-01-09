@@ -25,13 +25,16 @@ import UIKit
 //    Player(name: "Oscar Peterson", game: "Spin the Bottle", rating: 5),
 //    Player(name: "Dave Brubeck", game: "Texas Hold 'em Poker", rating: 2) ]
 
-class LocationAndTimeViewController : UIViewController {
+class LocationAndTimeViewController : UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    @IBOutlet weak var LocationAndTimeTable: UITableView!
+    @IBOutlet weak var locationAndTimeTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationAndTimeTable.delegate = self
+//        locationAndTimeTable.dataSource = self
         
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
