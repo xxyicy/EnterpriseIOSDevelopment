@@ -28,13 +28,20 @@ import UIKit
 class LocationAndTimeViewController : UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    @IBOutlet weak var locationAndTimeTable: UITableView!
+    @IBOutlet weak var quickOrderTableCell: UITableViewCell!
+    @IBOutlet weak var buildingTableCell: UITableViewCell!
+    @IBOutlet weak var roomTableCell: UITableViewCell!
+    @IBOutlet weak var timeTableCell: UITableViewCell!
+    @IBOutlet weak var locationAndTimeButton: UIButton!
+    @IBOutlet weak var orderDetailButton: UIButton!
+    @IBOutlet weak var confirmAndCheckOutButton: UIButton!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationAndTimeTable.delegate = self
-//        locationAndTimeTable.dataSource = self
+//        quickOrderTableCell.textLabel?.text = "Quick Order"
         
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
