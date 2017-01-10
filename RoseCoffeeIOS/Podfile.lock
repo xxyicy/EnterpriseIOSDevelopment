@@ -1,0 +1,22 @@
+PODS:
+  - Rosefire (2.1.0)
+
+DEPENDENCIES:
+  - Rosefire (from `https://ada.csse.rose-hulman.edu/rosefire/ios-sdk.git`, tag `2.1.0`)
+
+EXTERNAL SOURCES:
+  Rosefire:
+    :git: https://ada.csse.rose-hulman.edu/rosefire/ios-sdk.git
+    :tag: 2.1.0
+
+CHECKOUT OPTIONS:
+  Rosefire:
+    :git: https://ada.csse.rose-hulman.edu/rosefire/ios-sdk.git
+    :tag: 2.1.0
+
+SPEC CHECKSUMS:
+  Rosefire: 6e0c0f97fe55dcdb52928d833a79dcc4d59d9412
+
+PODFILE CHECKSUM: eacc8f55f5c63c547ab693277d271175e2d0e490
+
+COCOAPODS: 1.1.1
