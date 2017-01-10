@@ -46,9 +46,9 @@ class SignInViewController: UIViewController {
     
     func getPhoneNumber() {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let navController: UINavigationController = storyboard.instantiateViewController(withIdentifier: "updateInfoView") as! UINavigationController
+        let viewController: UIViewController = storyboard.instantiateViewController(withIdentifier: "updateInfoView")
         
-        self.revealViewController().pushFrontViewController(navController, animated: true)
+        self.revealViewController().pushFrontViewController(viewController, animated: true)
         
     }
 }
