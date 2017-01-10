@@ -14,7 +14,6 @@ class LocationAndTimeViewController : UIViewController, UITableViewDataSource,UI
     @IBOutlet weak var locationAndTimeButton: UIButton!
     @IBOutlet weak var orderDetailButton: UIButton!
     @IBOutlet weak var confirmAndCheckOutButton: UIButton!
-    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
