@@ -20,6 +20,7 @@ class MenuController: UITableViewController {
             profileImageView.image = image
         }
         
+        
     }
     
     override func didReceiveMemoryWarning() {

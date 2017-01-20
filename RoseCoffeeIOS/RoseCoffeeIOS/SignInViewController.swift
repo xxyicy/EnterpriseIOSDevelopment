@@ -8,6 +8,7 @@
 
 import Foundation
 import Rosefire
+import Firebase
 
 class SignInViewController: UIViewController {
     
@@ -15,20 +16,35 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     let secret = "KkKMGtbQOhWZcr0ksKHN" as String
     let REGISTERY_TOKEN = "e3d9d1dd-8931-46fd-b41c-b02187ff1ddb" as String
+    let userRef = FIRDatabase.database().reference(withPath: "rose-coffee-on-ios/user")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        FIRApp.configure()
+        
         Rosefire.sharedDelegate().uiDelegate = self
         
     }
     @IBAction func SignInAction(_ sender: UIButton) {
         let defaults = UserDefaults.standard
-        if defaults.object(forKey: "user_token") != nil {
-            login()
+        let token = defaults.object(forKey: "user_token")
+        if token != nil {
+            userRef.child(token as! String).observeSingleEvent(of: .value, with: {(snapshot) in
+                let value = snapshot.value as? NSDictionary
+                let isDelivery = value?["is delivery"] as? Bool
+                if (isDelivery)! {
+                    //Jump to customer main
+                    self.login()
+                } else {
+                    //Change to delivery main page later
+                    self.login()
+                }
+            })
         }else{
             Rosefire.sharedDelegate().signIn(registryToken: REGISTERY_TOKEN) { (err, result) in
                 if err == nil {
                     defaults.set(result?.token, forKey: "user_token")
+//                    ref.child("user").setValue()
                     self.getPhoneNumber()
                 }else{
                     
