@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>572584355197-h07ocd6nvn3g5dp73ebst5496p04v87k.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.572584355197-h07ocd6nvn3g5dp73ebst5496p04v87k</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDRVsmqBTm67gN-bhpU_mrSTmOqglZYbhs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>572584355197</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>edu.rosehulman.RoseCoffeeIOS</string>
+	<key>PROJECT_ID</key>
+	<string>rose-coffee-on-ios</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rose-coffee-on-ios.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:572584355197:ios:cbeef65cf7f0a7c7</string>
+	<key>DATABASE_URL</key>
+	<string>https://rose-coffee-on-ios.firebaseio.com</string>
+</dict>
+</plist>
