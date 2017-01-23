@@ -14,13 +14,21 @@ class MenuController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
+        let view: UIView = UIView()
+        view.backgroundColor = UIColor(red: 125.0, green: 19.0, blue: 23.0, alpha: 1.0)
+        tableView.tableFooterView = view
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
         if let image = appDelegate.profileImage {
             profileImageView.contentMode = .scaleAspectFill
             profileImageView.image = image
         }
-        
-        
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,9 +36,21 @@ class MenuController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func SignOutAction(_ sender: UIButton) {
-        
-    }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.row == 1){
+            let defaults = UserDefaults.standard
+            let isDelivery: Bool = defaults.object(forKey: "isDelivery") as! Bool
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let navController: UINavigationController
+            if !isDelivery{
+                navController = storyboard.instantiateViewController(withIdentifier: "customerMainNav") as! UINavigationController
+            }else{
+                navController = storyboard.instantiateViewController(withIdentifier: "deliveryMainNav") as! UINavigationController
+
+            }
+            self.revealViewController().pushFrontViewController(navController, animated: true)
+        }
+    }
 }
 

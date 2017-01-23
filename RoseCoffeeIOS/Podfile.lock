@@ -1,7 +1,31 @@
 PODS:
+  - Firebase (3.4.0):
+    - Firebase/Core (= 3.4.0)
+  - Firebase/Analytics (3.4.0):
+    - FirebaseAnalytics (~> 3.3)
+  - Firebase/Core (3.4.0):
+    - Firebase/Analytics
+  - Firebase/Database (3.4.0):
+    - Firebase/Analytics
+    - FirebaseDatabase (= 3.0.2)
+  - FirebaseAnalytics (3.3.0):
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleInterchangeUtilities (~> 1.2)
+    - GoogleSymbolUtilities (~> 1.1)
+    - GoogleUtilities (~> 1.2)
+  - FirebaseDatabase (3.0.2):
+    - FirebaseAnalytics (~> 3.2)
+  - FirebaseInstanceID (1.0.8)
+  - GoogleInterchangeUtilities (1.2.1):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleSymbolUtilities (1.1.1)
+  - GoogleUtilities (1.3.1):
+    - GoogleSymbolUtilities (~> 1.0)
   - Rosefire (2.1.0)
 
 DEPENDENCIES:
+  - Firebase
+  - Firebase/Database
   - Rosefire (from `https://ada.csse.rose-hulman.edu/rosefire/ios-sdk.git`, tag `2.1.0`)
 
 EXTERNAL SOURCES:
@@ -15,8 +39,15 @@ CHECKOUT OPTIONS:
     :tag: 2.1.0
 
 SPEC CHECKSUMS:
+  Firebase: 754562547af419cc2f4b15247fee419081924bc2
+  FirebaseAnalytics: 228be2991cb28efb96cdafc4d62f64680e615c69
+  FirebaseDatabase: 59bea2e7dfd81b3b8b2f8e396caf1a52c2ced6f7
+  FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
+  GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
+  GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
+  GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   Rosefire: 6e0c0f97fe55dcdb52928d833a79dcc4d59d9412
 
-PODFILE CHECKSUM: eacc8f55f5c63c547ab693277d271175e2d0e490
+PODFILE CHECKSUM: c8beb28cba35f771656e21e7bea2d99d680e5833
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0.rc.1

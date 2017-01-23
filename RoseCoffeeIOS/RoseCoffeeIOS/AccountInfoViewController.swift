@@ -7,13 +7,18 @@
 //
 
 import UIKit
-
+import Firebase
 
 class AccountInfoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var phoneNumLabel: UILabel!
+    @IBOutlet weak var isDeliverySwitch: UISwitch!
     let imagePicker = UIImagePickerController()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let userRef = FIRDatabase.database().reference(withPath: "user")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +30,17 @@ class AccountInfoViewController: UIViewController, UIImagePickerControllerDelega
         }
         
         imagePicker.delegate = self
+        
+        let defaults = UserDefaults.standard
+        let username: String = defaults.object(forKey: "username") as! String
+        userRef.child(username).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            self.isDeliverySwitch.setOn((value?["is delivery"] as? Bool)!, animated: true)
+            self.nameLabel.text = value?["name"] as! String?
+            self.emailLabel.text = value?["email"] as! String?
+            self.phoneNumLabel.text = value?["phone number"] as! String?
+        })
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,5 +69,21 @@ class AccountInfoViewController: UIViewController, UIImagePickerControllerDelega
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func changeDeliveryStatus(_ sender: UISwitch) {
+        let defaults = UserDefaults.standard
+        let username: String = defaults.object(forKey: "username") as! String
+        defaults.set(sender.isOn, forKey: "isDelivery")
+        userRef.child(username).child("is delivery").setValue(sender.isOn)
+    }
+    
+    @IBAction func SignOutAction(_ sender: UIButton) {
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: "username")
+        defaults.removeObject(forKey: "isDelivery")
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let signInViewController: UIViewController = storyboard.instantiateViewController(withIdentifier: "SignInView")
+        
+        self.revealViewController().pushFrontViewController(signInViewController, animated: true)
+    }
     
 }

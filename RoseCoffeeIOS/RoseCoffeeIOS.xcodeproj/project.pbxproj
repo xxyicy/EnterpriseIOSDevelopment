@@ -25,6 +25,9 @@
 		6F20521B1DFA1B0300FB6605 /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2052191DFA1B0300FB6605 /* AccountInfoViewController.swift */; };
 		6F20521C1DFA1B0300FB6605 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F20521A1DFA1B0300FB6605 /* MenuController.swift */; };
 		6F20521E1DFA1B9900FB6605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F20521D1DFA1B9900FB6605 /* AppDelegate.swift */; };
+		6F460B511E35C7F300752714 /* DeliveryMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F460B501E35C7F300752714 /* DeliveryMainViewController.swift */; };
+		6FF46CDB1E3596340053899E /* UpdateInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF46CDA1E3596340053899E /* UpdateInfoViewController.swift */; };
+		6FF46CDD1E359F390053899E /* ConfirmAndCheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF46CDC1E359F390053899E /* ConfirmAndCheckoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		6F2052191DFA1B0300FB6605 /* AccountInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
 		6F20521A1DFA1B0300FB6605 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		6F20521D1DFA1B9900FB6605 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6F460B501E35C7F300752714 /* DeliveryMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryMainViewController.swift; sourceTree = "<group>"; };
+		6FF46CDA1E3596340053899E /* UpdateInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateInfoViewController.swift; sourceTree = "<group>"; };
+		6FF46CDC1E359F390053899E /* ConfirmAndCheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmAndCheckoutViewController.swift; sourceTree = "<group>"; };
 		A71BDFF38B3B5AB550D1600A /* Pods-RoseCoffeeIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoseCoffeeIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoseCoffeeIOS/Pods-RoseCoffeeIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B7766A7566F215F3E52EB85C /* Pods_RoseCoffeeIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoseCoffeeIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE49F5D3AF68E18B90CCBBDA /* Pods_RoseCoffeeIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoseCoffeeIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +124,7 @@
 			children = (
 				4630A8721E1A1FB800F28AA7 /* LocationAndTimeViewController.swift */,
 				46DB46FE1E246E1500834A76 /* OrderDetailViewController.swift */,
+				6FF46CDC1E359F390053899E /* ConfirmAndCheckoutViewController.swift */,
 			);
 			name = CustomerMain;
 			sourceTree = "<group>";
@@ -162,8 +169,10 @@
 				6F2052141DFA1AC600FB6605 /* SWRealViewController */,
 				6F2052121DFA1AC200FB6605 /* Images.xcassets */,
 				1B1C2C851E183A0200E52EA7 /* SignInViewController.swift */,
+				6FF46CDA1E3596340053899E /* UpdateInfoViewController.swift */,
 				6F20521A1DFA1B0300FB6605 /* MenuController.swift */,
 				4630A8741E1A1FC600F28AA7 /* CustomerMain */,
+				6F460B501E35C7F300752714 /* DeliveryMainViewController.swift */,
 				6F2052191DFA1B0300FB6605 /* AccountInfoViewController.swift */,
 				46DB46FC1E2464CB00834A76 /* SettingViewController.swift */,
 				6F20521D1DFA1B9900FB6605 /* AppDelegate.swift */,
@@ -274,7 +283,7 @@
 				TargetAttributes = {
 					6F2051C71DF76CC400FB6605 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = GSEF3KE5GL;
+						DevelopmentTeam = N6QJ9S57D2;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -397,6 +406,7 @@
 			files = (
 				6F20521E1DFA1B9900FB6605 /* AppDelegate.swift in Sources */,
 				6F20521B1DFA1B0300FB6605 /* AccountInfoViewController.swift in Sources */,
+				6F460B511E35C7F300752714 /* DeliveryMainViewController.swift in Sources */,
 				1B1C2C861E183A0200E52EA7 /* SignInViewController.swift in Sources */,
 				6F2051D41DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld in Sources */,
 				46DB46FD1E2464CB00834A76 /* SettingViewController.swift in Sources */,
@@ -404,6 +414,8 @@
 				6F2052181DFA1AEC00FB6605 /* SWRevealViewController.m in Sources */,
 				46DB46FF1E246E1500834A76 /* OrderDetailViewController.swift in Sources */,
 				4630A8731E1A1FB800F28AA7 /* LocationAndTimeViewController.swift in Sources */,
+				6FF46CDD1E359F390053899E /* ConfirmAndCheckoutViewController.swift in Sources */,
+				6FF46CDB1E3596340053899E /* UpdateInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,7 +572,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = GSEF3KE5GL;
+				DEVELOPMENT_TEAM = N6QJ9S57D2;
 				INFOPLIST_FILE = RoseCoffeeIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.rosehulman.RoseCoffeeIOS;
@@ -578,7 +590,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = GSEF3KE5GL;
+				DEVELOPMENT_TEAM = N6QJ9S57D2;
 				INFOPLIST_FILE = RoseCoffeeIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.rosehulman.RoseCoffeeIOS;

@@ -16,49 +16,72 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     let secret = "KkKMGtbQOhWZcr0ksKHN" as String
     let REGISTERY_TOKEN = "e3d9d1dd-8931-46fd-b41c-b02187ff1ddb" as String
-    let userRef = FIRDatabase.database().reference(withPath: "rose-coffee-on-ios/user")
+    let userRef = FIRDatabase.database().reference(withPath: "user")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        FIRApp.configure()
         
         Rosefire.sharedDelegate().uiDelegate = self
         
     }
     @IBAction func SignInAction(_ sender: UIButton) {
         let defaults = UserDefaults.standard
-        let token = defaults.object(forKey: "user_token")
-        if token != nil {
-            userRef.child(token as! String).observeSingleEvent(of: .value, with: {(snapshot) in
-                let value = snapshot.value as? NSDictionary
-                let isDelivery = value?["is delivery"] as? Bool
-                if (isDelivery)! {
-                    //Jump to customer main
-                    self.login()
-                } else {
-                    //Change to delivery main page later
-                    self.login()
-                }
-            })
+        let username = defaults.object(forKey: "username")
+        if username != nil {
+            self.presentMain(username: username as! String)
         }else{
             Rosefire.sharedDelegate().signIn(registryToken: REGISTERY_TOKEN) { (err, result) in
                 if err == nil {
-                    defaults.set(result?.token, forKey: "user_token")
-//                    ref.child("user").setValue()
-                    self.getPhoneNumber()
-                }else{
+                    let username: String = (result?.username)!
+                    defaults.set(username,forKey:"username")
+                    self.userRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                        if snapshot.hasChild(username) {
+                            self.userRef.child(username).child("token").setValue(result?.token)
+                            self.presentMain(username: username)
+                        }else{
+                            let userObject = ["is delivery": false,"token":(result?.token)!, "name": (result?.name)!, "email":(result?.email)!] as [String : Any]
+                            self.userRef.child(username).setValue(userObject)
+                            defaults.set(false, forKey: "isDelivery")
+                            self.getPhoneNumber()
+                        }
+                    })
                     
+                }else{
+                    print("Firebase Sign In Failed")
                 }
             }
         }
     }
     
-    func login() {
+    func presentMain(username: String) {
+        userRef.child(username).observeSingleEvent(of: .value, with: {(snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let isDelivery = value?["is delivery"] as? Bool
+            UserDefaults.standard.set(isDelivery, forKey: "isDelivery")
+            if (isDelivery)! {
+                //Jump to delivery main
+                self.presentDeliveryMain()
+                
+            } else {
+                //Change to customer main page later
+                self.presentCustomerMain()
+            }
+        })
+    }
+    
+    func presentCustomerMain() {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let navController: UINavigationController = storyboard.instantiateViewController(withIdentifier: "customerMainNav") as! UINavigationController
-        
+        navController.navigationBar.isTranslucent = false;
         self.revealViewController().pushFrontViewController(navController, animated: true)
     }
+    
+    func presentDeliveryMain() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let navController: UINavigationController = storyboard.instantiateViewController(withIdentifier: "deliveryMainNav") as! UINavigationController
+        navController.navigationBar.isTranslucent = false;
+
+        self.revealViewController().pushFrontViewController(navController, animated: true)    }
     
     func getPhoneNumber() {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

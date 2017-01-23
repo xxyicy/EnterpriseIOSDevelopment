@@ -27,9 +27,6 @@ class OrderDetailViewController : UIViewController, UITableViewDataSource,UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Get a reference to Firebase
-        FIRApp.configure()
-        
         
         tableView.delegate = self
         tableView.dataSource = self
