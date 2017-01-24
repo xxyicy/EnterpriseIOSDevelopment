@@ -112,7 +112,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank-profile-picture-973460_960_720 (1).png" translatesAutoresizingMaskIntoConstraints="NO" id="HLd-YZ-EId" userLabel="ProfileImageView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="HLd-YZ-EId" userLabel="ProfileImageView">
                                 <rect key="frame" x="122.5" y="145" width="130" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HLd-YZ-EId" secondAttribute="height" multiplier="1:1" id="QPG-xS-cla"/>
@@ -382,7 +382,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank-profile-picture-973460_960_720 (1).png" translatesAutoresizingMaskIntoConstraints="NO" id="uPc-Zs-HJx">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="uPc-Zs-HJx">
                                                     <rect key="frame" x="38" y="30.5" width="100" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="494-07-Vip"/>
@@ -1046,8 +1046,8 @@
         <image name="Add" width="64" height="64"/>
         <image name="RightArrow" width="313" height="313"/>
         <image name="Rose" width="194" height="221"/>
-        <image name="blank-profile-picture-973460_960_720 (1).png" width="720" height="720"/>
         <image name="delivery" width="512" height="512"/>
         <image name="menu" width="22" height="22"/>
+        <image name="profile" width="720" height="720"/>
     </resources>
 </document>
