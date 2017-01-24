@@ -31,6 +31,8 @@ class LocationAndTimeViewController : UIViewController, UITableViewDataSource,UI
         tableView.dataSource = self
         
         tableView.tableFooterView = UIView()
+        
+        self.navigationController?.navigationBar.isTranslucent = true;
     
     }
     

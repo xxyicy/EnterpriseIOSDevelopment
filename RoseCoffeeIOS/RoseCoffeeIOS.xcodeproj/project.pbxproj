@@ -12,6 +12,7 @@
 		2F4FC6A62564179A76BDAA55 /* Pods_RoseCoffeeIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44BA29FB90B7C77CC59D73B /* Pods_RoseCoffeeIOS.framework */; };
 		4630A8731E1A1FB800F28AA7 /* LocationAndTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4630A8721E1A1FB800F28AA7 /* LocationAndTimeViewController.swift */; };
 		463261001E31A31100AF4421 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 463260FF1E31A31100AF4421 /* GoogleService-Info.plist */; };
+		46840D8D1E36F6CE00BD0FB3 /* CustomerRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46840D8C1E36F6CE00BD0FB3 /* CustomerRatingViewController.swift */; };
 		46DB46FD1E2464CB00834A76 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DB46FC1E2464CB00834A76 /* SettingViewController.swift */; };
 		46DB46FF1E246E1500834A76 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DB46FE1E246E1500834A76 /* OrderDetailViewController.swift */; };
 		6F2051D11DF76CC400FB6605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F2051CF1DF76CC400FB6605 /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		1BEC19CE1E233406007760A7 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		4630A8721E1A1FB800F28AA7 /* LocationAndTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAndTimeViewController.swift; sourceTree = "<group>"; };
 		463260FF1E31A31100AF4421 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		46840D8C1E36F6CE00BD0FB3 /* CustomerRatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerRatingViewController.swift; sourceTree = "<group>"; };
 		46DB46FC1E2464CB00834A76 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		46DB46FE1E246E1500834A76 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
 		6F2051C81DF76CC400FB6605 /* RoseCoffeeIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoseCoffeeIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 				4630A8721E1A1FB800F28AA7 /* LocationAndTimeViewController.swift */,
 				46DB46FE1E246E1500834A76 /* OrderDetailViewController.swift */,
 				6FF46CDC1E359F390053899E /* ConfirmAndCheckoutViewController.swift */,
+				46840D8C1E36F6CE00BD0FB3 /* CustomerRatingViewController.swift */,
 			);
 			name = CustomerMain;
 			sourceTree = "<group>";
@@ -163,22 +166,22 @@
 		6F2051CA1DF76CC400FB6605 /* RoseCoffeeIOS */ = {
 			isa = PBXGroup;
 			children = (
-				1BEC19CE1E233406007760A7 /* Podfile */,
-				463260FF1E31A31100AF4421 /* GoogleService-Info.plist */,
+				6F2051D71DF76CC400FB6605 /* LaunchScreen.storyboard */,
+				6F2051CF1DF76CC400FB6605 /* Main.storyboard */,
+				6F20521D1DFA1B9900FB6605 /* AppDelegate.swift */,
 				6F2052141DFA1AC600FB6605 /* SWRealViewController */,
 				6F2052121DFA1AC200FB6605 /* Images.xcassets */,
 				1B1C2C851E183A0200E52EA7 /* SignInViewController.swift */,
 				6FF46CDA1E3596340053899E /* UpdateInfoViewController.swift */,
 				6F20521A1DFA1B0300FB6605 /* MenuController.swift */,
-				6F8E835C1E36E004006D2637 /* DeliveryMain */,
 				4630A8741E1A1FC600F28AA7 /* CustomerMain */,
+				6F8E835C1E36E004006D2637 /* DeliveryMain */,
 				6F2052191DFA1B0300FB6605 /* AccountInfoViewController.swift */,
 				46DB46FC1E2464CB00834A76 /* SettingViewController.swift */,
-				6F20521D1DFA1B9900FB6605 /* AppDelegate.swift */,
-				6F2051CF1DF76CC400FB6605 /* Main.storyboard */,
-				6F2051D71DF76CC400FB6605 /* LaunchScreen.storyboard */,
 				6F2051DA1DF76CC400FB6605 /* Info.plist */,
 				6F2051D21DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld */,
+				463260FF1E31A31100AF4421 /* GoogleService-Info.plist */,
+				1BEC19CE1E233406007760A7 /* Podfile */,
 			);
 			path = RoseCoffeeIOS;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				6F460B511E35C7F300752714 /* OrderListViewController.swift in Sources */,
 				1B1C2C861E183A0200E52EA7 /* SignInViewController.swift in Sources */,
 				6F2051D41DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld in Sources */,
+				46840D8D1E36F6CE00BD0FB3 /* CustomerRatingViewController.swift in Sources */,
 				46DB46FD1E2464CB00834A76 /* SettingViewController.swift in Sources */,
 				6F20521C1DFA1B0300FB6605 /* MenuController.swift in Sources */,
 				6F2052181DFA1AEC00FB6605 /* SWRevealViewController.m in Sources */,
