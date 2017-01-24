@@ -25,7 +25,8 @@
 		6F20521B1DFA1B0300FB6605 /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2052191DFA1B0300FB6605 /* AccountInfoViewController.swift */; };
 		6F20521C1DFA1B0300FB6605 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F20521A1DFA1B0300FB6605 /* MenuController.swift */; };
 		6F20521E1DFA1B9900FB6605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F20521D1DFA1B9900FB6605 /* AppDelegate.swift */; };
-		6F460B511E35C7F300752714 /* DeliveryMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F460B501E35C7F300752714 /* DeliveryMainViewController.swift */; };
+		6F460B511E35C7F300752714 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F460B501E35C7F300752714 /* OrderListViewController.swift */; };
+		6F8E835E1E36E268006D2637 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8E835D1E36E268006D2637 /* OrderTableViewCell.swift */; };
 		6FF46CDB1E3596340053899E /* UpdateInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF46CDA1E3596340053899E /* UpdateInfoViewController.swift */; };
 		6FF46CDD1E359F390053899E /* ConfirmAndCheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF46CDC1E359F390053899E /* ConfirmAndCheckoutViewController.swift */; };
 /* End PBXBuildFile section */
@@ -74,7 +75,8 @@
 		6F2052191DFA1B0300FB6605 /* AccountInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
 		6F20521A1DFA1B0300FB6605 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		6F20521D1DFA1B9900FB6605 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6F460B501E35C7F300752714 /* DeliveryMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryMainViewController.swift; sourceTree = "<group>"; };
+		6F460B501E35C7F300752714 /* OrderListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
+		6F8E835D1E36E268006D2637 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		6FF46CDA1E3596340053899E /* UpdateInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateInfoViewController.swift; sourceTree = "<group>"; };
 		6FF46CDC1E359F390053899E /* ConfirmAndCheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmAndCheckoutViewController.swift; sourceTree = "<group>"; };
 		A71BDFF38B3B5AB550D1600A /* Pods-RoseCoffeeIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoseCoffeeIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoseCoffeeIOS/Pods-RoseCoffeeIOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -171,8 +173,8 @@
 				1B1C2C851E183A0200E52EA7 /* SignInViewController.swift */,
 				6FF46CDA1E3596340053899E /* UpdateInfoViewController.swift */,
 				6F20521A1DFA1B0300FB6605 /* MenuController.swift */,
+				6F8E835C1E36E004006D2637 /* DeliveryMain */,
 				4630A8741E1A1FC600F28AA7 /* CustomerMain */,
-				6F460B501E35C7F300752714 /* DeliveryMainViewController.swift */,
 				6F2052191DFA1B0300FB6605 /* AccountInfoViewController.swift */,
 				46DB46FC1E2464CB00834A76 /* SettingViewController.swift */,
 				6F20521D1DFA1B9900FB6605 /* AppDelegate.swift */,
@@ -210,6 +212,15 @@
 				6F2052151DFA1AEB00FB6605 /* RoseCoffeeIOS-Bridging-Header.h */,
 			);
 			name = SWRealViewController;
+			sourceTree = "<group>";
+		};
+		6F8E835C1E36E004006D2637 /* DeliveryMain */ = {
+			isa = PBXGroup;
+			children = (
+				6F460B501E35C7F300752714 /* OrderListViewController.swift */,
+				6F8E835D1E36E268006D2637 /* OrderTableViewCell.swift */,
+			);
+			name = DeliveryMain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,7 +417,7 @@
 			files = (
 				6F20521E1DFA1B9900FB6605 /* AppDelegate.swift in Sources */,
 				6F20521B1DFA1B0300FB6605 /* AccountInfoViewController.swift in Sources */,
-				6F460B511E35C7F300752714 /* DeliveryMainViewController.swift in Sources */,
+				6F460B511E35C7F300752714 /* OrderListViewController.swift in Sources */,
 				1B1C2C861E183A0200E52EA7 /* SignInViewController.swift in Sources */,
 				6F2051D41DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld in Sources */,
 				46DB46FD1E2464CB00834A76 /* SettingViewController.swift in Sources */,
@@ -416,6 +427,7 @@
 				4630A8731E1A1FB800F28AA7 /* LocationAndTimeViewController.swift in Sources */,
 				6FF46CDD1E359F390053899E /* ConfirmAndCheckoutViewController.swift in Sources */,
 				6FF46CDB1E3596340053899E /* UpdateInfoViewController.swift in Sources */,
+				6F8E835E1E36E268006D2637 /* OrderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
