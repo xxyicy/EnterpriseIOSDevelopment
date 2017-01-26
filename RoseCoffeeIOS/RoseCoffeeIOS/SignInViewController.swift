@@ -72,16 +72,16 @@ class SignInViewController: UIViewController {
     func presentCustomerMain() {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let navController: UINavigationController = storyboard.instantiateViewController(withIdentifier: "customerMainNav") as! UINavigationController
-        navController.navigationBar.isTranslucent = false;
+
         self.revealViewController().pushFrontViewController(navController, animated: true)
     }
     
     func presentDeliveryMain() {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let navController: UINavigationController = storyboard.instantiateViewController(withIdentifier: "deliveryMainNav") as! UINavigationController
-        navController.navigationBar.isTranslucent = false;
 
-        self.revealViewController().pushFrontViewController(navController, animated: true)    }
+        self.revealViewController().pushFrontViewController(navController, animated: true)
+    }
     
     func getPhoneNumber() {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

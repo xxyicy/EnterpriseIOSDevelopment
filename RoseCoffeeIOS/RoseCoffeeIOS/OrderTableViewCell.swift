@@ -8,9 +8,9 @@
 
 import UIKit
 class OrderTableViewCell: UITableViewCell {
-    @IBOutlet weak var toLabel: UILabel?
-    @IBOutlet weak var byLabel: UILabel?
-    @IBOutlet weak var menuTextField: UITextField?
+    @IBOutlet weak var locationLabel: UILabel?
+    @IBOutlet weak var timeLabel: UILabel?
+    @IBOutlet weak var menuLabel: UILabel!
     @IBOutlet weak var button: UIButton!
 
 }

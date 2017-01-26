@@ -40,6 +40,9 @@ class AccountInfoViewController: UIViewController, UIImagePickerControllerDelega
             self.emailLabel.text = value?["email"] as! String?
             self.phoneNumLabel.text = value?["phone number"] as! String?
         })
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         
     }
     
