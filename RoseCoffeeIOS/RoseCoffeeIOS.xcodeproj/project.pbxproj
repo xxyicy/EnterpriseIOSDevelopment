@@ -17,6 +17,9 @@
 		46840D8D1E36F6CE00BD0FB3 /* CustomerRatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46840D8C1E36F6CE00BD0FB3 /* CustomerRatingViewController.swift */; };
 		46DB46FD1E2464CB00834A76 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DB46FC1E2464CB00834A76 /* SettingViewController.swift */; };
 		46DB46FF1E246E1500834A76 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DB46FE1E246E1500834A76 /* OrderDetailViewController.swift */; };
+		6F1DACE41E3F041A00ED05DA /* Espresso.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DACE31E3F041A00ED05DA /* Espresso.jpeg */; };
+		6F1DACE81E3F063700ED05DA /* frappuccino creme.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DACE71E3F063700ED05DA /* frappuccino creme.jpg */; };
+		6F1DACEA1E3F07FC00ED05DA /* frappuccino coffee.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6F1DACE91E3F07FC00ED05DA /* frappuccino coffee.jpeg */; };
 		6F2051D11DF76CC400FB6605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F2051CF1DF76CC400FB6605 /* Main.storyboard */; };
 		6F2051D41DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F2051D21DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld */; };
 		6F2051D91DF76CC400FB6605 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F2051D71DF76CC400FB6605 /* LaunchScreen.storyboard */; };
@@ -64,6 +67,9 @@
 		46840D8C1E36F6CE00BD0FB3 /* CustomerRatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerRatingViewController.swift; sourceTree = "<group>"; };
 		46DB46FC1E2464CB00834A76 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		46DB46FE1E246E1500834A76 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
+		6F1DACE31E3F041A00ED05DA /* Espresso.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Espresso.jpeg; path = ../../../../Desktop/Espresso.jpeg; sourceTree = "<group>"; };
+		6F1DACE71E3F063700ED05DA /* frappuccino creme.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "frappuccino creme.jpg"; path = "../../../../Desktop/frappuccino creme.jpg"; sourceTree = "<group>"; };
+		6F1DACE91E3F07FC00ED05DA /* frappuccino coffee.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "frappuccino coffee.jpeg"; path = "../../../../Desktop/frappuccino coffee.jpeg"; sourceTree = "<group>"; };
 		6F2051C81DF76CC400FB6605 /* RoseCoffeeIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoseCoffeeIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F2051D01DF76CC400FB6605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6F2051D31DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RoseCoffeeIOS.xcdatamodel; sourceTree = "<group>"; };
@@ -180,6 +186,9 @@
 		6F2051CA1DF76CC400FB6605 /* RoseCoffeeIOS */ = {
 			isa = PBXGroup;
 			children = (
+				6F1DACE91E3F07FC00ED05DA /* frappuccino coffee.jpeg */,
+				6F1DACE71E3F063700ED05DA /* frappuccino creme.jpg */,
+				6F1DACE31E3F041A00ED05DA /* Espresso.jpeg */,
 				6F2051D71DF76CC400FB6605 /* LaunchScreen.storyboard */,
 				6F2051CF1DF76CC400FB6605 /* Main.storyboard */,
 				6F20521D1DFA1B9900FB6605 /* AppDelegate.swift */,
@@ -353,10 +362,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F2052131DFA1AC200FB6605 /* Images.xcassets in Resources */,
+				6F1DACEA1E3F07FC00ED05DA /* frappuccino coffee.jpeg in Resources */,
+				6F1DACE81E3F063700ED05DA /* frappuccino creme.jpg in Resources */,
 				6F2051D91DF76CC400FB6605 /* LaunchScreen.storyboard in Resources */,
 				1BEC19CF1E233406007760A7 /* Podfile in Resources */,
 				6F2051D11DF76CC400FB6605 /* Main.storyboard in Resources */,
 				463261001E31A31100AF4421 /* GoogleService-Info.plist in Resources */,
+				6F1DACE41E3F041A00ED05DA /* Espresso.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

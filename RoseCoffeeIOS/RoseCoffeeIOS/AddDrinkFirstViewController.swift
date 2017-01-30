@@ -27,10 +27,16 @@ class AddDrinkFirstViewController: UICollectionViewController {
         let label = cell.viewWithTag(1) as! UILabel
         if (indexPath.item == 0) {
             label.text = "Espresso Drinks"
+            cell.backgroundView = UIImageView(image: UIImage(named: "Espresso.jpeg"))
+            cell.frame = CGRect(x: 0, y: 30, width: collectionView.bounds.size.width/2, height: collectionView.bounds.size.width/2)
         } else if (indexPath.item == 1) {
-            label.text = "Frappuccina Coffee"
+            label.text = "Frappuccino Coffee"
+            cell.backgroundView = UIImageView(image: UIImage(named: "frappuccino coffee.jpeg"))
+            cell.frame = CGRect(x: collectionView.bounds.size.width/2, y: 30, width: collectionView.bounds.size.width/2, height: collectionView.bounds.size.width/2)
         } else if (indexPath.item == 2) {
             label.text = "Frappuccino Creme"
+            cell.backgroundView = UIImageView(image: UIImage(named: "frappuccino creme.jpg"))
+            cell.frame = CGRect(x: 0, y: 30 + collectionView.bounds.size.width/2, width: collectionView.bounds.size.width/2, height: collectionView.bounds.size.width/2)
         }
         cell.systemLayoutSizeFitting(CGSize(width: collectionView.bounds.size.width/2, height: collectionView.bounds.size.width/2))
         return cell

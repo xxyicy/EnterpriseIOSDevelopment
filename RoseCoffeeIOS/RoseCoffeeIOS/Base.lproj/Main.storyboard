@@ -929,10 +929,10 @@
         <scene sceneID="ruZ-Pz-Puz">
             <objects>
                 <collectionViewController storyboardIdentifier="AddDrinkModal" id="gzX-lz-awf" customClass="AddDrinkFirstViewController" customModule="RoseCoffeeIOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="gp8-SJ-eEJ">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="gp8-SJ-eEJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.56712710857391357" green="0.12396614998579025" blue="0.11755705624818802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="NJ8-wc-dVQ">
                             <size key="itemSize" width="187.5" height="187.5"/>
                             <size key="headerReferenceSize" width="50" height="50"/>
@@ -947,20 +947,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="155" height="111"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="eop-Dx-Q3V">
-                                            <rect key="frame" x="0.0" y="0.0" width="155" height="111"/>
-                                            <color key="backgroundColor" red="0.37322092056274414" green="0.0019158176146447659" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="tintColor" red="0.37322092060000001" green="0.0019158176149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="eop-Dx-Q3V">
+                                            <rect key="frame" x="8" y="71" width="139" height="30"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="139" id="A6o-4i-srY"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="eop-Dx-Q3V" firstAttribute="width" secondItem="D7Y-lU-1cL" secondAttribute="width" id="0Lb-A7-fTa"/>
-                                    <constraint firstItem="eop-Dx-Q3V" firstAttribute="height" secondItem="D7Y-lU-1cL" secondAttribute="height" id="JQw-qm-j0Q"/>
-                                    <constraint firstItem="eop-Dx-Q3V" firstAttribute="centerY" secondItem="D7Y-lU-1cL" secondAttribute="centerY" id="hsg-Mv-NcI"/>
+                                    <constraint firstAttribute="bottom" secondItem="eop-Dx-Q3V" secondAttribute="bottom" constant="10" id="9gA-e8-ojg"/>
                                     <constraint firstItem="eop-Dx-Q3V" firstAttribute="centerX" secondItem="D7Y-lU-1cL" secondAttribute="centerX" id="vbZ-Ex-RYl"/>
                                 </constraints>
                                 <size key="customSize" width="155" height="111"/>
@@ -990,22 +991,23 @@
                         <color key="backgroundColor" red="0.56712710860000004" green="0.12396615" blue="0.1175570562" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NAO-nl-TyH">
                             <size key="itemSize" width="154" height="116"/>
-                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="30" height="30"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" reuseIdentifier="Cell" id="g1v-Pz-jzl">
-                                <rect key="frame" x="0.0" y="50" width="154" height="116"/>
+                                <rect key="frame" x="0.0" y="30" width="154" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="154" height="116"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPi-IT-7K8">
-                                            <rect key="frame" x="0.0" y="0.0" width="154" height="116"/>
-                                            <color key="backgroundColor" red="0.37322092060000001" green="0.0019158176149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="tintColor" red="0.37322092060000001" green="0.0019158176149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZPi-IT-7K8">
+                                            <rect key="frame" x="8" y="76" width="138" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="138" id="Veq-qT-buN"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1013,15 +1015,13 @@
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="ZPi-IT-7K8" firstAttribute="centerY" secondItem="g1v-Pz-jzl" secondAttribute="centerY" id="Cl4-ey-Mdk"/>
                                     <constraint firstItem="ZPi-IT-7K8" firstAttribute="centerX" secondItem="g1v-Pz-jzl" secondAttribute="centerX" id="J1b-Yo-LJU"/>
-                                    <constraint firstItem="ZPi-IT-7K8" firstAttribute="width" secondItem="g1v-Pz-jzl" secondAttribute="width" id="Q0W-39-3tb"/>
-                                    <constraint firstItem="ZPi-IT-7K8" firstAttribute="height" secondItem="g1v-Pz-jzl" secondAttribute="height" id="Rlt-ki-Q6A"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZPi-IT-7K8" secondAttribute="bottom" constant="10" id="c9N-NL-4MX"/>
                                 </constraints>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NvY-4l-82u">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </collectionReusableView>
                         <connections>
