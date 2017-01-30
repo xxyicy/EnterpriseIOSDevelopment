@@ -71,7 +71,7 @@
 		0A38FAF8FC05809422FAF4AA37574AFF /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		0DCD4853B165FEF409C262B95986E04F /* Pods-RoseCoffeeIOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RoseCoffeeIOS-umbrella.h"; sourceTree = "<group>"; };
 		1247532526DA2DF0682BC854B9067A8B /* Pods-RoseCoffeeIOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RoseCoffeeIOS-frameworks.sh"; sourceTree = "<group>"; };
-		132D1E381A4C27FF7BB8E49909AC85F2 /* Cosmos.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Cosmos.modulemap; sourceTree = "<group>"; };
+		132D1E381A4C27FF7BB8E49909AC85F2 /* Cosmos.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Cosmos.modulemap; sourceTree = "<group>"; };
 		132E9702C63DA8690983FACED8932C88 /* Rosefire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Rosefire-umbrella.h"; sourceTree = "<group>"; };
 		18D60D8D9241D824E06F029402AD467B /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
 		194BFB4DDEE84B94D2001475A7D60896 /* CosmosLocalizedRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLocalizedRating.swift; path = Cosmos/CosmosLocalizedRating.swift; sourceTree = "<group>"; };
@@ -81,16 +81,16 @@
 		1FAF4F70740F05FA34D54F1982E18E7A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		1FEFA35D2C324383A35E684062035764 /* Rosefire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rosefire.swift; path = Rosefire/Classes/Rosefire.swift; sourceTree = "<group>"; };
 		2C5DFBFF37BA6AEF072F77873009B9E5 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		2D4923C72EAEEE068CC2836B468E7D21 /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
+		2D4923C72EAEEE068CC2836B468E7D21 /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
 		2FB36F885712F6F1FBA59495221F69F6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FF2B080BE91A99A6D0986F936717116 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
 		34463CA97543E69917282EC826B25AB5 /* Pods-RoseCoffeeIOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RoseCoffeeIOS-dummy.m"; sourceTree = "<group>"; };
 		3D61ACF460BCA285DDAA49A5FBEBBF34 /* Cosmos.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cosmos.xcconfig; sourceTree = "<group>"; };
-		40DC3F8DC8371A21748D490CE83DBBE3 /* Rosefire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Rosefire.modulemap; sourceTree = "<group>"; };
+		40DC3F8DC8371A21748D490CE83DBBE3 /* Rosefire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Rosefire.modulemap; sourceTree = "<group>"; };
 		460D67B03837BBE9BA2014DF44AFFA80 /* CosmosTouchTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouchTarget.swift; path = Cosmos/Helpers/CosmosTouchTarget.swift; sourceTree = "<group>"; };
 		46556D49DA89FDF20A49907D89A82B81 /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
 		4FC719BF44BFB459AD74BC2E14FF8204 /* StarLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarLayer.swift; path = Cosmos/StarLayer.swift; sourceTree = "<group>"; };
-		509FBD1D0DB97FBA48B4F066FE0666EF /* Pods_RoseCoffeeIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RoseCoffeeIOS.framework; path = "Pods-RoseCoffeeIOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		509FBD1D0DB97FBA48B4F066FE0666EF /* Pods_RoseCoffeeIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoseCoffeeIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		537957B139C2D9C8AF8877D1987EE20A /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
 		5689E576BA9F2DB06930B9E6E1F63A16 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
 		57BB0EDD3B55E93F8066A4F5D8CDD6DF /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
@@ -100,14 +100,14 @@
 		680CFF1E198EAB31538347209925FC85 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
 		712A2211B31AF92D9598D101774BEA84 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		7469B0577614E0AF583F366C4AA150DF /* CosmosText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosText.swift; path = Cosmos/CosmosText.swift; sourceTree = "<group>"; };
-		7B623414A2775952C627839DBFBFA2D2 /* Cosmos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cosmos.framework; path = Cosmos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B623414A2775952C627839DBFBFA2D2 /* Cosmos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cosmos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E442E9335F518B17695E9A72DE918B0 /* CosmosLayers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLayers.swift; path = Cosmos/CosmosLayers.swift; sourceTree = "<group>"; };
 		81607F20092CACC1394D3DCB7D6993B0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		8D24C93BFDA7E744952422FA834998AE /* Cosmos-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cosmos-dummy.m"; sourceTree = "<group>"; };
 		8EB4AC16F5D9B8C32EEA3FD5AA2BC676 /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
 		8F2F887B761DF2ED105769E79B0ED681 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91AFC52FD1820AE9869F3D5E898D7D1A /* CosmosTouch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouch.swift; path = Cosmos/CosmosTouch.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; };
 		967236D4180E62C092B3F237E36C64D4 /* Cosmos-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cosmos-prefix.pch"; sourceTree = "<group>"; };
 		A3214EE116D2251DB441B86F97A29E96 /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
 		A4732BFC73AFFAE0DDDBFF5C85461641 /* CosmosAccessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosAccessibility.swift; path = Cosmos/CosmosAccessibility.swift; sourceTree = "<group>"; };
@@ -119,15 +119,15 @@
 		D1270DC4FE2D64EECC3FDD52DAC5C9AF /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
 		D5092EE58D2AC13217DB942F41FBBBBD /* RightToLeft.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RightToLeft.swift; path = Cosmos/Helpers/RightToLeft.swift; sourceTree = "<group>"; };
 		DCC922138CC5F86238397614C11191DA /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
-		DE738CEA8F95173FFCCD82737509733E /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE738CEA8F95173FFCCD82737509733E /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1741578D52AB69CAEFEAC34D02A2AEC /* Pods-RoseCoffeeIOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RoseCoffeeIOS-resources.sh"; sourceTree = "<group>"; };
-		E407C73C2C2E60D723F7CDA77F08235E /* Pods-RoseCoffeeIOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-RoseCoffeeIOS.modulemap"; sourceTree = "<group>"; };
+		E407C73C2C2E60D723F7CDA77F08235E /* Pods-RoseCoffeeIOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-RoseCoffeeIOS.modulemap"; sourceTree = "<group>"; };
 		E7378ECFB8C2D603BFB0501AAA46D12B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7959AB59A331655DBB7AD95A7F10458 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
 		E824F876D3EF0E842810147DF3956C63 /* CosmosDefaultSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosDefaultSettings.swift; path = Cosmos/CosmosDefaultSettings.swift; sourceTree = "<group>"; };
 		F5147AE3C7F8B063B02257EFF0EFD800 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		F63DCCC0F9A562504FE8265C17DA4BCE /* Rosefire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Rosefire.xcconfig; sourceTree = "<group>"; };
-		F65436994AEAC1A433B9A2FC5CCF9DE4 /* Rosefire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Rosefire.framework; path = Rosefire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F65436994AEAC1A433B9A2FC5CCF9DE4 /* Rosefire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Rosefire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6D2CDBDFC8F55EB6E8CEA79B7A12D39 /* CosmosView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosView.swift; path = Cosmos/CosmosView.swift; sourceTree = "<group>"; };
 		FC7AEFE6734C10B821647465AF8F8D97 /* CosmosRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosRating.swift; path = Cosmos/CosmosRating.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -262,7 +262,6 @@
 				4FC719BF44BFB459AD74BC2E14FF8204 /* StarLayer.swift */,
 				0A5A4A7AF41412EB70186FF3AFEF291F /* Support Files */,
 			);
-			name = Cosmos;
 			path = Cosmos;
 			sourceTree = "<group>";
 		};
@@ -271,7 +270,6 @@
 			children = (
 				4176FC99DAAC7059545547797C1FE033 /* Frameworks */,
 			);
-			name = FirebaseCore;
 			path = FirebaseCore;
 			sourceTree = "<group>";
 		};
@@ -292,7 +290,6 @@
 				B1F55F66AE78443D73D844A56F1C4D9E /* NSData+zlib */,
 				E619BE026A8F96D17D1090A00E3C5B8F /* Support Files */,
 			);
-			name = GoogleToolboxForMac;
 			path = GoogleToolboxForMac;
 			sourceTree = "<group>";
 		};
@@ -301,7 +298,6 @@
 			children = (
 				41F2D1C26E6515EA5AF6AC45AEEC81A9 /* Frameworks */,
 			);
-			name = GoogleSymbolUtilities;
 			path = GoogleSymbolUtilities;
 			sourceTree = "<group>";
 		};
@@ -337,7 +333,6 @@
 			children = (
 				766B32F68A5F4F1AEFEE705C9A16507C /* Frameworks */,
 			);
-			name = FirebaseDatabase;
 			path = FirebaseDatabase;
 			sourceTree = "<group>";
 		};
@@ -377,7 +372,6 @@
 			children = (
 				787293F18789AA3CA2691A96EF1FEC66 /* Core */,
 			);
-			name = Firebase;
 			path = Firebase;
 			sourceTree = "<group>";
 		};
@@ -386,7 +380,6 @@
 			children = (
 				D65EFD8A89FFFFA713824B2C6AB97ED2 /* Frameworks */,
 			);
-			name = FirebaseAnalytics;
 			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
@@ -415,7 +408,6 @@
 				1FEFA35D2C324383A35E684062035764 /* Rosefire.swift */,
 				A95B86B643D14A263FA907D26C77DC3D /* Support Files */,
 			);
-			name = Rosefire;
 			path = Rosefire;
 			sourceTree = "<group>";
 		};
@@ -425,7 +417,6 @@
 				E7959AB59A331655DBB7AD95A7F10458 /* FIRInstanceID.h */,
 				4F4B4F3A70F5B8FDEC7F46A45AD1DE40 /* Frameworks */,
 			);
-			name = FirebaseInstanceID;
 			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
@@ -456,7 +447,6 @@
 			children = (
 				9CF6BF727F4CC3E419682D3627D21F3C /* Frameworks */,
 			);
-			name = GoogleInterchangeUtilities;
 			path = GoogleInterchangeUtilities;
 			sourceTree = "<group>";
 		};

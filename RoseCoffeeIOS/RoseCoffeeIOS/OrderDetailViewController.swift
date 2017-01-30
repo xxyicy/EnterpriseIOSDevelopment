@@ -22,7 +22,10 @@ import Firebase
 
 
 class OrderDetailViewController : UIViewController, UITableViewDataSource,UITableViewDelegate {
+    @IBOutlet var AddDrinkButton: UIImageView!
+    @IBOutlet var AddSnackButton: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +35,33 @@ class OrderDetailViewController : UIViewController, UITableViewDataSource,UITabl
         tableView.dataSource = self
         
         tableView.tableFooterView = UIView()
+        
+        let addDrinkGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(addDrink(img: )))
+        AddDrinkButton.isUserInteractionEnabled = true
+        AddDrinkButton.addGestureRecognizer(addDrinkGestureRecognizer)
+        let addSnackGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(addSnack(img: )))
+        AddSnackButton.isUserInteractionEnabled = true
+        AddSnackButton.addGestureRecognizer(addSnackGestureRecognizer)
+        
+        
     }
+    
+    func addDrink(img: AnyObject) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let modal: AddDrinkFirstViewController = storyboard.instantiateViewController(withIdentifier: "AddDrinkModal") as! AddDrinkFirstViewController
+        modal.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        modal.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        self.present(modal, animated: true)
+    }
+    
+    func addSnack(img: AnyObject) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let modal: AddDrinkFirstViewController = storyboard.instantiateViewController(withIdentifier: "AddDrinkModal") as! AddDrinkFirstViewController
+        modal.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        modal.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        self.present(modal, animated: true)
+    }
+    
     
     // MARK: - Table view data source
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

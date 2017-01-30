@@ -527,11 +527,11 @@
                                         <rect key="frame" x="0.0" y="160" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e0X-X5-Qsk" id="4iw-BJ-c5B">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="My Delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZLt-bc-rlG">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="50.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -545,11 +545,11 @@
                                         <rect key="frame" x="0.0" y="211" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dq1-VM-Bcz" id="EhX-ud-P7b">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Account Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X0W-xp-5gr">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="50.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -566,11 +566,11 @@
                                         <rect key="frame" x="0.0" y="262" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xeI-pN-phf" id="cN9-Ld-qpv">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Setting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sSz-Vp-70F">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="50.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -923,7 +923,103 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4go-t4-JQK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3623.1999999999998" y="1316.4917541229386"/>
+            <point key="canvasLocation" x="3623" y="1319"/>
+        </scene>
+        <!--Add Drink First View Controller-->
+        <scene sceneID="ruZ-Pz-Puz">
+            <objects>
+                <collectionViewController storyboardIdentifier="AddDrinkModal" id="gzX-lz-awf" customClass="AddDrinkFirstViewController" customModule="RoseCoffeeIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="gp8-SJ-eEJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NJ8-wc-dVQ">
+                            <size key="itemSize" width="119" height="91"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" id="D7Y-lU-1cL">
+                                <rect key="frame" x="0.0" y="0.0" width="119" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="119" height="91"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eop-Dx-Q3V">
+                                            <rect key="frame" x="0.0" y="0.0" width="119" height="91"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="eop-Dx-Q3V" firstAttribute="width" secondItem="D7Y-lU-1cL" secondAttribute="width" id="0Lb-A7-fTa"/>
+                                    <constraint firstItem="eop-Dx-Q3V" firstAttribute="height" secondItem="D7Y-lU-1cL" secondAttribute="height" id="JQw-qm-j0Q"/>
+                                    <constraint firstItem="eop-Dx-Q3V" firstAttribute="centerY" secondItem="D7Y-lU-1cL" secondAttribute="centerY" id="hsg-Mv-NcI"/>
+                                    <constraint firstItem="eop-Dx-Q3V" firstAttribute="centerX" secondItem="D7Y-lU-1cL" secondAttribute="centerX" id="vbZ-Ex-RYl"/>
+                                </constraints>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="gzX-lz-awf" id="Vgx-19-xY8"/>
+                            <outlet property="delegate" destination="gzX-lz-awf" id="5YN-d7-qjp"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yzM-nw-RAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4407.1999999999998" y="1318.2908545727137"/>
+        </scene>
+        <!--Add Snack First View Controller-->
+        <scene sceneID="dB1-Fz-oCq">
+            <objects>
+                <collectionViewController id="h3I-Jk-RdV" customClass="AddSnackFirstViewController" customModule="RoseCoffeeIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Iv8-Y7-niV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NAO-nl-TyH">
+                            <size key="itemSize" width="135" height="107"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" id="g1v-Pz-jzl">
+                                <rect key="frame" x="0.0" y="0.0" width="135" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="135" height="107"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPi-IT-7K8">
+                                            <rect key="frame" x="0.0" y="0.0" width="135" height="107"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="ZPi-IT-7K8" firstAttribute="centerY" secondItem="g1v-Pz-jzl" secondAttribute="centerY" id="Cl4-ey-Mdk"/>
+                                    <constraint firstItem="ZPi-IT-7K8" firstAttribute="centerX" secondItem="g1v-Pz-jzl" secondAttribute="centerX" id="J1b-Yo-LJU"/>
+                                    <constraint firstItem="ZPi-IT-7K8" firstAttribute="width" secondItem="g1v-Pz-jzl" secondAttribute="width" id="Q0W-39-3tb"/>
+                                    <constraint firstItem="ZPi-IT-7K8" firstAttribute="height" secondItem="g1v-Pz-jzl" secondAttribute="height" id="Rlt-ki-Q6A"/>
+                                </constraints>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="h3I-Jk-RdV" id="gmr-aY-cKt"/>
+                            <outlet property="delegate" destination="h3I-Jk-RdV" id="rFd-if-UrU"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n6p-2o-SUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5244" y="1317.3913043478262"/>
         </scene>
         <!--Order List-->
         <scene sceneID="dKg-Qi-kAx">
@@ -938,7 +1034,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m45-O2-LBq" id="fh3-rZ-E0O">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N06-mK-LEF">
@@ -1185,6 +1281,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Order Detail" id="XKx-nS-lh1"/>
                     <connections>
+                        <outlet property="AddDrinkButton" destination="X0C-wS-1Wn" id="P6W-cA-isn"/>
+                        <outlet property="AddSnackButton" destination="olL-5s-aLq" id="Vfb-lM-76b"/>
                         <outlet property="tableView" destination="dgV-rJ-TOT" id="oLq-HG-Np3"/>
                     </connections>
                 </viewController>
