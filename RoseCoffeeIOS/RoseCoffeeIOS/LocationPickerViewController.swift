@@ -60,6 +60,9 @@ class LocationPickerViewController : UIViewController, UIPickerViewDelegate, UIP
     @IBAction func saveLocation(_ sender: UIButton) {
         let defaults = UserDefaults.standard
         defaults.set(selectedLocation, forKey: type)
+        if (type == "location"){
+            defaults.removeObject(forKey: "room")
+        }
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
         self.dismiss(animated: true, completion: nil)
     }

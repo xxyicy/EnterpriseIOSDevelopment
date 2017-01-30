@@ -56,7 +56,7 @@ class OrderDetailViewController : UIViewController, UITableViewDataSource,UITabl
     
     func addSnack(img: AnyObject) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let modal: AddDrinkFirstViewController = storyboard.instantiateViewController(withIdentifier: "AddDrinkModal") as! AddDrinkFirstViewController
+        let modal: AddSnackFirstViewController = storyboard.instantiateViewController(withIdentifier: "AddSnackModal") as! AddSnackFirstViewController
         modal.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         modal.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         self.present(modal, animated: true)

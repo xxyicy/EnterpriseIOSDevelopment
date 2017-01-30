@@ -22,7 +22,7 @@ class AddDrinkFirstViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell =
+        let cell:UICollectionViewCell =
             collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         let label = cell.viewWithTag(1) as! UILabel
         if (indexPath.item == 1) {
@@ -35,6 +35,10 @@ class AddDrinkFirstViewController: UICollectionViewController {
             label.text = "error"
         }
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

@@ -28,6 +28,7 @@ class LocationAndTimeViewController : UIViewController, UITableViewDataSource,UI
                                    "Scharpenberg":["101","Other"],
                                    "Skinner":["101","Other"],
                                    "Speed":["101","Other"],
+                                   "Lakeside":["101","Other"],
                                    "Olin":["O259","O257","O159","O157", "Other"]]
     
     override func viewDidLoad() {
@@ -90,14 +91,14 @@ class LocationAndTimeViewController : UIViewController, UITableViewDataSource,UI
             cell.detailTextLabel?.text = "Lakeside 203 at 9 pm"
         }else if indexPath.row == 1 {
             cell.textLabel?.text = "Building"
-            cell.detailTextLabel?.text = "Olin"
+            cell.detailTextLabel?.text = ""
             if defaults.object(forKey: "location") != nil {
                 cell.detailTextLabel?.text = defaults.object(forKey: "location") as! String?
             }
             
         }else if indexPath.row == 2 {
             cell.textLabel?.text = "Room"
-            cell.detailTextLabel?.text = "000"
+            cell.detailTextLabel?.text = ""
             if defaults.object(forKey: "room") != nil {
                 cell.detailTextLabel?.text = defaults.object(forKey: "room") as! String?
             }
