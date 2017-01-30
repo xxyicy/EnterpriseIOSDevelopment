@@ -12,19 +12,28 @@ import Firebase
 class AddSnackFirstViewController: UICollectionViewController {
     
     let snackRef = FIRDatabase.database().reference(withPath: "menu/snacktest")
+    var snackText : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        snackRef.observe(FIRDataEventType.value, with: { (snapshot) in
+            self.snackText = []
+            for value in (snapshot.value as? NSArray)!{
+                self.snackText.append((value as? String)!)
+            }
+            self.collectionView?.reloadData()
+        })
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return snackRef.accessibilityElementCount()
+        return snackText.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         let label = cell.viewWithTag(1) as! UILabel
-        label.text = snackRef.value(forKey: String(indexPath.item)) as! String?
+        label.text = snackText[indexPath.item]
         return cell
     }
     

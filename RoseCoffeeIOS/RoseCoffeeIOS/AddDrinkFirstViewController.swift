@@ -11,7 +11,7 @@ import Firebase
 
 class AddDrinkFirstViewController: UICollectionViewController {
     
-    let userRef = FIRDatabase.database().reference(withPath: "menu")
+    let menuRef = FIRDatabase.database().reference(withPath: "menu")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,19 +26,28 @@ class AddDrinkFirstViewController: UICollectionViewController {
             collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         let label = cell.viewWithTag(1) as! UILabel
         if (indexPath.item == 0) {
-            label.text = "Large/Vanti"
+            label.text = "Espresso Drinks"
         } else if (indexPath.item == 1) {
-            label.text = "Medium/Grantee"
+            label.text = "Frappuccina Coffee"
         } else if (indexPath.item == 2) {
-            label.text = "Small/Tall"
-        } else {
-            label.text = "error"
+            label.text = "Frappuccino Creme"
         }
+        cell.systemLayoutSizeFitting(CGSize(width: collectionView.bounds.size.width/2, height: collectionView.bounds.size.width/2))
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.dismiss(animated: true, completion: nil)
+        if (indexPath.item == 0) {
+            OpenIndex("Espresso Drinks")
+        } else if (indexPath.item == 1) {
+            OpenIndex("Frappuccina Coffee")
+        } else if (indexPath.item == 2) {
+            OpenIndex("Frappuccino Creme")
+        }
+    }
+    
+    func OpenIndex(_ index: String) {
+        
     }
     
 }
