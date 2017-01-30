@@ -17,6 +17,7 @@ class SignInViewController: UIViewController {
     let secret = "KkKMGtbQOhWZcr0ksKHN" as String
     let REGISTERY_TOKEN = "e3d9d1dd-8931-46fd-b41c-b02187ff1ddb" as String
     let userRef = FIRDatabase.database().reference(withPath: "user")
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,9 @@ class SignInViewController: UIViewController {
                         }else{
                             let userObject = ["is delivery": false,"token":(result?.token)!, "name": (result?.name)!, "email":(result?.email)!] as [String : Any]
                             self.userRef.child(username).setValue(userObject)
-                            defaults.set(false, forKey: "isDelivery")
+                            self.appDelegate.isDelivery = false
+                            self.appDelegate.name = result?.name
+                            self.appDelegate.email = result?.email
                             self.getPhoneNumber()
                         }
                     })
@@ -58,6 +61,10 @@ class SignInViewController: UIViewController {
             let value = snapshot.value as? NSDictionary
             let isDelivery = value?["is delivery"] as? Bool
             UserDefaults.standard.set(isDelivery, forKey: "isDelivery")
+            self.appDelegate.isDelivery = isDelivery
+            self.appDelegate.name = value?["name"] as? String
+            self.appDelegate.email = value?["email"] as? String
+            self.appDelegate.phoneNum = value?["phone number"] as? String
             if (isDelivery)! {
                 //Jump to delivery main
                 self.presentDeliveryMain()

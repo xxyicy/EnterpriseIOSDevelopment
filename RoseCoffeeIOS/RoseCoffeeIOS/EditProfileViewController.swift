@@ -19,6 +19,8 @@ class EditProfileViewController : UIViewController {
     @IBOutlet weak var phoneNumTextField: UITextField!
     
     let userRef = FIRDatabase.database().reference(withPath: "user")
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,11 @@ class EditProfileViewController : UIViewController {
         self.userRef.child(username).child("email").setValue(self.emailTextField.text!)
         
         self.userRef.child(username).child("phone number").setValue(self.phoneNumTextField.text!)
+        
+        appDelegate.name = self.firstNameTextField.text! + " " + self.lastNameTextField.text!
+        appDelegate.email = self.emailTextField.text!
+        appDelegate.phoneNum = self.phoneNumTextField.text!
+
         
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let navController: UINavigationController = storyboard.instantiateViewController(withIdentifier: "AccountInfoNav") as! UINavigationController

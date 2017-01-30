@@ -31,15 +31,10 @@ class AccountInfoViewController: UIViewController, UIImagePickerControllerDelega
         
         imagePicker.delegate = self
         
-        let defaults = UserDefaults.standard
-        let username: String = defaults.object(forKey: "username") as! String
-        userRef.child(username).observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSDictionary
-            self.isDeliverySwitch.setOn((value?["is delivery"] as? Bool)!, animated: true)
-            self.nameLabel.text = value?["name"] as! String?
-            self.emailLabel.text = value?["email"] as! String?
-            self.phoneNumLabel.text = value?["phone number"] as! String?
-        })
+        self.isDeliverySwitch.setOn(appDelegate.isDelivery!, animated: true)
+        self.nameLabel.text = appDelegate.name
+        self.emailLabel.text = appDelegate.email
+        self.phoneNumLabel.text = appDelegate.phoneNum
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -75,14 +70,14 @@ class AccountInfoViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func changeDeliveryStatus(_ sender: UISwitch) {
         let defaults = UserDefaults.standard
         let username: String = defaults.object(forKey: "username") as! String
-        defaults.set(sender.isOn, forKey: "isDelivery")
+        appDelegate.isDelivery = sender.isOn
         userRef.child(username).child("is delivery").setValue(sender.isOn)
     }
     
     @IBAction func SignOutAction(_ sender: UIButton) {
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: "username")
-        defaults.removeObject(forKey: "isDelivery")
+        
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let signInViewController: UIViewController = storyboard.instantiateViewController(withIdentifier: "SignInView")
         

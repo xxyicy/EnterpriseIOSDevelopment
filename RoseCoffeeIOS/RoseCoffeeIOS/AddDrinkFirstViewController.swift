@@ -18,18 +18,18 @@ class AddDrinkFirstViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2;
+        return 3;
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:UICollectionViewCell =
             collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         let label = cell.viewWithTag(1) as! UILabel
-        if (indexPath.item == 1) {
+        if (indexPath.item == 0) {
             label.text = "Large/Vanti"
-        } else if (indexPath.item == 2) {
+        } else if (indexPath.item == 1) {
             label.text = "Medium/Grantee"
-        } else if (indexPath.item == 3) {
+        } else if (indexPath.item == 2) {
             label.text = "Small/Tall"
         } else {
             label.text = "error"

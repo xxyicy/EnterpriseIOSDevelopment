@@ -12,6 +12,7 @@ import Firebase
 class updateInfoViewController : UIViewController {
     @IBOutlet weak var phoneNumTextField: UITextField!
     let userRef = FIRDatabase.database().reference(withPath: "user")
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,7 @@ class updateInfoViewController : UIViewController {
         let defaults = UserDefaults.standard
         let username = defaults.object(forKey: "username")
         userRef.child(username as! String).child("phone number").setValue(phoneNumTextField.text)
-        
+        appDelegate.phoneNum = phoneNumTextField.text
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let navController: UINavigationController = storyboard.instantiateViewController(withIdentifier: "customerMainNav") as! UINavigationController
         
