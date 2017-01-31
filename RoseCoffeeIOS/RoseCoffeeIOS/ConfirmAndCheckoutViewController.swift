@@ -19,6 +19,7 @@ class ConfirmAndCheckoutViewController : UIViewController {
         let defaults = UserDefaults.standard
         locationLabel.text = String("\(defaults.object(forKey: "location") as! String) \(defaults.object(forKey: "room") as! String)")
         timeLabel.text = defaults.object(forKey: "time") as! String?
+        priceLabel.text = defaults.object(forKey: "PriceTemp") as! String?
     }
     
     @IBAction func backToLocationAndTime(_ sender: UIButton) {

@@ -188,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2940" y="-107"/>
+            <point key="canvasLocation" x="2940" y="-108"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="SzV-Pe-PFn">
@@ -309,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aic-0f-Ftz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3668" y="-107.49625187406298"/>
+            <point key="canvasLocation" x="3822" y="-108"/>
         </scene>
         <!--Setting-->
         <scene sceneID="gVH-Mh-ARz">
@@ -835,7 +835,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrZ-fe-OUi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2938.4000000000001" y="1319.1904047976013"/>
+            <point key="canvasLocation" x="2940" y="1402"/>
         </scene>
         <!--Time Picker View Controller-->
         <scene sceneID="k3n-HQ-TRt">
@@ -923,13 +923,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4go-t4-JQK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3822" y="1319"/>
+            <point key="canvasLocation" x="3822" y="1402"/>
         </scene>
         <!--Add Drink First View Controller-->
         <scene sceneID="ruZ-Pz-Puz">
             <objects>
                 <collectionViewController storyboardIdentifier="AddDrinkModal" id="gzX-lz-awf" customClass="AddDrinkFirstViewController" customModule="RoseCoffeeIOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="gp8-SJ-eEJ">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="gp8-SJ-eEJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -979,16 +979,15 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yzM-nw-RAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4629.6000000000004" y="1317.3913043478262"/>
+            <point key="canvasLocation" x="4630" y="1402"/>
         </scene>
         <!--Add Snack First View Controller-->
         <scene sceneID="dB1-Fz-oCq">
             <objects>
                 <collectionViewController storyboardIdentifier="AddSnackModal" id="h3I-Jk-RdV" customClass="AddSnackFirstViewController" customModule="RoseCoffeeIOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Iv8-Y7-niV">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Iv8-Y7-niV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.56712710860000004" green="0.12396615" blue="0.1175570562" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NAO-nl-TyH">
                             <size key="itemSize" width="154" height="116"/>
                             <size key="headerReferenceSize" width="30" height="30"/>
@@ -1032,7 +1031,56 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6p-2o-SUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5400.8000000000002" y="1317.3913043478262"/>
+            <point key="canvasLocation" x="5401" y="1402"/>
+        </scene>
+        <!--Add Drink Second View Controller-->
+        <scene sceneID="yQ1-uQ-BzU">
+            <objects>
+                <viewController storyboardIdentifier="AddDrinkSecondView" id="jg0-dM-oz4" customClass="AddDrinkSecondViewController" customModule="RoseCoffeeIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QEd-HG-8Et"/>
+                        <viewControllerLayoutGuide type="bottom" id="BCZ-Ni-ocN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="plg-Ir-Uti">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZHD-dp-Yof">
+                                <rect key="frame" x="16" y="57" width="343" height="237"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OlK-uW-PIn">
+                                <rect key="frame" x="16" y="28" width="47" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q21-Mz-rEi">
+                                <rect key="frame" x="16" y="302" width="110" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Any other requirements?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XnK-bt-43b">
+                                <rect key="frame" x="16" y="331" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="CommentTextView" destination="XnK-bt-43b" id="xrB-vl-UBg"/>
+                        <outlet property="SizePickerView" destination="ZHD-dp-Yof" id="gY7-ii-qcB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LAx-Br-ZdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6279" y="1402"/>
         </scene>
         <!--Order List-->
         <scene sceneID="dKg-Qi-kAx">
@@ -1160,7 +1208,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3QP-Al-Rad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2938" y="1990"/>
+            <point key="canvasLocation" x="2940" y="2174"/>
         </scene>
         <!--Order Detail-->
         <scene sceneID="jFY-bc-8dg">
@@ -1458,7 +1506,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMp-ax-mLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4629.6000000000004" y="655.32233883058473"/>
+            <point key="canvasLocation" x="4630" y="658"/>
         </scene>
         <!--Rate-->
         <scene sceneID="IEq-Kn-d4n">
@@ -1581,7 +1629,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IgI-I2-Ve6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1953" y="1989"/>
+            <point key="canvasLocation" x="1999" y="2174"/>
         </scene>
     </scenes>
     <resources>

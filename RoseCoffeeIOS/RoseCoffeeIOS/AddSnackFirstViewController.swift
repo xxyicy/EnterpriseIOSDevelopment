@@ -24,6 +24,7 @@ class AddSnackFirstViewController: UICollectionViewController {
             }
             self.collectionView?.reloadData()
         })
+        self.collectionView?.reloadData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
