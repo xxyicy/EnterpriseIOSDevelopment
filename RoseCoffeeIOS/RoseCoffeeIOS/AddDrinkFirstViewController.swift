@@ -10,10 +10,11 @@ import UIKit
 import Firebase
 
 class AddDrinkFirstViewController: UICollectionViewController {
-    
+
     let drinkRef = FIRDatabase.database().reference(withPath: "menu/drink")
     var keys: [String] = []
     var imageArray: [UIImage] = []
+    var VCRef: OrderDetailViewController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,23 +46,25 @@ class AddDrinkFirstViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let defaults = UserDefaults.standard
         self.drinkRef.child(self.keys[indexPath.item]).observe(FIRDataEventType.value, with: { (snapshot) in
             let value = snapshot.value as! NSDictionary
             var sizes:[String] = []
             for (key,_) in value {
-                sizes.append(key as! String)
+                let k: String = key as! String
+                if (k != "image"){
+                    sizes.append(key as! String)
+                }
             }
-            print(1)
-            defaults.set(sizes, forKey: "tempSizes")
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let modal: AddDrinkSecondViewController = storyboard.instantiateViewController(withIdentifier: "AddDrinkSecondView") as! AddDrinkSecondViewController
+            modal.sizeArray = sizes
+            modal.drinkName = self.keys[indexPath.item]
+            modal.VCRef = self.VCRef
+            modal.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            modal.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+            self.present(modal, animated: true)
+            
         })
-        defaults.set(self.keys[indexPath.item], forKey: "tempDrink")
-        
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let modal: AddDrinkSecondViewController = storyboard.instantiateViewController(withIdentifier: "AddDrinkSecondView") as! AddDrinkSecondViewController
-        modal.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        modal.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        self.present(modal, animated: true)
     }
     
     func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {

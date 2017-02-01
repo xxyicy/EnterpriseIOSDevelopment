@@ -9,17 +9,31 @@
 import UIKit
 import Firebase
 
-class AddDrinkSecondViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+
+
+class AddDrinkSecondViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    @IBOutlet var CommentTextView: UITextField!
+    
+    @IBOutlet var commentTextField: UITextField!
+    @IBOutlet var sizePickerView: UIPickerView!
+    
+    var VCRef: OrderDetailViewController? = nil
     var drinkRef = FIRDatabase.database().reference(withPath: "menu/drink")
-    let defaults = UserDefaults.standard
     var sizeArray: [String] = []
+    var drinkName : String = ""
+    var selectedSize:String = ""
+    var price: String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.sizeArray = defaults.value(forKey: "tempSizes") as! [String]
-        print(1)
+        
+        self.commentTextField.delegate = self
+        self.sizePickerView.delegate = self
+        self.sizePickerView.dataSource = self
+        let position = 0
+        self.selectedSize = self.sizeArray[position]
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -27,15 +41,26 @@ class AddDrinkSecondViewController: UIViewController, UIPickerViewDelegate, UIPi
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        print(sizeArray.count)
         return sizeArray.count
     }
+    
+    
+    @IBAction func finishSetting(_ sender: Any) {
+        print("About to send new order data back!")
+        VCRef?.passData(commentTextField.text!, drinkName, selectedSize, price)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return sizeArray[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        defaults.set(self.drinkRef.child(defaults.value(forKey: "tempDrink") as! String).value(forKey: sizeArray[row]), forKey: "PriceTemp")
+        self.selectedSize = sizeArray[row]
+        drinkRef.child(drinkName).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            self.price = String(value?.value(forKey: self.selectedSize) as! Double)
+        })
     }
 }

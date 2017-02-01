@@ -29,6 +29,8 @@ class AccountInfoViewController: UIViewController, UIImagePickerControllerDelega
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+        
+        
         imagePicker.delegate = self
         
         self.isDeliverySwitch.setOn(appDelegate.isDelivery!, animated: true)
