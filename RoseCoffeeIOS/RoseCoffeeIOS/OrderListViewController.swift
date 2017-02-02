@@ -17,6 +17,8 @@ class OrderListViewController : UITableViewController {
     
     override func viewDidLoad() {
         if self.revealViewController() != nil {
+            print(self.revealViewController())
+
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -29,7 +31,7 @@ class OrderListViewController : UITableViewController {
             }
             self.tableView.reloadData()
         })
-        
+       
         tableView.tableFooterView = UIView()
     }
     

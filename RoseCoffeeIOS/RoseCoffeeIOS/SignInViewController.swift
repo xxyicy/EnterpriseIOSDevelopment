@@ -45,6 +45,7 @@ class SignInViewController: UIViewController {
                             self.appDelegate.isDelivery = false
                             self.appDelegate.name = result?.name
                             self.appDelegate.email = result?.email
+                            self.appDelegate.userName = result?.username
                             self.getPhoneNumber()
                         }
                     })
