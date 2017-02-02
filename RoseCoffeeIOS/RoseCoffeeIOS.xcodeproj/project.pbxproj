@@ -142,17 +142,77 @@
 		4630A8741E1A1FC600F28AA7 /* CustomerMain */ = {
 			isa = PBXGroup;
 			children = (
+				46D93B7D1E43B80900B59071 /* FirstPage */,
+				46D93B7E1E43B81C00B59071 /* SecondPage */,
+				46D93B7F1E43B82D00B59071 /* ThirdPage */,
+			);
+			name = CustomerMain;
+			sourceTree = "<group>";
+		};
+		46D93B7B1E43B7C900B59071 /* MyOrder */ = {
+			isa = PBXGroup;
+			children = (
+				1B8675881E425AC000F94BDF /* MyOrdersViewController.swift */,
+				1B86758A1E42630E00F94BDF /* MyOrdersTableCell.swift */,
+				1B86758C1E42C79100F94BDF /* MyOrderHistoryViewController.swift */,
+			);
+			name = MyOrder;
+			sourceTree = "<group>";
+		};
+		46D93B7C1E43B7E600B59071 /* MyDelivery */ = {
+			isa = PBXGroup;
+			children = (
+				6F8E835C1E36E004006D2637 /* DeliveryMain */,
+				4630A8741E1A1FC600F28AA7 /* CustomerMain */,
+			);
+			name = MyDelivery;
+			sourceTree = "<group>";
+		};
+		46D93B7D1E43B80900B59071 /* FirstPage */ = {
+			isa = PBXGroup;
+			children = (
 				4630A8721E1A1FB800F28AA7 /* LocationAndTimeViewController.swift */,
 				6F60E6E61E39A03D00413FFE /* LocationPickerViewController.swift */,
 				6F60E6E81E39C50200413FFE /* TimePickerViewController.swift */,
+			);
+			name = FirstPage;
+			sourceTree = "<group>";
+		};
+		46D93B7E1E43B81C00B59071 /* SecondPage */ = {
+			isa = PBXGroup;
+			children = (
 				46DB46FE1E246E1500834A76 /* OrderDetailViewController.swift */,
 				468321D91E3D38BB00B0C33F /* AddDrinkFirstViewController.swift */,
 				468321DB1E3D70D300B0C33F /* AddSnackFirstViewController.swift */,
 				46943C251E3FBEA200A96F6D /* AddDrinkSecondViewController.swift */,
+			);
+			name = SecondPage;
+			sourceTree = "<group>";
+		};
+		46D93B7F1E43B82D00B59071 /* ThirdPage */ = {
+			isa = PBXGroup;
+			children = (
 				6FF46CDC1E359F390053899E /* ConfirmAndCheckoutViewController.swift */,
 				46840D8C1E36F6CE00BD0FB3 /* CustomerRatingViewController.swift */,
 			);
-			name = CustomerMain;
+			name = ThirdPage;
+			sourceTree = "<group>";
+		};
+		46D93B801E43B8CF00B59071 /* AccountInfo */ = {
+			isa = PBXGroup;
+			children = (
+				6F2052191DFA1B0300FB6605 /* AccountInfoViewController.swift */,
+				6F3393C91E371D420032E40F /* EditProfileViewController.swift */,
+			);
+			name = AccountInfo;
+			sourceTree = "<group>";
+		};
+		46D93B811E43B8FC00B59071 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				46DB46FC1E2464CB00834A76 /* SettingViewController.swift */,
+			);
+			name = Setting;
 			sourceTree = "<group>";
 		};
 		5BE129BB9C05A16C688A669A /* Pods */ = {
@@ -195,20 +255,16 @@
 				6F2052141DFA1AC600FB6605 /* SWRealViewController */,
 				6F2052121DFA1AC200FB6605 /* Images.xcassets */,
 				1B1C2C851E183A0200E52EA7 /* SignInViewController.swift */,
-				6F20521A1DFA1B0300FB6605 /* MenuController.swift */,
-				4630A8741E1A1FC600F28AA7 /* CustomerMain */,
-				6F8E835C1E36E004006D2637 /* DeliveryMain */,
-				6F2052191DFA1B0300FB6605 /* AccountInfoViewController.swift */,
 				6FF46CDA1E3596340053899E /* UpdateInfoViewController.swift */,
-				6F3393C91E371D420032E40F /* EditProfileViewController.swift */,
-				46DB46FC1E2464CB00834A76 /* SettingViewController.swift */,
+				6F20521A1DFA1B0300FB6605 /* MenuController.swift */,
+				46D93B7B1E43B7C900B59071 /* MyOrder */,
+				46D93B7C1E43B7E600B59071 /* MyDelivery */,
+				46D93B801E43B8CF00B59071 /* AccountInfo */,
+				46D93B811E43B8FC00B59071 /* Setting */,
 				6F2051DA1DF76CC400FB6605 /* Info.plist */,
 				6F2051D21DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld */,
 				463260FF1E31A31100AF4421 /* GoogleService-Info.plist */,
 				1BEC19CE1E233406007760A7 /* Podfile */,
-				1B8675881E425AC000F94BDF /* MyOrdersViewController.swift */,
-				1B86758A1E42630E00F94BDF /* MyOrdersTableCell.swift */,
-				1B86758C1E42C79100F94BDF /* MyOrderHistoryViewController.swift */,
 			);
 			path = RoseCoffeeIOS;
 			sourceTree = "<group>";
