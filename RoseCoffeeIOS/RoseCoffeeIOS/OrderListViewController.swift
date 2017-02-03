@@ -13,7 +13,9 @@ class OrderListViewController : UITableViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     let cellReuseIdentifier = "order"
     let orderRef = FIRDatabase.database().reference(withPath: "order")
+    let userRef = FIRDatabase.database().reference(withPath: "user")
     var toClaimArray: [NSDictionary] = []
+    var keyArray: [String] = []
     
     override func viewDidLoad() {
         if self.revealViewController() != nil {
@@ -24,11 +26,18 @@ class OrderListViewController : UITableViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+        
         orderRef.child("to claim").observe(FIRDataEventType.value, with: { (snapshot) in
             self.toClaimArray = []
-            for (_,value) in (snapshot.value as? NSDictionary)!{
-                self.toClaimArray.append((value as? NSDictionary)!)
+            
+            if (snapshot.value as? NSDictionary) != nil {
+                for (key,value) in (snapshot.value as? NSDictionary)!{
+                    self.keyArray.append(key as! String)
+                    self.toClaimArray.append((value as! NSDictionary))
+                }
             }
+            
+            
             self.tableView.reloadData()
         })
        
@@ -84,9 +93,49 @@ class OrderListViewController : UITableViewController {
     
     func buttonClicked(_ sender: UIButton){
         let alert = UIAlertController(title: "Do you want to take this order?", message: "", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
+            let defaults = UserDefaults.standard
+            let username = defaults.object(forKey: "username") as! String
+            let value = self.toClaimArray[sender.tag]
+            value.setValue(username, forKey: "deliveryPerson")
+            self.orderRef.child("to claim").child(self.keyArray[sender.tag]).removeValue(completionBlock: { (error, refer) in
+                
+                if (error != nil){
+                    alert.dismiss(animated: true, completion: nil)
+                    self.errorOccur()
+                }else{
+                    self.orderRef.child("claimed").child(self.keyArray[sender.tag]).setValue(value)
+                    self.userRef.child(username).child("delivery orders").child("in progress").child(self.keyArray[sender.tag]).setValue("claimed")
+                    self.userRef.child(value.object(forKey: "customer") as! String).child("customer orders").child("in progress").child(self.keyArray[sender.tag]).setValue("claimed")
+                    alert.dismiss(animated: true, completion: nil)
+                    self.takeOrderConfirmation(value)
+                }
+            })
+            
+        }))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
 
+    }
+    
+    func errorOccur(){
+        let instruction = UIAlertController(title: "Sorry, this order expired or has be taken by someone else.", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        instruction.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
+        self.present(instruction, animated: true, completion: nil)
+    }
+    
+    func takeOrderConfirmation(_ value: NSDictionary) {
+        let instruction = UIAlertController(title: "You successfully take the order, Go to order detail page?", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        instruction.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+            (UIAlertAction) in
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let orderInfoViewController: OrderInfoViewController = storyboard.instantiateViewController(withIdentifier: "orderInfoPage") as! OrderInfoViewController
+            orderInfoViewController.isDone = false
+            orderInfoViewController.order = value
+            
+            self.navigationController?.pushViewController(orderInfoViewController, animated: true)
+        }))
+        instruction.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        self.present(instruction, animated: true, completion: nil)
     }
 }

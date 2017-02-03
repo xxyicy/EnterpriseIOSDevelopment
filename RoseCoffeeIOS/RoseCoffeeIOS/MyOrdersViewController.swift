@@ -17,6 +17,7 @@ class MyOrdersViewController: UITableViewController{
     let cellReuseIdentifier = "myOrderTableViewCell"
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let orderRef = FIRDatabase.database().reference(withPath: "order")
+    let userRef = FIRDatabase.database().reference(withPath: "user")
     var claimedArray: [NSDictionary] = []
     var deliveredArray: [NSDictionary] = []
 
@@ -30,49 +31,40 @@ class MyOrdersViewController: UITableViewController{
         }
         
         
-        orderRef.child("claimed").observe(FIRDataEventType.value, with: { (snapshot) in
-            self.claimedArray = []
-            for (_,value) in (snapshot.value as? NSDictionary)!{
-                if(self.appDelegate.isDelivery)!{
-                    //check how to get the value of deliveryPerson
-                    for child in snapshot.children {
-                        
-                        let key = (child as! FIRDataSnapshot).key as FIRDataSnapshot
-                        
-                        let text = key.object
-                        if(key == "deliveryPerson"){
-                            if(text == self.appDelegate.userName){
-                                self.claimedArray.append((value as? NSDictionary)!)
-                            }
-                        }
+        let defaults = UserDefaults.standard
+        let username = defaults.object(forKey: "username") as! String
+        var order: String = ""
+        if (appDelegate.isDelivery)!{
+            order = "delivery orders"
+        }else{
+            order = "customer orders"
+        }
+        userRef.child(username).child(order).child("in progress").observe(FIRDataEventType.value, with: { (snapshot) in
+            let list = snapshot.value as! NSDictionary
+            let dispatch = DispatchGroup()
+            dispatch.enter()
+            var count = 0
+            for (key,value) in list {
+                let state = value as! String
+                self.orderRef.child(value as! String).child(key as! String).observeSingleEvent(of: .value, with: { (snapshot) in
+                    let value = snapshot.value as! NSDictionary
+                    if (state == "claimed"){
+                        self.claimedArray.append(value)
+                    }else{
+                        self.deliveredArray.append(value)
                     }
-                }else{
-                    self.claimedArray.append((value as? NSDictionary)!)}
+                    count+=1
+                    if (count == list.count){
+                        dispatch.leave()
+                    }
+                })
             }
-            self.tableView.reloadData()
+            dispatch.notify(queue: DispatchQueue.main, execute: {
+                self.tableView.reloadData()
+            })
+            
         })
         
-        orderRef.child("delivered").observe(FIRDataEventType.value, with: {(snapshot) in
-            self.deliveredArray = []
-            for(_,value) in (snapshot.value as? NSDictionary)! {
-                if(self.appDelegate.isDelivery)!{
-                    //check how to get the value of deliveryPerson
-
-                    for child in snapshot.children {
-                        
-                        let key = (child as! FIRDataSnapshot).key as String
-                        let text = (child as? FIRDataSnapshot)?.value as! String
-                        if(key == "deliveryPerson"){
-                            if(text == self.appDelegate.userName){
-                                self.deliveredArray.append((value as? NSDictionary)!)
-                            }
-                        }
-                    }
-                }else{
-                    self.deliveredArray.append((value as? NSDictionary)!)}
-            }
-            self.tableView.reloadData()
-        })
         
         tableView.tableFooterView = UIView()
         
@@ -88,8 +80,7 @@ class MyOrdersViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let total:NSInteger = claimedArray.count + deliveredArray.count
-        return total
+        return claimedArray.count + deliveredArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -109,7 +100,7 @@ class MyOrdersViewController: UITableViewController{
             cell.statusLabel?.text = "Claimed"
 
         }
-        
+
         cell.timeLabel?.text = value.object(forKey: "time") as! String?
         cell.locationLabel?.text = value.object(forKey: "location") as! String?
         let orderList: NSDictionary = value.object(forKey: "order list") as! NSDictionary
@@ -127,27 +118,34 @@ class MyOrdersViewController: UITableViewController{
         let strIndex:NSInteger = menus.characters.count
         let menuIndex = menus.index(menus.startIndex, offsetBy: strIndex-3)
         menus = menus.substring(to: menuIndex)
-        // for displaying quantity of each order
-//        for(itemName, itemInfo) in orderList{
-//            let toAdd:String = itemName as! String
-//            for(key, keyValue) in itemInfo as! NSDictionary{
-//                if(key as! String == "quantity"){
-//                    let quantity = keyValue as! Double}
-//
-//            }
-//            
-//        }
+        
         cell.menuLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.menuLabel?.text = menus
 
         cell.menuLabel?.numberOfLines = 0
-        
-        
     
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 125
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row >= claimedArray.count){
+            //
+            
+        }else{
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let profileViewController: ProfileViewController = storyboard.instantiateViewController(withIdentifier: "profilePage") as! ProfileViewController
+            let value = claimedArray[indexPath.row]
+            if (appDelegate.isDelivery!){
+                profileViewController.username = value.object(forKey: "customer") as! String
+            }else{
+                profileViewController.username = value.object(forKey: "deliveryPerson") as! String
+            }
+            
+            self.navigationController?.pushViewController(profileViewController, animated: true)
+        }
     }
 }

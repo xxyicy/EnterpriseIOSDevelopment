@@ -47,11 +47,11 @@ class ConfirmAndCheckoutViewController : UIViewController {
     }
     
     @IBAction func backToLocationAndTime(_ sender: UIButton) {
-        self.navigationController?.popToRootViewController(animated: true)
+        _ = self.navigationController?.popToRootViewController(animated: true)
     }
     
     
     @IBAction func backToOrderDetail(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
 }

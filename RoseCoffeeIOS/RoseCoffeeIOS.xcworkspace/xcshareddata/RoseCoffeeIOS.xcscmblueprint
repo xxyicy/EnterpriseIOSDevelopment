@@ -4,23 +4,16 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "CDF00ECBB476DD48D33EE67EBEE44217CAA6B429" : 9223372036854775807,
-    "3DD5A6D97357D327435511EF03A3C6F161F8E4FD" : 9223372036854775807
+    "CDF00ECBB476DD48D33EE67EBEE44217CAA6B429" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "21A89DB4-1709-4422-87B7-2337DAE1BB4A",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "CDF00ECBB476DD48D33EE67EBEE44217CAA6B429" : "EnterpriseIOSDevelopment\/",
-    "3DD5A6D97357D327435511EF03A3C6F161F8E4FD" : ""
+    "CDF00ECBB476DD48D33EE67EBEE44217CAA6B429" : "EnterpriseIOSDevelopment\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "RoseCoffeeIOS",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RoseCoffeeIOS\/RoseCoffeeIOS.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/xxyicy\/SplitItCourseProject.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3DD5A6D97357D327435511EF03A3C6F161F8E4FD"
-    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/xxyicy\/EnterpriseIOSDevelopment.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",

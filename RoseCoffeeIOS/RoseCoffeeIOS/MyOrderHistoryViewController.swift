@@ -13,9 +13,10 @@ import Firebase
 
 class MyOrderHistoryViewController: UITableViewController{
     
-    let cellReuseIdentifier = "myOrderTableViewCell"
+    let cellReuseIdentifier = "orderHistoryTableViewCell"
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let orderRef = FIRDatabase.database().reference(withPath: "order")
+    let userRef = FIRDatabase.database().reference(withPath: "user")
     var receivedArray: [NSDictionary] = []
     
     
@@ -23,15 +24,35 @@ class MyOrderHistoryViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        orderRef.child("received").observe(FIRDataEventType.value, with: { (snapshot) in
-            self.receivedArray = []
-            for (_,value) in (snapshot.value as? NSDictionary)!{
-                self.receivedArray.append((value as? NSDictionary)!)
+        let defaults = UserDefaults.standard
+        let username = defaults.object(forKey: "username") as! String
+        var order: String = ""
+        if (appDelegate.isDelivery)!{
+            order = "delivery orders"
+        }else{
+            order = "customer orders"
+        }
+        userRef.child(username).child(order).child("done").observe(FIRDataEventType.value, with: { (snapshot) in
+            let list = snapshot.value as! [String]
+            let dispatch = DispatchGroup()
+            dispatch.enter()
+            var count = 0
+            for value in list {
+                self.orderRef.child("received").child(value).observeSingleEvent(of: .value, with: { (snapshot) in
+                    let value = snapshot.value as! NSDictionary
+                    self.receivedArray.append(value)
+                    count+=1
+                    if (count == list.count){
+                        dispatch.leave()
+                    }
+                })
             }
-            self.tableView.reloadData()
+            dispatch.notify(queue: DispatchQueue.main, execute: {
+                self.tableView.reloadData()
+            })
+            
         })
-        
-        
+
         tableView.tableFooterView = UIView()
         
     }
@@ -54,7 +75,7 @@ class MyOrderHistoryViewController: UITableViewController{
         
         let cell:MyOrdersTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! MyOrdersTableViewCell
         
-        var value:NSDictionary = self.receivedArray[indexPath.row]
+        let value:NSDictionary = self.receivedArray[indexPath.row]
         
         
         cell.timeLabel?.text = value.object(forKey: "time") as! String?
@@ -87,5 +108,34 @@ class MyOrderHistoryViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 125
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let orderInfoViewController: OrderInfoViewController = storyboard.instantiateViewController(withIdentifier: "orderInfoPage") as! OrderInfoViewController
+        let value = receivedArray[indexPath.row]
+        
+        orderInfoViewController.order = value
+        
+        self.navigationController?.pushViewController(orderInfoViewController, animated: true)
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let defaults = UserDefaults.standard
+            let username = defaults.object(forKey: "username") as! String
+            var order: String = ""
+            if (appDelegate.isDelivery)!{
+                order = "delivery orders"
+            }else{
+                order = "customer orders"
+            }
+            userRef.child(username).child(order).child("done").child(String(indexPath.row)).removeValue()
+        }
     }
 }

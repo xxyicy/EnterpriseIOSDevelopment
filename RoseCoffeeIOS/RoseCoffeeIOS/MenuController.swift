@@ -38,7 +38,7 @@ class MenuController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath.row == 2){
+        if (indexPath.row == 1){
             
             let isDelivery: Bool = appDelegate.isDelivery!
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

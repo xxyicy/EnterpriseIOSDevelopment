@@ -60,7 +60,7 @@ class EditProfileViewController : UIViewController {
     }
     
     @IBAction func cancelChange(_ sender: UIBarButtonItem) {
-        self.navigationController?.popViewController(animated: true)
+        _ = navigationController?.popViewController(animated: true)
     }
 
 }
