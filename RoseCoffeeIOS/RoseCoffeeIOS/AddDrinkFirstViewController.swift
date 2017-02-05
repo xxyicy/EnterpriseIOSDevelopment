@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class AddDrinkFirstViewController: UICollectionViewController {
-
+    
     let drinkRef = FIRDatabase.database().reference(withPath: "menu/drink")
     var keys: [String] = []
     var imageArray: [UIImage] = []
@@ -25,16 +25,15 @@ class AddDrinkFirstViewController: UICollectionViewController {
                 let temp = data as! NSDictionary
                 let temp2 = temp.object(forKey: "image") as! String
                 self.downloadImage(URL(string: temp2)!)
+                self.collectionView?.reloadData()
             }
-            self.collectionView?.reloadData()
         })
-        self.collectionView?.reloadData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageArray.count;
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:UICollectionViewCell =
             collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)

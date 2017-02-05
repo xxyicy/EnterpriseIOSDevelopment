@@ -40,15 +40,22 @@ class OrderInfoViewController : UIViewController {
         
         timeLabel.text = order.object(forKey: "time") as! String?
         locationLabel.text = order.object(forKey: "location") as! String?
-//        priceLabel.text = "0"
+        priceLabel.text = String(order.object(forKey: "total price") as! Double)
         var orderDetail: String = ""
-        let orderList = order.object(forKey: "order list") as! NSDictionary
-        for (key,val) in orderList {
-            let number = (val as! NSDictionary).object(forKey:"quantity") as! NSNumber
-            orderDetail = orderDetail + String(describing: number)
-            orderDetail = orderDetail + " "
-            orderDetail = orderDetail + (key as! String)
-            orderDetail = orderDetail + "\n"
+        var orderList = order.object(forKey: "drinks")
+        if (orderList != nil) {
+            for (key,val) in (orderList as! NSDictionary) {
+                let size = (val as! NSDictionary).object(forKey:"size") as! String
+                let comment = (val as! NSDictionary).object(forKey:"comment") as! String
+                orderDetail = orderDetail + (key as! String) + " - " + size + " - "+comment+"\n"
+            }
+        }
+        orderList = order.object(forKey: "snacks")
+        if (orderList != nil) {
+            for (key,_) in (orderList as! NSDictionary) {
+                orderDetail = orderDetail + (key as! String)
+                orderDetail = orderDetail + "\n"
+            }
         }
         orderLabel.text = orderDetail
         if let comment = order.object(forKey: "comment") as! String? {

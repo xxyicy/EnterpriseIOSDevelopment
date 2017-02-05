@@ -21,7 +21,8 @@ import UIKit
 import Firebase
 
 protocol passOrderDetail {
-    func passData(_ comment: String, _ drinkName: String, _ drinkSize: String, _ drinkPrice: String)
+    func passDrinkData(_ comment: String, _ drinkName: String, _ drinkSize: String, _ drinkPrice: String)
+    func passSnackData(_ snackName: String, _ snackPrice: String)
 }
 
 class OrderDetailViewController : UIViewController, UITableViewDataSource,UITableViewDelegate, passOrderDetail{
@@ -32,6 +33,8 @@ class OrderDetailViewController : UIViewController, UITableViewDataSource,UITabl
     var drinkComments:[String] = []
     var drinkSizes: [String] = []
     var drinkPrices: [String] = []
+    var snacks: [String] = []
+    var snackPrices: [String] = []
     
     
     override func viewDidLoad() {
@@ -59,8 +62,10 @@ class OrderDetailViewController : UIViewController, UITableViewDataSource,UITabl
         nextViewController.drinkComments = self.drinkComments
         nextViewController.drinkSizes = self.drinkSizes
         nextViewController.drinkPrices = self.drinkPrices
-        self.navigationController?.pushViewController(nextViewController, animated: true)
+        nextViewController.snacks = self.snacks
+        nextViewController.snackPrices = self.snackPrices
         
+        self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -80,6 +85,7 @@ class OrderDetailViewController : UIViewController, UITableViewDataSource,UITabl
     func addSnack(img: AnyObject) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let modal: AddSnackFirstViewController = storyboard.instantiateViewController(withIdentifier: "AddSnackModal") as! AddSnackFirstViewController
+        modal.VCRef = self
         modal.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         modal.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         self.present(modal, animated: true)
@@ -92,22 +98,29 @@ class OrderDetailViewController : UIViewController, UITableViewDataSource,UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return drinks.count
+        let temp = drinks.count + snacks.count
+        return temp
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell =
             tableView.dequeueReusableCell(withIdentifier: "OrderDetailCell", for: indexPath)
-        var tempText = drinks[indexPath.row]
-        if (tempText.characters.count >= 12) {
-            let index = tempText.index(tempText.startIndex, offsetBy: 5)
-            tempText = tempText.substring(to: index) + ".."
-        }
-        cell.textLabel?.text = tempText + " - " + drinkSizes[indexPath.row]
-        if (drinkComments[indexPath.row] != "") {
-            cell.detailTextLabel?.text = self.drinkComments[indexPath.row]
+        if (indexPath.row >= drinks.count) {
+            let tempIndex = indexPath.row - drinks.count
+            cell.textLabel?.text = snacks[tempIndex]
+            cell.detailTextLabel?.text = ""
         } else {
-            print("Comment is empty")
+            var tempText = drinks[indexPath.row]
+            if (tempText.characters.count >= 12) {
+                let index = tempText.index(tempText.startIndex, offsetBy: 5)
+                tempText = tempText.substring(to: index) + ".."
+            }
+            cell.textLabel?.text = tempText + " - " + drinkSizes[indexPath.row]
+            if (drinkComments[indexPath.row] != "") {
+                cell.detailTextLabel?.text = self.drinkComments[indexPath.row]
+            } else {
+                print("Comment is empty")
+            }
         }
         return cell
     }
@@ -116,14 +129,20 @@ class OrderDetailViewController : UIViewController, UITableViewDataSource,UITabl
         _ = self.navigationController?.popViewController(animated: true)
     }
     
-    func passData(_ comment: String, _ drinkName: String, _ drinkSize: String, _ drinkPrice:String){
+    func passDrinkData(_ comment: String, _ drinkName: String, _ drinkSize: String, _ drinkPrice:String){
         self.drinkComments.append(comment)
         self.drinks.append(drinkName)
         self.drinkSizes.append(drinkSize)
         self.drinkPrices.append(drinkPrice)
-        self.tableView.reloadData();
+        self.tableView.reloadData()
     }
-
+    
+    func passSnackData(_ snackName: String, _ snackPrice: String) {
+        self.snacks.append(snackName)
+        self.snackPrices.append(snackPrice)
+        self.tableView.reloadData()
+    }
+    
     
 }
 

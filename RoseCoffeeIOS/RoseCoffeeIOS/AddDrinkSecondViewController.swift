@@ -47,7 +47,7 @@ class AddDrinkSecondViewController: UIViewController, UITextFieldDelegate, UIPic
     
     @IBAction func finishSetting(_ sender: Any) {
         print("About to send new order data back!")
-        VCRef?.passData(commentTextField.text!, drinkName, selectedSize, price)
+        VCRef?.passDrinkData(commentTextField.text!, drinkName, selectedSize, price)
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
