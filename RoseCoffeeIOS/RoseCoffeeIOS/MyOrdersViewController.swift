@@ -103,18 +103,23 @@ class MyOrdersViewController: UITableViewController{
 
         cell.timeLabel?.text = value.object(forKey: "time") as! String?
         cell.locationLabel?.text = value.object(forKey: "location") as! String?
-        let orderList: NSDictionary = value.object(forKey: "order list") as! NSDictionary
+        let drinkList = value.object(forKey: "drinks")
     
         var menus: String = ""
-
-        var count:NSInteger = 0;
-        for key in orderList.allKeys {
-            count = count+1
-            let toAdd = key as! String
-            menus = menus + toAdd
-            let breakLine: String = ",  "
-            menus = menus + breakLine
+        if (drinkList != nil) {
+            for (key,_) in (drinkList as! NSDictionary) {
+                menus = menus + (key as! String) + ", "
+            }
         }
+        
+        let snackList = value.object(forKey: "snacks")
+
+        if (snackList != nil) {
+            for key in (snackList as! NSArray) {
+                menus = menus + (key as! String) + ", "
+            }
+        }
+        
         let strIndex:NSInteger = menus.characters.count
         let menuIndex = menus.index(menus.startIndex, offsetBy: strIndex-3)
         menus = menus.substring(to: menuIndex)

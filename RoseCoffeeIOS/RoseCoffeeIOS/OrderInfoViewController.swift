@@ -52,7 +52,7 @@ class OrderInfoViewController : UIViewController {
         }
         orderList = order.object(forKey: "snacks")
         if (orderList != nil) {
-            for (key,_) in (orderList as! NSDictionary) {
+            for key in (orderList as! NSArray) {
                 orderDetail = orderDetail + (key as! String)
                 orderDetail = orderDetail + "\n"
             }

@@ -32,29 +32,31 @@ class MyOrderHistoryViewController: UITableViewController{
         }else{
             order = "customer orders"
         }
-        userRef.child(username).child(order).child("done").observe(FIRDataEventType.value, with: { (snapshot) in
-            let list = snapshot.value as! [String]
-            let dispatch = DispatchGroup()
-            dispatch.enter()
-            var count = 0
-            for value in list {
-                self.orderRef.child("received").child(value).observeSingleEvent(of: .value, with: { (snapshot) in
-                    let value = snapshot.value as! NSDictionary
-                    self.receivedArray.append(value)
-                    count+=1
-                    if (count == list.count){
-                        dispatch.leave()
-                    }
+        let historyRef = userRef.child(username).child(order).child("done")
+        
+        historyRef.observe(FIRDataEventType.value, with: { (snapshot) in
+            let list = snapshot.value as? NSArray
+            
+                let dispatch = DispatchGroup()
+                dispatch.enter()
+                var count = 0
+                if (list != nil) {
+                for value in list! {
+                    self.orderRef.child("received").child(value as! String).observeSingleEvent(of: .value, with: { (snapshot) in
+                        let value = snapshot.value as! NSDictionary
+                        self.receivedArray.append(value)
+                        count+=1
+                        if (count == list?.count){
+                            dispatch.leave()
+                        }
+                    })
+                }
+                dispatch.notify(queue: DispatchQueue.main, execute: {
+                    self.tableView.reloadData()
                 })
             }
-            dispatch.notify(queue: DispatchQueue.main, execute: {
-                self.tableView.reloadData()
-            })
-            
         })
-
         tableView.tableFooterView = UIView()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
