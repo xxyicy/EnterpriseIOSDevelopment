@@ -88,10 +88,7 @@ class ConfirmAndCheckoutViewController : UIViewController {
                 self.activityIndicator.stopAnimating()
                 UIApplication.shared.endIgnoringInteractionEvents()
                 key.child("listened").setValue(true)
-                self.claimedOrderRef.observeSingleEvent(of: .childAdded, with: { (snapshot) in
-                    let value = snapshot.value as! NSDictionary
-                    self.orderTakenConfirmation(value)
-                })
+                self.orderTakenConfirmation(post as NSDictionary)
             }
         })
     }
@@ -105,9 +102,17 @@ class ConfirmAndCheckoutViewController : UIViewController {
             temp = String(drinks.count) + " drinks"
         }
         if (snacks.count == 1) {
+            if (drinks.count == 0) {
+                temp = "1 snack"
+            } else {
             temp+=", 1 snack"
+            }
         } else if (snacks.count > 1) {
-            temp = temp + ", " + String(snacks.count) + " snacks"
+            if (drinks.count == 0) {
+                temp = String(snacks.count) + " snacks"
+            } else {
+                temp = temp + ", " + String(snacks.count) + " snacks"
+            }
         }
         orderLabel.text = temp
     }
