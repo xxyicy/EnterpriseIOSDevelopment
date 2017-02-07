@@ -87,8 +87,6 @@ class ConfirmAndCheckoutViewController : UIViewController {
             if ((snapshot.value as! Bool) == true) {
                 self.activityIndicator.stopAnimating()
                 UIApplication.shared.endIgnoringInteractionEvents()
-                let added = ["listened": true]
-                key.updateChildValues(added)
                 self.orderTakenConfirmation(post as NSDictionary)
             }
         })
@@ -131,12 +129,12 @@ class ConfirmAndCheckoutViewController : UIViewController {
         let instruction = UIAlertController(title: "You order is taken. Go to order detail page?", message: "", preferredStyle: UIAlertControllerStyle.alert)
         instruction.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
             (UIAlertAction) in
-            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let orderInfoViewController: OrderInfoViewController = storyboard.instantiateViewController(withIdentifier: "orderInfoPage") as! OrderInfoViewController
-            orderInfoViewController.isDone = false
-            orderInfoViewController.order = value
             
-            self.navigationController?.pushViewController(orderInfoViewController, animated: true)
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let profileViewController: ProfileViewController = storyboard.instantiateViewController(withIdentifier: "profilePage") as! ProfileViewController
+            profileViewController.username = value.object(forKey: "deliveryPerson") as! String
+            
+            self.navigationController?.pushViewController(profileViewController, animated: true)
         }))
         instruction.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         self.present(instruction, animated: true, completion: nil)

@@ -16,25 +16,34 @@ class AddSnackFirstViewController: UICollectionViewController {
     var snackText : [String] = []
     var imageArray:[UIImage] = []
     var priceArray: [Double] = []
+    var count: NSInteger = 0
+    var totalNum: NSInteger = 0
+    let dispatch = DispatchGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         snackRef.observe(FIRDataEventType.value, with: { (snapshot) in
             let value = snapshot.value as! NSDictionary
-            self.snackText = value.allKeys as! [String]
-            for (_,data) in value {
+            self.count = 0
+            self.dispatch.enter()
+            self.totalNum = value.count
+            for (key,data) in value {
                 let temp = data as! NSDictionary
                 let temp2 = temp.object(forKey: "image") as! String
                 self.downloadImage(URL(string: temp2)!)
+                self.snackText.append(key as! String)
                 self.priceArray.append(temp.object(forKey: "price") as! Double)
             }
-            self.collectionView?.reloadData()
+            self.dispatch.notify(queue: DispatchQueue.main, execute: {
+                self.collectionView?.reloadData()
+            })
+            
         })
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return snackText.count
+        return imageArray.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -42,7 +51,7 @@ class AddSnackFirstViewController: UICollectionViewController {
             collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         let label = cell.viewWithTag(1) as! UILabel
         label.text = self.snackText[indexPath.item]
-//        cell.backgroundView = UIImageView(image:self.imageArray[indexPath.item])
+        cell.backgroundView = UIImageView(image:self.imageArray[indexPath.item])
         cell.frame = CGRect(x: CGFloat(indexPath.item % 2) * collectionView.bounds.size.width/2, y: 30 + CGFloat(indexPath.item/2) * collectionView.bounds.size.width/2, width: collectionView.bounds.size.width/2, height: collectionView.bounds.size.width/2)
         return cell
     }
@@ -57,6 +66,10 @@ class AddSnackFirstViewController: UICollectionViewController {
     func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
         URLSession.shared.dataTask(with: url) {
             (data, response, error) in completion(data, response, error)
+                self.count += 1
+            if (self.count == self.totalNum){
+                self.dispatch.leave()
+            }
             }.resume()
     }
     
