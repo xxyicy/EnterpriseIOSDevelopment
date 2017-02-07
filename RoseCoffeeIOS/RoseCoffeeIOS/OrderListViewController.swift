@@ -97,15 +97,22 @@ class OrderListViewController : UITableViewController {
     }
     
     func buttonClicked(_ sender: UIButton){
+        
+        print(sender.tag)
         let alert = UIAlertController(title: "Do you want to take this order?", message: "", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
             let defaults = UserDefaults.standard
             let username = defaults.object(forKey: "username") as! String
             let value = self.toClaimArray[sender.tag]
+            
+            print (value)
             value.setValue(username, forKey: "deliveryPerson")
+            
+            print (self.keyArray[sender.tag])
             let toClaimRef = self.orderRef.child("to claim").child(self.keyArray[sender.tag])
             
-            toClaimRef.child("claimed").setValue(true)
+            let update = ["claimed": 1]
+            toClaimRef.updateChildValues(update)
             
             toClaimRef.observeSingleEvent(of: .childChanged, with: { (snapshot) in
                 if ((snapshot.value as! Bool) == true) {
