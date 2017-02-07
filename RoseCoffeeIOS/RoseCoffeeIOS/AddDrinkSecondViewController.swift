@@ -34,6 +34,7 @@ class AddDrinkSecondViewController: UIViewController, UITextFieldDelegate, UIPic
         let position = 0
         self.selectedSize = self.sizeArray[position]
         
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -47,8 +48,18 @@ class AddDrinkSecondViewController: UIViewController, UITextFieldDelegate, UIPic
     
     @IBAction func finishSetting(_ sender: Any) {
         print("About to send new order data back!")
-        VCRef?.passDrinkData(commentTextField.text!, drinkName, selectedSize, price)
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        if (self.price == "") {
+            drinkRef.child(drinkName).observeSingleEvent(of: .value, with: { (snapshot) in
+                let value = snapshot.value as? NSDictionary
+                self.price = String(value?.value(forKey: self.selectedSize) as! Double)
+                self.VCRef?.passDrinkData(self.commentTextField.text!, self.drinkName, self.selectedSize, self.price)
+                self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+                
+            })
+        } else {
+            VCRef?.passDrinkData(commentTextField.text!, drinkName, selectedSize, price)
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
     }
     
     

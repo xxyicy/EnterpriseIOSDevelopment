@@ -45,6 +45,7 @@ class ConfirmAndCheckoutViewController : UIViewController {
         var counter: Double = 0.0
         for (s) in drinkPrices {
             counter += Double(s)!
+            
         }
         for (s) in snackPrices {
             counter += Double(s)!
