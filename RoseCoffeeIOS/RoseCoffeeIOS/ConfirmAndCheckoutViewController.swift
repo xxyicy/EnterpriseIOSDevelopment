@@ -75,8 +75,7 @@ class ConfirmAndCheckoutViewController : UIViewController {
                     "drinks": drinkDic,
                     "snacks": snackArr,
                     "total price": priceDou,
-                    "claimed":false,
-                    "listened":false]
+                    "claimed":false]
         let key = self.toClaimOrderRef.childByAutoId()
         key.setValue(post)
         
@@ -87,7 +86,8 @@ class ConfirmAndCheckoutViewController : UIViewController {
             if ((snapshot.value as! Bool) == true) {
                 self.activityIndicator.stopAnimating()
                 UIApplication.shared.endIgnoringInteractionEvents()
-                key.child("listened").setValue(1)
+                let added = ["listened": true]
+                key.updateChildValues(added)
                 self.orderTakenConfirmation(post as NSDictionary)
             }
         })

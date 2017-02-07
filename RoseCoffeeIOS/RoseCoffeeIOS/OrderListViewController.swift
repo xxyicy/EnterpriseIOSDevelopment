@@ -111,13 +111,11 @@ class OrderListViewController : UITableViewController {
             print (self.keyArray[sender.tag])
             let toClaimRef = self.orderRef.child("to claim").child(self.keyArray[sender.tag])
             
-            let update = ["claimed": 1]
-            toClaimRef.updateChildValues(update)
+            toClaimRef.child("claimed").setValue(1)
             
-            toClaimRef.observeSingleEvent(of: .childChanged, with: { (snapshot) in
-                if ((snapshot.value as! Bool) == true) {
+            toClaimRef.observeSingleEvent(of: .childAdded, with: { (snapshot) in
+                if ((snapshot.value as! NSInteger) == 1) {
                     toClaimRef.removeValue(completionBlock: { (error, refer) in
-                        
                         if (error != nil){
                             alert.dismiss(animated: true, completion: nil)
                             self.errorOccur()
