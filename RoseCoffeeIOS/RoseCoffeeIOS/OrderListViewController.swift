@@ -99,8 +99,9 @@ class OrderListViewController : UITableViewController {
             let value = self.toClaimArray[sender.tag]
             value.setValue(username, forKey: "deliveryPerson")
             let toClaimRef = self.orderRef.child("to claim").child(self.keyArray[sender.tag])
+            print(toClaimRef.key)
             
-            toClaimRef.setValue(true, forKey: "claimed")
+            toClaimRef.child("claimed").setValue(true)
             
             
             toClaimRef.removeValue(completionBlock: { (error, refer) in
