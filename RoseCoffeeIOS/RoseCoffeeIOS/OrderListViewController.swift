@@ -55,8 +55,9 @@ class OrderListViewController : UITableViewController {
         let value:NSDictionary = toClaimArray[indexPath.row]
         cell.timeLabel?.text = value.object(forKey: "time") as! String?
         cell.locationLabel?.text = value.object(forKey: "location") as! String?
-        let drink: NSNumber = value.object(forKey: "drink quantity") as! NSNumber
-        let snack: NSNumber = value.object(forKey: "snack quantity") as! NSNumber
+        let drink = value.object(forKey: "drink quantity")
+        let snack = value.object(forKey: "snack quantity")
+        if let drink = (drink as? NSInteger), let snack = (snack as? NSInteger) {
         switch drink {
         case 0:
             switch snack {
@@ -85,6 +86,7 @@ class OrderListViewController : UITableViewController {
                 cell.menuLabel?.text = "\(drink) drinks, \(snack) snacks"
             }
         }
+        }
         
         cell.button.tag = indexPath.row
         cell.button.addTarget(self, action: #selector(buttonClicked(_:)), for: UIControlEvents.touchUpInside)
@@ -107,20 +109,25 @@ class OrderListViewController : UITableViewController {
             
             toClaimRef.child("claimed").setValue(true)
             
-            
-            toClaimRef.removeValue(completionBlock: { (error, refer) in
-                
-                if (error != nil){
-                    alert.dismiss(animated: true, completion: nil)
-                    self.errorOccur()
-                }else{
-                    self.orderRef.child("claimed").child(self.keyArray[sender.tag]).setValue(value)
-                    self.userRef.child(username).child("delivery orders").child("in progress").child(self.keyArray[sender.tag]).setValue("claimed")
-                    self.userRef.child(value.object(forKey: "customer") as! String).child("customer orders").child("in progress").child(self.keyArray[sender.tag]).setValue("claimed")
-                    alert.dismiss(animated: true, completion: nil)
-                    self.takeOrderConfirmation(value)
+            toClaimRef.child("listened").observeSingleEvent(of: .value, with: { (snapshot) in
+                if ((snapshot.value as! Bool) == true) {
+                    toClaimRef.removeValue(completionBlock: { (error, refer) in
+                        
+                        if (error != nil){
+                            alert.dismiss(animated: true, completion: nil)
+                            self.errorOccur()
+                        }else{
+                            self.orderRef.child("claimed").child(self.keyArray[sender.tag]).setValue(value)
+                            self.userRef.child(username).child("delivery orders").child("in progress").child(self.keyArray[sender.tag]).setValue("claimed")
+                            self.userRef.child(value.object(forKey: "customer") as! String).child("customer orders").child("in progress").child(self.keyArray[sender.tag]).setValue("claimed")
+                            alert.dismiss(animated: true, completion: nil)
+                            self.takeOrderConfirmation(value)
+                        }
+                    })
                 }
             })
+            
+            
             
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
