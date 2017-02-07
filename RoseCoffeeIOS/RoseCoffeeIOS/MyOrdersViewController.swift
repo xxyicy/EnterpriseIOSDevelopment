@@ -46,6 +46,7 @@ class MyOrdersViewController: UITableViewController{
             var count = 0
             for (key,value) in list {
                 let state = value as! String
+                print(state)
                 self.orderRef.child(value as! String).child(key as! String).observeSingleEvent(of: .value, with: { (snapshot) in
                     let value = snapshot.value as! NSDictionary
                     if (state == "claimed"){
@@ -57,6 +58,7 @@ class MyOrdersViewController: UITableViewController{
                     if (count == list.count){
                         dispatch.leave()
                     }
+                    
                 })
             }
             dispatch.notify(queue: DispatchQueue.main, execute: {
