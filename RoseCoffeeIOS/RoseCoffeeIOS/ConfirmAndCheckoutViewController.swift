@@ -87,7 +87,7 @@ class ConfirmAndCheckoutViewController : UIViewController {
             if ((snapshot.value as! Bool) == true) {
                 self.activityIndicator.stopAnimating()
                 UIApplication.shared.endIgnoringInteractionEvents()
-                key.setValue(true, forKey: "listened")
+                key.child("listened").setValue(true)
             }
         })
     }

@@ -55,11 +55,13 @@ class OrderListViewController : UITableViewController {
         let value:NSDictionary = toClaimArray[indexPath.row]
         cell.timeLabel?.text = value.object(forKey: "time") as! String?
         cell.locationLabel?.text = value.object(forKey: "location") as! String?
-        let drink: NSInteger = value.object(forKey: "drink quantity") as! NSInteger
-        let snack: NSInteger = value.object(forKey: "snack quantity") as! NSInteger
+        let drink: NSNumber = value.object(forKey: "drink quantity") as! NSNumber
+        let snack: NSNumber = value.object(forKey: "snack quantity") as! NSNumber
         switch drink {
         case 0:
             switch snack {
+            case 0:
+                cell.menuLabel?.text = ""
             case 1:
                 cell.menuLabel?.text = "1 snack"
             default:
@@ -67,6 +69,8 @@ class OrderListViewController : UITableViewController {
             }
         case 1:
             switch snack {
+            case 0:
+                cell.menuLabel?.text = "1 drink"
             case 1:
                 cell.menuLabel?.text = "1 drink, 1 snack"
             default:
