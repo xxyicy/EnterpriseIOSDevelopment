@@ -40,6 +40,7 @@ class MyOrdersViewController: UITableViewController{
             order = "customer orders"
         }
         userRef.child(username).child(order).child("in progress").observe(FIRDataEventType.value, with: { (snapshot) in
+            if (snapshot.exists()) {
             let list = snapshot.value as! NSDictionary
             let dispatch = DispatchGroup()
             dispatch.enter()
@@ -48,8 +49,9 @@ class MyOrdersViewController: UITableViewController{
                 let state = value as! String
                 print(state)
                 self.orderRef.child(value as! String).child(key as! String).observeSingleEvent(of: .value, with: { (snapshot) in
+                    if (snapshot.exists()) {
                     let value = snapshot.value as! NSDictionary
-                    if (state == "claimed"){
+                    if (state == "claimed") {
                         self.claimedArray.append(value)
                     }else{
                         self.deliveredArray.append(value)
@@ -58,13 +60,13 @@ class MyOrdersViewController: UITableViewController{
                     if (count == list.count){
                         dispatch.leave()
                     }
-                    
+                    }
                 })
             }
             dispatch.notify(queue: DispatchQueue.main, execute: {
                 self.tableView.reloadData()
             })
-            
+            }
         })
         
         

@@ -97,10 +97,13 @@ class OrderListViewController : UITableViewController {
             let defaults = UserDefaults.standard
             let username = defaults.object(forKey: "username") as! String
             let value = self.toClaimArray[sender.tag]
-            value.setValue(true, forKey: "claimed")
             value.setValue(username, forKey: "deliveryPerson")
+            let toClaimRef = self.orderRef.child("to claim").child(self.keyArray[sender.tag])
             
-            self.orderRef.child("to claim").child(self.keyArray[sender.tag]).removeValue(completionBlock: { (error, refer) in
+            toClaimRef.setValue(true, forKey: "claimed")
+            
+            
+            toClaimRef.removeValue(completionBlock: { (error, refer) in
                 
                 if (error != nil){
                     alert.dismiss(animated: true, completion: nil)
