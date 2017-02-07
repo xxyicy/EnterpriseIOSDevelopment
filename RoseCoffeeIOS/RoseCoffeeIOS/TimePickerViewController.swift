@@ -10,6 +10,9 @@ class TimePickerViewController : UIViewController {
         pickerView.layer.cornerRadius = 10
         
         picker.addTarget(self, action: #selector(timeChanged(_:)), for: .valueChanged)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        selectedTime = dateFormatter.string(from: Date())
     }
     
     @IBAction func dismissViewController(_ sender: UIButton) {

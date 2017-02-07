@@ -33,10 +33,14 @@ class OrderInfoViewController : UIViewController {
             self.customerLabel.text = value.object(forKey: "name") as! String?
         })
         
+        self.deliveryPersonLabel.text = "Don't know"
         userRef.child(order.object(forKey: "deliveryPerson") as! String).observeSingleEvent(of: .value, with: { (snapshot) in
+            if (snapshot.exists()) {
             let value = snapshot.value as! NSDictionary
             self.deliveryPersonLabel.text = value.object(forKey: "name") as! String?
+            }
         })
+        
         
         timeLabel.text = order.object(forKey: "time") as! String?
         locationLabel.text = order.object(forKey: "location") as! String?
