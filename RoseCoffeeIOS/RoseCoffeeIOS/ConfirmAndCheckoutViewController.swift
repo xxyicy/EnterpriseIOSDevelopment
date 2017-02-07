@@ -12,6 +12,7 @@ import Firebase
 class ConfirmAndCheckoutViewController : UIViewController {
     
     let toClaimOrderRef = FIRDatabase.database().reference(withPath: "order/to claim")
+    let claimedOrderRef = FIRDatabase.database().reference(withPath: "order/claimed")
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
     @IBOutlet weak var locationLabel: UILabel!
@@ -83,11 +84,14 @@ class ConfirmAndCheckoutViewController : UIViewController {
         activityIndicator.startAnimating()
         UIApplication.shared.beginIgnoringInteractionEvents()
         key.observe(FIRDataEventType.childChanged, with: { (snapshot) in
-            print("I am here")
             if ((snapshot.value as! Bool) == true) {
                 self.activityIndicator.stopAnimating()
                 UIApplication.shared.endIgnoringInteractionEvents()
                 key.child("listened").setValue(true)
+                self.claimedOrderRef.observeSingleEvent(of: .childAdded, with: { (snapshot) in
+                    let value = snapshot.value as! NSDictionary
+                    self.orderTakenConfirmation(value)
+                })
             }
         })
     }
@@ -115,5 +119,20 @@ class ConfirmAndCheckoutViewController : UIViewController {
     
     @IBAction func backToOrderDetail(_ sender: UIButton) {
         _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    func orderTakenConfirmation(_ value: NSDictionary) {
+        let instruction = UIAlertController(title: "You order is taken. Go to order detail page?", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        instruction.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+            (UIAlertAction) in
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let orderInfoViewController: OrderInfoViewController = storyboard.instantiateViewController(withIdentifier: "orderInfoPage") as! OrderInfoViewController
+            orderInfoViewController.isDone = false
+            orderInfoViewController.order = value
+            
+            self.navigationController?.pushViewController(orderInfoViewController, animated: true)
+        }))
+        instruction.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        self.present(instruction, animated: true, completion: nil)
     }
 }

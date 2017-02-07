@@ -19,7 +19,6 @@ class OrderListViewController : UITableViewController {
     
     override func viewDidLoad() {
         if self.revealViewController() != nil {
-            print(self.revealViewController())
 
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -105,10 +104,8 @@ class OrderListViewController : UITableViewController {
             let value = self.toClaimArray[sender.tag]
             value.setValue(username, forKey: "deliveryPerson")
             let toClaimRef = self.orderRef.child("to claim").child(self.keyArray[sender.tag])
-            print(toClaimRef.key)
             
             toClaimRef.child("claimed").setValue(true)
-            print("done")
             
             toClaimRef.observeSingleEvent(of: .childChanged, with: { (snapshot) in
                 if ((snapshot.value as! Bool) == true) {

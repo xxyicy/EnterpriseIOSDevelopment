@@ -61,15 +61,15 @@ class OrderInfoViewController : UIViewController {
         if let comment = order.object(forKey: "comment") as! String? {
             commentsTextView.text = comment
         }else{
-            commentsTextView.text = "NO COMMENTS"
+            commentsTextView.text = "No comment"
         }
         
         if isDone {
 //            customerRating.text = "5.0"
 //            deliveryPersonRating.text = "5.0"
         }else{
-            customerRating.text = "Not Rate Yet"
-            deliveryPersonRating.text = "Not Rate Yet"
+            customerRating.text = "Not rate yet"
+            deliveryPersonRating.text = "Not rate yet"
 
         }
         

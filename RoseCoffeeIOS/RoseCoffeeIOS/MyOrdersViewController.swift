@@ -47,7 +47,6 @@ class MyOrdersViewController: UITableViewController{
             var count = 0
             for (key,value) in list {
                 let state = value as! String
-                print(state)
                 self.orderRef.child(value as! String).child(key as! String).observeSingleEvent(of: .value, with: { (snapshot) in
                     if (snapshot.exists()) {
                     let value = snapshot.value as! NSDictionary
@@ -145,6 +144,7 @@ class MyOrdersViewController: UITableViewController{
             //
             
         }else{
+            
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let profileViewController: ProfileViewController = storyboard.instantiateViewController(withIdentifier: "profilePage") as! ProfileViewController
             let value = claimedArray[indexPath.row]
