@@ -108,8 +108,9 @@ class OrderListViewController : UITableViewController {
             print(toClaimRef.key)
             
             toClaimRef.child("claimed").setValue(true)
+            print("done")
             
-            toClaimRef.child("listened").observeSingleEvent(of: .value, with: { (snapshot) in
+            toClaimRef.observeSingleEvent(of: .childChanged, with: { (snapshot) in
                 if ((snapshot.value as! Bool) == true) {
                     toClaimRef.removeValue(completionBlock: { (error, refer) in
                         
@@ -122,8 +123,11 @@ class OrderListViewController : UITableViewController {
                             self.userRef.child(value.object(forKey: "customer") as! String).child("customer orders").child("in progress").child(self.keyArray[sender.tag]).setValue("claimed")
                             alert.dismiss(animated: true, completion: nil)
                             self.takeOrderConfirmation(value)
+                            toClaimRef.removeObserver(withHandle: 0)
                         }
                     })
+                } else {
+                    print("Customer is not responding correctly")
                 }
             })
             
