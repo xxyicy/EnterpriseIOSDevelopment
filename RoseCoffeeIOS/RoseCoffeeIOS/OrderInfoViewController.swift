@@ -23,18 +23,22 @@ class OrderInfoViewController : UIViewController {
     let userRef = FIRDatabase.database().reference(withPath: "user")
     var order: NSDictionary = [:]
     var isDone: Bool = true
+    var orderConfirmed: Bool = false
     
     override func viewDidLoad() {
         
-        if self.revealViewController() != nil {
-            self.navigationItem.leftBarButtonItem?.target = self.revealViewController()
-            self.navigationItem.leftBarButtonItem?.action = #selector(SWRevealViewController.revealToggle(_:))
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        if (orderConfirmed){
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: #selector(backToMyDeliver(_:)))
         }
 
         userRef.child(order.object(forKey: "customer") as! String).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as! NSDictionary
             self.customerLabel.text = value.object(forKey: "name") as! String?
+            if (self.orderConfirmed){
+                let price = self.order.object(forKey: "total price") as! NSInteger
+                let balance = value.object(forKey: "balance") as! NSInteger
+                self.userRef.child(self.order.object(forKey: "customer") as! String).child("balance").setValue(balance-price)
+            }
         })
         
         if (order.object(forKey: "deliveryPerson") != nil) {
@@ -43,6 +47,13 @@ class OrderInfoViewController : UIViewController {
             
             let value = snapshot.value as! NSDictionary
             self.deliveryPersonLabel.text = value.object(forKey: "name") as! String?
+            
+            if (self.orderConfirmed){
+                let price = self.order.object(forKey: "total price") as! NSInteger
+                let balance = value.object(forKey: "balance") as! NSInteger
+                self.userRef.child(self.order.object(forKey: "deliveryPerson") as! String).child("balance").setValue(balance-price)
+            }
+
             
         })} else {
             self.deliveryPersonLabel.text = "Don't know"
@@ -84,5 +95,9 @@ class OrderInfoViewController : UIViewController {
 
         }
         
+    }
+    
+    func backToMyDeliver(_ sender: UIBarButtonItem){
+        let _ = self.navigationController?.popToRootViewController(animated: true)
     }
 }

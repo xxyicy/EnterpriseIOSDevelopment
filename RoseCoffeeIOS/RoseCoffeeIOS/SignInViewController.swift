@@ -21,10 +21,7 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let defaults = UserDefaults.standard
-        defaults.set("qiuz", forKey: "username")
-        
+    
         Rosefire.sharedDelegate().uiDelegate = self
         
     }
@@ -43,7 +40,7 @@ class SignInViewController: UIViewController {
                             self.userRef.child(username).child("token").setValue(result?.token)
                             self.presentMain(username: username)
                         }else{
-                            let userObject = ["is delivery": false,"token":(result?.token)!, "name": (result?.name)!, "email":(result?.email)!] as [String : Any]
+                            let userObject = ["is delivery": false,"token":(result?.token)!, "name": (result?.name)!, "email":(result?.email)!, "balance":0] as [String : Any]
                             self.userRef.child(username).setValue(userObject)
                             self.appDelegate.isDelivery = false
                             self.appDelegate.name = result?.name

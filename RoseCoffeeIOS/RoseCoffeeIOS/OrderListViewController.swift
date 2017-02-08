@@ -119,6 +119,7 @@ class OrderListViewController : UITableViewController {
                     self.orderRef.child("claimed").child(self.keyArray[sender.tag]).setValue(value)
                     self.userRef.child(username).child("delivery orders").child("in progress").child(self.keyArray[sender.tag]).setValue("claimed")
                     self.userRef.child(value.object(forKey: "customer") as! String).child("customer orders").child("in progress").child(self.keyArray[sender.tag]).setValue("claimed")
+                    
                     alert.dismiss(animated: true, completion: nil)
                     self.takeOrderConfirmation(value)
                     toClaimRef.removeObserver(withHandle: 0)

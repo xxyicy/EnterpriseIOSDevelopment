@@ -1384,9 +1384,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Order Info" id="Doh-iX-Plr">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="dJD-fe-nrU"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Order Info" id="Doh-iX-Plr"/>
                     <connections>
                         <outlet property="commentsTextView" destination="0s9-hT-LgF" id="QEu-tT-fcD"/>
                         <outlet property="customerLabel" destination="Zxq-S7-SWw" id="k1F-U3-vk4"/>
@@ -1401,7 +1399,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWO-EH-hRY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5815.1999999999998" y="2173.7631184407796"/>
+            <point key="canvasLocation" x="6754.3999999999996" y="2173.7631184407796"/>
         </scene>
         <!--Order Detail-->
         <scene sceneID="jFY-bc-8dg">
@@ -1954,7 +1952,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="My Orders" id="5h2-FA-jmL">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="kKy-I4-duM" userLabel="menu"/>
-                        <barButtonItem key="rightBarButtonItem" title="Hisotry" id="sye-lv-ZHu">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="sye-lv-ZHu">
                             <connections>
                                 <segue destination="fgi-Kd-lZQ" kind="show" id="ORO-ba-Ugc"/>
                             </connections>
