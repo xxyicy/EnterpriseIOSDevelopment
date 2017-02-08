@@ -25,8 +25,12 @@ class OrderInfoViewController : UIViewController {
     var isDone: Bool = true
     
     override func viewDidLoad() {
-
-        self.navigationItem.title = "Order Info"
+        
+        if self.revealViewController() != nil {
+            self.navigationItem.leftBarButtonItem?.target = self.revealViewController()
+            self.navigationItem.leftBarButtonItem?.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
 
         userRef.child(order.object(forKey: "customer") as! String).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as! NSDictionary

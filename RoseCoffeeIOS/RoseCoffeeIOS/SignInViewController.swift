@@ -22,6 +22,9 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let defaults = UserDefaults.standard
+        defaults.set("qiuz", forKey: "username")
+        
         Rosefire.sharedDelegate().uiDelegate = self
         
     }

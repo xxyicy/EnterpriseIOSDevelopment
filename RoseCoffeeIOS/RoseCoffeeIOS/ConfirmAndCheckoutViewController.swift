@@ -136,7 +136,8 @@ class ConfirmAndCheckoutViewController : UIViewController {
             orderInfoViewController.isDone = false
             orderInfoViewController.order = value
             
-            self.navigationController?.pushViewController(orderInfoViewController, animated: true)
+            let navigation = UINavigationController(rootViewController: orderInfoViewController)
+            self.present(navigation, animated: true, completion: nil)
         }))
         instruction.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         self.present(instruction, animated: true, completion: nil)
