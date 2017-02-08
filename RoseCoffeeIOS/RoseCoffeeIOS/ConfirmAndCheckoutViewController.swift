@@ -75,20 +75,21 @@ class ConfirmAndCheckoutViewController : UIViewController {
                     "time": defaults.value(forKey: "time"),
                     "drinks": drinkDic,
                     "snacks": snackArr,
-                    "total price": priceDou,
-                    "claimed":false]
+                    "total price": priceDou]
         let key = self.toClaimOrderRef.childByAutoId()
         key.setValue(post)
+        
         
         //Show Activity Indicator
         activityIndicator.startAnimating()
         UIApplication.shared.beginIgnoringInteractionEvents()
-        key.observe(FIRDataEventType.childChanged, with: { (snapshot) in
-            if ((snapshot.value as! Bool) == true) {
-                self.activityIndicator.stopAnimating()
-                UIApplication.shared.endIgnoringInteractionEvents()
-                self.orderTakenConfirmation(post as NSDictionary)
-            }
+        key.observe(FIRDataEventType.childRemoved, with: { (snapshot) in
+            self.activityIndicator.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+            self.claimedOrderRef.child(key.key).observeSingleEvent(of: .value, with: { (snapshot) in
+                let value = snapshot.value as! NSDictionary
+                self.orderTakenConfirmation(value)
+            })
         })
     }
     
@@ -126,15 +127,16 @@ class ConfirmAndCheckoutViewController : UIViewController {
     }
     
     func orderTakenConfirmation(_ value: NSDictionary) {
+        
         let instruction = UIAlertController(title: "You order is taken. Go to order detail page?", message: "", preferredStyle: UIAlertControllerStyle.alert)
         instruction.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
             (UIAlertAction) in
-            
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let profileViewController: ProfileViewController = storyboard.instantiateViewController(withIdentifier: "profilePage") as! ProfileViewController
-            profileViewController.username = value.object(forKey: "deliveryPerson") as! String
+            let orderInfoViewController: OrderInfoViewController = storyboard.instantiateViewController(withIdentifier: "orderInfoPage") as! OrderInfoViewController
             
-            self.navigationController?.pushViewController(profileViewController, animated: true)
+            orderInfoViewController.order = value
+            
+            self.navigationController?.pushViewController(orderInfoViewController, animated: true)
         }))
         instruction.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         self.present(instruction, animated: true, completion: nil)

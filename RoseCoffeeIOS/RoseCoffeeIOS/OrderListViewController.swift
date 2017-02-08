@@ -111,29 +111,19 @@ class OrderListViewController : UITableViewController {
             print (self.keyArray[sender.tag])
             let toClaimRef = self.orderRef.child("to claim").child(self.keyArray[sender.tag])
             
-            toClaimRef.child("claimed").setValue(1)
-            
-            toClaimRef.observeSingleEvent(of: .childAdded, with: { (snapshot) in
-                if ((snapshot.value as! NSInteger) == 1) {
-                    toClaimRef.removeValue(completionBlock: { (error, refer) in
-                        if (error != nil){
-                            alert.dismiss(animated: true, completion: nil)
-                            self.errorOccur()
-                        }else{
-                            self.orderRef.child("claimed").child(self.keyArray[sender.tag]).setValue(value)
-                            self.userRef.child(username).child("delivery orders").child("in progress").child(self.keyArray[sender.tag]).setValue("claimed")
-                            self.userRef.child(value.object(forKey: "customer") as! String).child("customer orders").child("in progress").child(self.keyArray[sender.tag]).setValue("claimed")
-                            alert.dismiss(animated: true, completion: nil)
-                            self.takeOrderConfirmation(value)
-                            toClaimRef.removeObserver(withHandle: 0)
-                        }
-                    })
-                } else {
-                    print("Customer is not responding correctly")
+            toClaimRef.removeValue(completionBlock: { (error, refer) in
+                if (error != nil){
+                    alert.dismiss(animated: true, completion: nil)
+                    self.errorOccur()
+                }else{
+                    self.orderRef.child("claimed").child(self.keyArray[sender.tag]).setValue(value)
+                    self.userRef.child(username).child("delivery orders").child("in progress").child(self.keyArray[sender.tag]).setValue("claimed")
+                    self.userRef.child(value.object(forKey: "customer") as! String).child("customer orders").child("in progress").child(self.keyArray[sender.tag]).setValue("claimed")
+                    alert.dismiss(animated: true, completion: nil)
+                    self.takeOrderConfirmation(value)
+                    toClaimRef.removeObserver(withHandle: 0)
                 }
             })
-            
-            
             
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
