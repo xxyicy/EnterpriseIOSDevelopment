@@ -105,10 +105,9 @@ class LocationAndTimeViewController : UIViewController, UITableViewDataSource,UI
             }
         }else{
             cell.textLabel?.text = "Time"
-            cell.detailTextLabel?.text = "current time"
-            if defaults.object(forKey: "time") != nil {
-                cell.detailTextLabel?.text = defaults.object(forKey: "time") as! String?
-            }
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            cell.detailTextLabel?.text = dateFormatter.string(from: Date())
         }
         return cell
     }

@@ -83,7 +83,7 @@ class ConfirmAndCheckoutViewController : UIViewController {
         //Show Activity Indicator
         activityIndicator.startAnimating()
         UIApplication.shared.beginIgnoringInteractionEvents()
-        key.observe(FIRDataEventType.childRemoved, with: { (snapshot) in
+        key.observeSingleEvent(of: .childRemoved, with: { (snapshot) in
             self.activityIndicator.stopAnimating()
             UIApplication.shared.endIgnoringInteractionEvents()
             self.claimedOrderRef.child(key.key).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -133,7 +133,7 @@ class ConfirmAndCheckoutViewController : UIViewController {
             (UIAlertAction) in
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let orderInfoViewController: OrderInfoViewController = storyboard.instantiateViewController(withIdentifier: "orderInfoPage") as! OrderInfoViewController
-            
+            orderInfoViewController.isDone = false
             orderInfoViewController.order = value
             
             self.navigationController?.pushViewController(orderInfoViewController, animated: true)
