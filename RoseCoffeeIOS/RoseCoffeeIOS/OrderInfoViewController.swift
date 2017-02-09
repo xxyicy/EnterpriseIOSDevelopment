@@ -28,16 +28,16 @@ class OrderInfoViewController : UIViewController {
     override func viewDidLoad() {
         
         if (orderConfirmed){
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: #selector(backToMyDeliver(_:)))
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backToMyDeliver))
         }
 
         userRef.child(order.object(forKey: "customer") as! String).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as! NSDictionary
             self.customerLabel.text = value.object(forKey: "name") as! String?
             if (self.orderConfirmed){
-                let price = self.order.object(forKey: "total price") as! NSInteger
-                let balance = value.object(forKey: "balance") as! NSInteger
-                self.userRef.child(self.order.object(forKey: "customer") as! String).child("balance").setValue(balance-price)
+                let price = self.order.object(forKey: "total price") as! Float
+                let balance = value.object(forKey: "balance") as! Float
+                self.userRef.child(self.order.object(forKey: "customer") as! String).child("balance").setValue(String(format: "%.2f", balance-price))
             }
         })
         
@@ -49,9 +49,9 @@ class OrderInfoViewController : UIViewController {
             self.deliveryPersonLabel.text = value.object(forKey: "name") as! String?
             
             if (self.orderConfirmed){
-                let price = self.order.object(forKey: "total price") as! NSInteger
-                let balance = value.object(forKey: "balance") as! NSInteger
-                self.userRef.child(self.order.object(forKey: "deliveryPerson") as! String).child("balance").setValue(balance-price)
+                let price = self.order.object(forKey: "total price") as! Double
+                let balance = value.object(forKey: "balance") as! Double
+                self.userRef.child(self.order.object(forKey: "deliveryPerson") as! String).child("balance").setValue(String(format: "%.2f", balance+price))
             }
 
             
@@ -97,7 +97,7 @@ class OrderInfoViewController : UIViewController {
         
     }
     
-    func backToMyDeliver(_ sender: UIBarButtonItem){
+    func backToMyDeliver(){
         let _ = self.navigationController?.popToRootViewController(animated: true)
     }
 }

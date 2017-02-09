@@ -139,7 +139,7 @@ class ConfirmAndCheckoutViewController : UIViewController {
             
             self.navigationController?.pushViewController(orderInfoViewController, animated: true)
         }))
-        instruction.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+
         self.present(instruction, animated: true, completion: nil)
     }
 }

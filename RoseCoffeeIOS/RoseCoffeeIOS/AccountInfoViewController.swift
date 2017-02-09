@@ -16,6 +16,8 @@ class AccountInfoViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneNumLabel: UILabel!
     @IBOutlet weak var isDeliverySwitch: UISwitch!
+    
+    @IBOutlet weak var balanceLabel: UILabel!
     let imagePicker = UIImagePickerController()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let userRef = FIRDatabase.database().reference(withPath: "user")
@@ -37,6 +39,7 @@ class AccountInfoViewController: UIViewController, UIImagePickerControllerDelega
         self.nameLabel.text = appDelegate.name
         self.emailLabel.text = appDelegate.email
         self.phoneNumLabel.text = appDelegate.phoneNum
+        self.balanceLabel.text = String(format: "%.2f",appDelegate.balance!)
     }
     
     override func viewDidAppear(_ animated: Bool) {

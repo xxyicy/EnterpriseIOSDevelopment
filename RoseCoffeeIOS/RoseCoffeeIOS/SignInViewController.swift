@@ -45,7 +45,7 @@ class SignInViewController: UIViewController {
                             self.appDelegate.isDelivery = false
                             self.appDelegate.name = result?.name
                             self.appDelegate.email = result?.email
-                            self.appDelegate.userName = result?.username
+                            self.appDelegate.balance = 0
                             self.getPhoneNumber()
                         }
                     })
@@ -66,6 +66,7 @@ class SignInViewController: UIViewController {
             self.appDelegate.name = value?["name"] as? String
             self.appDelegate.email = value?["email"] as? String
             self.appDelegate.phoneNum = value?["phone number"] as? String
+            self.appDelegate.balance = (value?["balance"] as! NSString).floatValue
             if (isDelivery)! {
                 //Jump to delivery main
                 self.presentDeliveryMain()
