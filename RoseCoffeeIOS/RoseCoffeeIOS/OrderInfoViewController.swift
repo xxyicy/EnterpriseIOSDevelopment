@@ -18,14 +18,19 @@ class OrderInfoViewController : UIViewController {
     @IBOutlet weak var orderLabel: UILabel!
     @IBOutlet weak var commentsTextView: UITextView!
     
+    @IBOutlet weak var rateButton: UIButton!
+    
     @IBOutlet weak var deliveryPersonRating: UILabel!
     @IBOutlet weak var customerRating: UILabel!
     let userRef = FIRDatabase.database().reference(withPath: "user")
     var order: NSDictionary = [:]
     var isDone: Bool = true
     var orderConfirmed: Bool = false
+    var buttonHidden = true;
     
     override func viewDidLoad() {
+        
+        rateButton.isHidden = buttonHidden
         
         if (orderConfirmed){
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backToMyDeliver))
@@ -55,7 +60,8 @@ class OrderInfoViewController : UIViewController {
             }
 
             
-        })} else {
+            })
+        } else {
             self.deliveryPersonLabel.text = "Don't know"
         }
         

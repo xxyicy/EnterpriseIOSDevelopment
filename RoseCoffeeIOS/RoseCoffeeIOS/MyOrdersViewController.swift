@@ -140,14 +140,32 @@ class MyOrdersViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         if(indexPath.row >= claimedArray.count){
-            //
+            //delivered orders
+            if(appDelegate.isDelivery)!{
+                let value = deliveredArray[indexPath.row-claimedArray.count]
+                
+                let deliveryConfirmViewController: OrderInfoViewController = storyboard.instantiateViewController(withIdentifier: "orderInfoPage") as! OrderInfoViewController
+                deliveryConfirmViewController.order = value
+                deliveryConfirmViewController.isDone = false
+                deliveryConfirmViewController.buttonHidden = false
+                
+                self.navigationController?.pushViewController(deliveryConfirmViewController, animated: true)
+                
+            }else{
+                let confirmViewController: ConfirmDeliveryViewController = storyboard.instantiateViewController(withIdentifier: "confirmDelivery") as! ConfirmDeliveryViewController
+            
+                
+                self.navigationController?.pushViewController(confirmViewController, animated: true)
+            }
             
         }else{
             
-            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            
             let profileViewController: ProfileViewController = storyboard.instantiateViewController(withIdentifier: "profilePage") as! ProfileViewController
             let value = claimedArray[indexPath.row]
+            
             if (appDelegate.isDelivery!){
                 profileViewController.username = value.object(forKey: "customer") as! String
             }else{
