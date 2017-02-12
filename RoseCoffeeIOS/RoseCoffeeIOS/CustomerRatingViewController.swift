@@ -34,6 +34,8 @@ class CustomerRatingViewController : UIViewController {
         order.setValue(nil, forKey: "key")
         order.setValue(rating, forKey: "ratingForCustomer")
         
+        order.setValue(1, forKey: "claimed")
+        
         let claimedRef = self.orderRef.child("claimed").child(key)
         
         let defaults = UserDefaults.standard

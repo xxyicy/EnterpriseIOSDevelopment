@@ -47,10 +47,10 @@ class ConfirmDeliveryViewController : UIViewController {
 
             }else{
                 self.orderRef.child("received").child(key).setValue(self.order)
-                self.userRef.child(username).child("delivery orders").child("in progress").child(key).setValue(nil)
-                self.userRef.child(username).child("delivery orders").child("done").child(key).setValue("received")
-                self.userRef.child(self.order.object(forKey: "customer") as! String).child("customer orders").child("done").child(key).setValue("received")
-                self.userRef.child(self.order.object(forKey: "customer") as! String).child("customer orders").child("in progress").child(key).setValue(nil)
+                self.userRef.child(username).child("customer orders").child("in progress").child(key).setValue(nil)
+                self.userRef.child(username).child("customer orders").child("done").child(key).setValue("received")
+                self.userRef.child(self.order.object(forKey: "deliveryPerson") as! String).child("delivery orders").child("done").child(key).setValue("received")
+                self.userRef.child(self.order.object(forKey: "deliveryPerson") as! String).child("delivery orders").child("in progress").child(key).setValue(nil)
 
                 
                deliveredRef.removeObserver(withHandle: 0)
