@@ -50,9 +50,11 @@ class MyOrdersViewController: UITableViewController{
                 self.orderRef.child(value as! String).child(key as! String).observeSingleEvent(of: .value, with: { (snapshot) in
                     if (snapshot.exists()) {
                     let value = snapshot.value as! NSDictionary
+                    value.setValue(snapshot.key, forKeyPath: "key")
+                    
                     if (state == "claimed") {
                         self.claimedArray.append(value)
-                    }else{
+                    }else if (state == "delivered"){
                         self.deliveredArray.append(value)
                     }
                     count+=1
@@ -143,13 +145,15 @@ class MyOrdersViewController: UITableViewController{
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         if(indexPath.row >= claimedArray.count){
             //delivered orders
+            let value = deliveredArray[indexPath.row-claimedArray.count]
             if(appDelegate.isDelivery)!{
-                let value = deliveredArray[indexPath.row-claimedArray.count]
+                
                 let profileViewController: ProfileViewController = storyboard.instantiateViewController(withIdentifier: "profilePage") as! ProfileViewController
                 profileViewController.username = value.object(forKey: "customer") as! String
                 self.navigationController?.pushViewController(profileViewController, animated: true)
             }else{
                 let confirmViewController: ConfirmDeliveryViewController = storyboard.instantiateViewController(withIdentifier: "confirmDelivery") as! ConfirmDeliveryViewController
+                confirmViewController.order = value
                 
                 self.navigationController?.pushViewController(confirmViewController, animated: true)
             }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B1C2C861E183A0200E52EA7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1C2C851E183A0200E52EA7 /* SignInViewController.swift */; };
+		1B28C5F01E500A43000BC8C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B28C5EE1E500A43000BC8C3 /* Main.storyboard */; };
 		1B8675891E425AC000F94BDF /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8675881E425AC000F94BDF /* MyOrdersViewController.swift */; };
 		1B86758B1E42630E00F94BDF /* MyOrdersTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B86758A1E42630E00F94BDF /* MyOrdersTableCell.swift */; };
 		1B86758D1E42C79100F94BDF /* MyOrderHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B86758C1E42C79100F94BDF /* MyOrderHistoryViewController.swift */; };
@@ -24,7 +25,6 @@
 		46DB46FF1E246E1500834A76 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DB46FE1E246E1500834A76 /* OrderDetailViewController.swift */; };
 		6F0A6BDC1E44399E009DDDC5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0A6BDB1E44399E009DDDC5 /* ProfileViewController.swift */; };
 		6F0A6BDE1E443EB7009DDDC5 /* OrderInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0A6BDD1E443EB7009DDDC5 /* OrderInfoViewController.swift */; };
-		6F2051D11DF76CC400FB6605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F2051CF1DF76CC400FB6605 /* Main.storyboard */; };
 		6F2051D41DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F2051D21DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodeld */; };
 		6F2051D91DF76CC400FB6605 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F2051D71DF76CC400FB6605 /* LaunchScreen.storyboard */; };
 		6F2051E41DF76CC400FB6605 /* RoseCoffeeIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2051E31DF76CC400FB6605 /* RoseCoffeeIOSTests.swift */; };
@@ -63,6 +63,7 @@
 /* Begin PBXFileReference section */
 		0AAF9B17A2527222A086E01F /* Pods-RoseCoffeeIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoseCoffeeIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoseCoffeeIOS/Pods-RoseCoffeeIOS.release.xcconfig"; sourceTree = "<group>"; };
 		1B1C2C851E183A0200E52EA7 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		1B28C5EF1E500A43000BC8C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B8675881E425AC000F94BDF /* MyOrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersViewController.swift; sourceTree = "<group>"; };
 		1B86758A1E42630E00F94BDF /* MyOrdersTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersTableCell.swift; sourceTree = "<group>"; };
 		1B86758C1E42C79100F94BDF /* MyOrderHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderHistoryViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		6F0A6BDB1E44399E009DDDC5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6F0A6BDD1E443EB7009DDDC5 /* OrderInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderInfoViewController.swift; sourceTree = "<group>"; };
 		6F2051C81DF76CC400FB6605 /* RoseCoffeeIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoseCoffeeIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F2051D01DF76CC400FB6605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6F2051D31DF76CC400FB6605 /* RoseCoffeeIOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RoseCoffeeIOS.xcdatamodel; sourceTree = "<group>"; };
 		6F2051D81DF76CC400FB6605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F2051DA1DF76CC400FB6605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -162,6 +162,7 @@
 				1B86758A1E42630E00F94BDF /* MyOrdersTableCell.swift */,
 				1B86758C1E42C79100F94BDF /* MyOrderHistoryViewController.swift */,
 				1B86758E1E4FB2D800F94BDF /* ConfirmDeliveryViewController.swift */,
+				46840D8C1E36F6CE00BD0FB3 /* CustomerRatingViewController.swift */,
 			);
 			name = MyOrder;
 			sourceTree = "<group>";
@@ -200,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				6FF46CDC1E359F390053899E /* ConfirmAndCheckoutViewController.swift */,
-				46840D8C1E36F6CE00BD0FB3 /* CustomerRatingViewController.swift */,
 			);
 			name = ThirdPage;
 			sourceTree = "<group>";
@@ -257,8 +257,8 @@
 		6F2051CA1DF76CC400FB6605 /* RoseCoffeeIOS */ = {
 			isa = PBXGroup;
 			children = (
+				1B28C5EE1E500A43000BC8C3 /* Main.storyboard */,
 				6F2051D71DF76CC400FB6605 /* LaunchScreen.storyboard */,
-				6F2051CF1DF76CC400FB6605 /* Main.storyboard */,
 				6F20521D1DFA1B9900FB6605 /* AppDelegate.swift */,
 				6F2052141DFA1AC600FB6605 /* SWRealViewController */,
 				6F2052121DFA1AC200FB6605 /* Images.xcassets */,
@@ -430,9 +430,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F2052131DFA1AC200FB6605 /* Images.xcassets in Resources */,
+				1B28C5F01E500A43000BC8C3 /* Main.storyboard in Resources */,
 				6F2051D91DF76CC400FB6605 /* LaunchScreen.storyboard in Resources */,
 				1BEC19CF1E233406007760A7 /* Podfile in Resources */,
-				6F2051D11DF76CC400FB6605 /* Main.storyboard in Resources */,
 				463261001E31A31100AF4421 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,10 +567,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6F2051CF1DF76CC400FB6605 /* Main.storyboard */ = {
+		1B28C5EE1E500A43000BC8C3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6F2051D01DF76CC400FB6605 /* Base */,
+				1B28C5EF1E500A43000BC8C3 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

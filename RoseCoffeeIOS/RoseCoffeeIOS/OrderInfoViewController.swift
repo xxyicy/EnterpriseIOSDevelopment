@@ -103,6 +103,14 @@ class OrderInfoViewController : UIViewController {
         
     }
     
+    @IBAction func confirmPressed(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let deliveryConfirmViewController: CustomerRatingViewController = storyboard.instantiateViewController(withIdentifier: "deliveryRating") as! CustomerRatingViewController
+        deliveryConfirmViewController.order = self.order
+        
+        self.navigationController?.pushViewController(deliveryConfirmViewController, animated: true)
+        
+    }
     func backToMyDeliver(){
         let _ = self.navigationController?.popToRootViewController(animated: true)
     }

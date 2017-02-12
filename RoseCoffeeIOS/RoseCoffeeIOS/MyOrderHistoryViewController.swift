@@ -56,6 +56,7 @@ class MyOrderHistoryViewController: UITableViewController{
                 })
             }
         })
+        print(self.receivedArray)
         tableView.tableFooterView = UIView()
     }
     
@@ -82,7 +83,9 @@ class MyOrderHistoryViewController: UITableViewController{
         
         cell.timeLabel?.text = value.object(forKey: "time") as! String?
         cell.locationLabel?.text = value.object(forKey: "location") as! String?
-        let orderList: NSDictionary = value.object(forKey: "order list") as! NSDictionary
+        let orderList: NSDictionary = value.object(forKey: "snack quantity") as! NSDictionary
+        let drinkList: NSDictionary = value.object(forKey: "drink quantity") as! NSDictionary
+
         
         var menus: String = ""
         
