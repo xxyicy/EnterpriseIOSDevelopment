@@ -147,6 +147,7 @@ class MyOrdersViewController: UITableViewController{
                 let value = deliveredArray[indexPath.row-claimedArray.count]
                 let profileViewController: ProfileViewController = storyboard.instantiateViewController(withIdentifier: "profilePage") as! ProfileViewController
                 profileViewController.username = value.object(forKey: "customer") as! String
+                self.navigationController?.pushViewController(profileViewController, animated: true)
             }else{
                 let confirmViewController: ConfirmDeliveryViewController = storyboard.instantiateViewController(withIdentifier: "confirmDelivery") as! ConfirmDeliveryViewController
                 
