@@ -35,22 +35,25 @@ class MyOrderHistoryViewController: UITableViewController{
         let historyRef = userRef.child(username).child(order).child("done")
         
         historyRef.observe(FIRDataEventType.value, with: { (snapshot) in
-            let list = snapshot.value as? NSArray
-            
+            if (snapshot.exists()) {
+                let list = snapshot.value as! NSDictionary
                 let dispatch = DispatchGroup()
                 dispatch.enter()
                 var count = 0
-                if (list != nil) {
-                for value in list! {
-                    self.orderRef.child("received").child(value as! String).observeSingleEvent(of: .value, with: { (snapshot) in
-                        let value = snapshot.value as! NSDictionary
-                        self.receivedArray.append(value)
-                        count+=1
-                        if (count == list?.count){
-                            dispatch.leave()
+                for (key,value) in list {
+                    self.orderRef.child(value as! String).child(key as! String).observeSingleEvent(of: .value, with: { (snapshot) in
+                        if (snapshot.exists()) {
+                            let value = snapshot.value as! NSDictionary
+                            self.receivedArray.append(value)
+                            
+                            count+=1
+                            if (count == list.count){
+                                dispatch.leave()
+                            }
                         }
                     })
                 }
+            
                 dispatch.notify(queue: DispatchQueue.main, execute: {
                     self.tableView.reloadData()
                 })
@@ -83,30 +86,30 @@ class MyOrderHistoryViewController: UITableViewController{
         
         cell.timeLabel?.text = value.object(forKey: "time") as! String?
         cell.locationLabel?.text = value.object(forKey: "location") as! String?
-        let orderList: NSDictionary = value.object(forKey: "snack quantity") as! NSDictionary
-        let drinkList: NSDictionary = value.object(forKey: "drink quantity") as! NSDictionary
-
+        let drinkList = value.object(forKey: "drinks")
         
         var menus: String = ""
-        
-        var count:NSInteger = 0;
-        for key in orderList.allKeys {
-            count = count+1
-            let toAdd = key as! String
-            menus = menus + toAdd
-            let breakLine: String = ",  "
-            menus = menus + breakLine
+        if (drinkList != nil) {
+            for (key,_) in (drinkList as! NSDictionary) {
+                menus = menus + (key as! String) + ", "
+            }
         }
+        
+        let snackList = value.object(forKey: "snacks")
+        
+        if (snackList != nil) {
+            for key in (snackList as! NSArray) {
+                menus = menus + (key as! String) + ", "
+            }
+        }        
         let strIndex:NSInteger = menus.characters.count
         let menuIndex = menus.index(menus.startIndex, offsetBy: strIndex-3)
         menus = menus.substring(to: menuIndex)
-
+        
         cell.menuLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.menuLabel?.text = menus
         
         cell.menuLabel?.numberOfLines = 0
-        
-        
         
         return cell
     }

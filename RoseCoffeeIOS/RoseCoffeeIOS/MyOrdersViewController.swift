@@ -47,7 +47,7 @@ class MyOrdersViewController: UITableViewController{
             var count = 0
             for (key,value) in list {
                 let state = value as! String
-                self.orderRef.child(value as! String).child(key as! String).observeSingleEvent(of: .value, with: { (snapshot) in
+                self.orderRef.child(state).child(key as! String).observeSingleEvent(of: .value, with: { (snapshot) in
                     if (snapshot.exists()) {
                     let value = snapshot.value as! NSDictionary
                     value.setValue(snapshot.key, forKeyPath: "key")

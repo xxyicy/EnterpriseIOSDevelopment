@@ -66,7 +66,7 @@ class SignInViewController: UIViewController {
             self.appDelegate.name = value?["name"] as? String
             self.appDelegate.email = value?["email"] as? String
             self.appDelegate.phoneNum = value?["phone number"] as? String
-            self.appDelegate.balance = (value?["balance"] as! NSNumber).floatValue
+            self.appDelegate.balance = (value?["balance"] as! NSString).floatValue
             if (isDelivery)! {
                 //Jump to delivery main
                 self.presentDeliveryMain()

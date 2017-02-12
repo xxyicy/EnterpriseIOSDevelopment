@@ -68,7 +68,7 @@ class OrderInfoViewController : UIViewController {
         
         timeLabel.text = order.object(forKey: "time") as! String?
         locationLabel.text = order.object(forKey: "location") as! String?
-        priceLabel.text = String(order.object(forKey: "total price") as! Double)
+        priceLabel.text = String(order.value(forKey: "total price") as! Double)
         var orderDetail: String = ""
         var orderList = order.object(forKey: "drinks")
         if (orderList != nil) {
