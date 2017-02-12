@@ -145,6 +145,19 @@ class MyOrdersViewController: UITableViewController{
             //delivered orders
             if(appDelegate.isDelivery)!{
                 let value = deliveredArray[indexPath.row-claimedArray.count]
+                let profileViewController: ProfileViewController = storyboard.instantiateViewController(withIdentifier: "profilePage") as! ProfileViewController
+                profileViewController.username = value.object(forKey: "customer") as! String
+            }else{
+                let confirmViewController: ConfirmDeliveryViewController = storyboard.instantiateViewController(withIdentifier: "confirmDelivery") as! ConfirmDeliveryViewController
+                
+                self.navigationController?.pushViewController(confirmViewController, animated: true)
+            }
+            
+        }else{
+            
+            let value = claimedArray[indexPath.row]
+            
+            if (appDelegate.isDelivery!){
                 
                 let deliveryConfirmViewController: OrderInfoViewController = storyboard.instantiateViewController(withIdentifier: "orderInfoPage") as! OrderInfoViewController
                 deliveryConfirmViewController.order = value
@@ -152,27 +165,13 @@ class MyOrdersViewController: UITableViewController{
                 deliveryConfirmViewController.buttonHidden = false
                 
                 self.navigationController?.pushViewController(deliveryConfirmViewController, animated: true)
-                
             }else{
-                let confirmViewController: ConfirmDeliveryViewController = storyboard.instantiateViewController(withIdentifier: "confirmDelivery") as! ConfirmDeliveryViewController
-            
-                
-                self.navigationController?.pushViewController(confirmViewController, animated: true)
-            }
-            
-        }else{
-            
-            
-            let profileViewController: ProfileViewController = storyboard.instantiateViewController(withIdentifier: "profilePage") as! ProfileViewController
-            let value = claimedArray[indexPath.row]
-            
-            if (appDelegate.isDelivery!){
-                profileViewController.username = value.object(forKey: "customer") as! String
-            }else{
+                let profileViewController: ProfileViewController = storyboard.instantiateViewController(withIdentifier: "profilePage") as! ProfileViewController
                 profileViewController.username = value.object(forKey: "deliveryPerson") as! String
+                self.navigationController?.pushViewController(profileViewController, animated: true)
             }
             
-            self.navigationController?.pushViewController(profileViewController, animated: true)
+            
         }
     }
 }
