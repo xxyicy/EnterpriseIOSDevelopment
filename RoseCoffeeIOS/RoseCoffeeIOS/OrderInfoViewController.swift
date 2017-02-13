@@ -93,8 +93,8 @@ class OrderInfoViewController : UIViewController {
         }
         
         if isDone {
-//            customerRating.text = "5.0"
-//            deliveryPersonRating.text = "5.0"
+            customerRating.text = String(order.object(forKey: "ratingForCustomer") as! Double)
+            deliveryPersonRating.text = String(order.object(forKey: "ratingForDelivery") as! Double)
         }else{
             customerRating.text = "Not rate yet"
             deliveryPersonRating.text = "Not rate yet"
