@@ -375,7 +375,6 @@
 				TargetAttributes = {
 					6F2051C71DF76CC400FB6605 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = GSEF3KE5GL;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -676,10 +675,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = GSEF3KE5GL;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RoseCoffeeIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.rosehulman.RoseCoffeeIOS;
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.rose-hulman.RoseCoffeeIOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RoseCoffeeIOS/RoseCoffeeIOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -694,10 +693,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = GSEF3KE5GL;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RoseCoffeeIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.rosehulman.RoseCoffeeIOS;
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.rose-hulman.RoseCoffeeIOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RoseCoffeeIOS/RoseCoffeeIOS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
