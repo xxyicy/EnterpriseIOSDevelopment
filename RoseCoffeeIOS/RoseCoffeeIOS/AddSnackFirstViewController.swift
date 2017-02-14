@@ -67,9 +67,9 @@ class AddSnackFirstViewController: UICollectionViewController {
         URLSession.shared.dataTask(with: url) {
             (data, response, error) in completion(data, response, error)
                 self.count += 1
-            if (self.count == self.totalNum){
-                self.dispatch.leave()
-            }
+                if (self.count == self.totalNum){
+                    self.dispatch.leave()
+                }
             }.resume()
     }
     

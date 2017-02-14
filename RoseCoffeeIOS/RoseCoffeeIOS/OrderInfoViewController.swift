@@ -39,11 +39,11 @@ class OrderInfoViewController : UIViewController {
         userRef.child(order.object(forKey: "customer") as! String).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as! NSDictionary
             self.customerLabel.text = value.object(forKey: "name") as! String?
-            if (self.orderConfirmed){
-                let price = self.order.object(forKey: "total price") as! Double
-                let balance = Double(value.object(forKey: "balance") as! String)!
-                self.userRef.child(self.order.object(forKey: "customer") as! String).child("balance").setValue(String(format: "%.2f", balance-price))
-            }
+//            if (self.orderConfirmed){
+//                let price = self.order.object(forKey: "total price") as! Double
+//                let balance = Double(value.object(forKey: "balance") as! String)!
+//                self.userRef.child(self.order.object(forKey: "customer") as! String).child("balance").setValue(String(format: "%.2f", balance-price))
+//            }
         })
         
         if (order.object(forKey: "deliveryPerson") != nil) {
@@ -52,13 +52,6 @@ class OrderInfoViewController : UIViewController {
             
             let value = snapshot.value as! NSDictionary
             self.deliveryPersonLabel.text = value.object(forKey: "name") as! String?
-            
-            if (self.orderConfirmed){
-                let price = self.order.object(forKey: "total price") as! Double
-                let balance = Double(value.object(forKey: "balance") as! String)!
-                self.userRef.child(self.order.object(forKey: "deliveryPerson") as! String).child("balance").setValue(String(format: "%.2f", balance+price))
-            }
-
             
             })
         } else {

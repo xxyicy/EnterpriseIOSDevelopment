@@ -15,18 +15,29 @@ class AddDrinkFirstViewController: UICollectionViewController {
     var keys: [String] = []
     var imageArray: [UIImage] = []
     var VCRef: OrderDetailViewController? = nil
+    var count: NSInteger = 0
+    var totalNum: NSInteger = 0
+    let dispatch = DispatchGroup()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         drinkRef.observe(FIRDataEventType.value, with: { (snapshot) in
             let value = snapshot.value as! NSDictionary
             self.keys = value.allKeys as! [String]
+            self.count = 0
+            self.dispatch.enter()
+            self.totalNum = value.count
+            
             for (_,data) in value {
                 let temp = data as! NSDictionary
                 let temp2 = temp.object(forKey: "image") as! String
                 self.downloadImage(URL(string: temp2)!)
-                self.collectionView?.reloadData()
             }
+
+            self.dispatch.notify(queue: DispatchQueue.main, execute: {
+                self.collectionView?.reloadData()
+            })
         })
     }
     
@@ -69,6 +80,10 @@ class AddDrinkFirstViewController: UICollectionViewController {
     func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
         URLSession.shared.dataTask(with: url) {
             (data, response, error) in completion(data, response, error)
+                self.count += 1
+                if (self.count == self.totalNum){
+                    self.dispatch.leave()
+                }
             }.resume()
     }
     
