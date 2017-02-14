@@ -40,7 +40,7 @@ class SignInViewController: UIViewController {
                             self.userRef.child(username).child("token").setValue(result?.token)
                             self.presentMain(username: username)
                         }else{
-                            let userObject = ["is delivery": false,"token":(result?.token)!, "name": (result?.name)!, "email":(result?.email)!, "balance":0] as [String : Any]
+                            let userObject = ["is delivery": false,"token":(result?.token)!, "name": (result?.name)!, "email":(result?.email)!, "balance": 0] as [String : Any]
                             self.userRef.child(username).setValue(userObject)
                             self.appDelegate.isDelivery = false
                             self.appDelegate.name = result?.name
@@ -66,7 +66,7 @@ class SignInViewController: UIViewController {
             self.appDelegate.name = value?["name"] as? String
             self.appDelegate.email = value?["email"] as? String
             self.appDelegate.phoneNum = value?["phone number"] as? String
-            self.appDelegate.balance = Double(value?["balance"] as! String)!
+            self.appDelegate.balance = value?["balance"] as? Double
             if (isDelivery)! {
                 //Jump to delivery main
                 self.presentDeliveryMain()

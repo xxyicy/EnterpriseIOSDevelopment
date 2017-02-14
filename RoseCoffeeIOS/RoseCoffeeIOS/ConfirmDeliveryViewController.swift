@@ -54,14 +54,14 @@ class ConfirmDeliveryViewController : UIViewController {
                 
                 self.userRef.child(username).observeSingleEvent(of: .value, with: { (snapshot) in
                     let value = snapshot.value as! NSDictionary
-                    let balance = Double(value.object(forKey: "balance") as! String)!
-                    self.userRef.child(username).child("balance").setValue(String(format:"%.2f",balance-price))
+                    let balance = value.object(forKey: "balance") as! Double
+                    self.userRef.child(username).child("balance").setValue(balance-price)
                 })
                 
                 self.userRef.child(self.order.object(forKey: "deliveryPerson") as! String).observeSingleEvent(of: .value, with: { (snapshot) in
                     let value = snapshot.value as! NSDictionary
-                    let balance = Double(value.object(forKey: "balance") as! String)!
-                    self.userRef.child(self.order.object(forKey: "deliveryPerson") as! String).child("balance").setValue(String(format:"%.2f",balance+price))
+                    let balance = value.object(forKey: "balance") as! Double
+                    self.userRef.child(self.order.object(forKey: "deliveryPerson") as! String).child("balance").setValue(balance+price)
                 })
                 
                 

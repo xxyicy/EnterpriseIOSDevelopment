@@ -44,7 +44,7 @@ class AccountInfoViewController: UIViewController, UIImagePickerControllerDelega
         let defaults = UserDefaults.standard
         let username = defaults.object(forKey: "username") as! String
         userRef.child(username).child("balance").observe(FIRDataEventType.value, with: { (snapshot) in
-            self.appDelegate.balance = Double(snapshot.value as! String)!
+            self.appDelegate.balance = snapshot.value as? Double
             self.balanceLabel.text = String(format: "%.2f",self.appDelegate.balance!)
         })
         
