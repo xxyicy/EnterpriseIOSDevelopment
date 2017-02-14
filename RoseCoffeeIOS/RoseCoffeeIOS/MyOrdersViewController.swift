@@ -40,33 +40,37 @@ class MyOrdersViewController: UITableViewController{
             order = "customer orders"
         }
         userRef.child(username).child(order).child("in progress").observe(FIRDataEventType.value, with: { (snapshot) in
+            self.claimedArray = []
+            self.deliveredArray = []
             if (snapshot.exists()) {
-            let list = snapshot.value as! NSDictionary
-            let dispatch = DispatchGroup()
-            dispatch.enter()
-            var count = 0
-            for (key,value) in list {
-                let state = value as! String
-                self.orderRef.child(state).child(key as! String).observeSingleEvent(of: .value, with: { (snapshot) in
-                    if (snapshot.exists()) {
-                    let value = snapshot.value as! NSDictionary
-                    value.setValue(snapshot.key, forKeyPath: "key")
-                    
-                    if (state == "claimed") {
-                        self.claimedArray.append(value)
-                    }else if (state == "delivered"){
-                        self.deliveredArray.append(value)
-                    }
-                    count+=1
-                    if (count == list.count){
-                        dispatch.leave()
-                    }
-                    }
+                let list = snapshot.value as! NSDictionary
+                let dispatch = DispatchGroup()
+                dispatch.enter()
+                var count = 0
+                for (key,value) in list {
+                    let state = value as! String
+                    self.orderRef.child(state).child(key as! String).observeSingleEvent(of: .value, with: { (snapshot) in
+                        if (snapshot.exists()) {
+                            let value = snapshot.value as! NSDictionary
+                            value.setValue(snapshot.key, forKeyPath: "key")
+                            
+                            if (state == "claimed") {
+                                self.claimedArray.append(value)
+                            }else if (state == "delivered"){
+                                self.deliveredArray.append(value)
+                            }
+                            count+=1
+                            if (count == list.count){
+                                dispatch.leave()
+                            }
+                        }
+                    })
+                }
+                dispatch.notify(queue: DispatchQueue.main, execute: {
+                    self.tableView.reloadData()
                 })
-            }
-            dispatch.notify(queue: DispatchQueue.main, execute: {
+            }else{
                 self.tableView.reloadData()
-            })
             }
         })
         
@@ -125,9 +129,9 @@ class MyOrdersViewController: UITableViewController{
             }
         }
         
-        let strIndex:NSInteger = menus.characters.count
-        let menuIndex = menus.index(menus.startIndex, offsetBy: strIndex-3)
-        menus = menus.substring(to: menuIndex)
+        //let strIndex:NSInteger = menus.characters.count
+        //let menuIndex = menus.index(menus.startIndex, offsetBy: strIndex-3)
+        //menus = menus.substring(to: menuIndex)
         
         cell.menuLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.menuLabel?.text = menus

@@ -40,6 +40,13 @@ class AccountInfoViewController: UIViewController, UIImagePickerControllerDelega
         self.emailLabel.text = appDelegate.email
         self.phoneNumLabel.text = appDelegate.phoneNum
         self.balanceLabel.text = String(format: "%.2f",appDelegate.balance!)
+        
+        let defaults = UserDefaults.standard
+        let username = defaults.object(forKey: "username") as! String
+        userRef.child(username).child("balance").observe(FIRDataEventType.value, with: { (snapshot) in
+            self.appDelegate.balance = Double(snapshot.value as! String)!
+            self.balanceLabel.text = String(format: "%.2f",self.appDelegate.balance!)
+        })
     }
     
     override func viewDidAppear(_ animated: Bool) {

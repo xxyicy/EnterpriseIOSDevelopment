@@ -38,7 +38,7 @@ class ConfirmDeliveryViewController : UIViewController {
         order.setValue(rating, forKey: "ratingForDelivery")
        
         let deliveredRef = self.orderRef.child("delivered").child(key)
-        
+        let price:Double = order.value(forKey: "total price") as! Double
         let defaults = UserDefaults.standard
         let username: String = defaults.object(forKey: "username") as! String
         
@@ -49,6 +49,22 @@ class ConfirmDeliveryViewController : UIViewController {
                 self.orderRef.child("received").child(key).setValue(self.order)
                 self.userRef.child(username).child("customer orders").child("in progress").child(key).setValue(nil)
                 self.userRef.child(username).child("customer orders").child("done").child(key).setValue("received")
+                
+                
+                
+                self.userRef.child(username).observeSingleEvent(of: .value, with: { (snapshot) in
+                    let value = snapshot.value as! NSDictionary
+                    let balance = Double(value.object(forKey: "balance") as! String)!
+                    self.userRef.child(username).child("balance").setValue(String(format:"%.2f",balance-price))
+                })
+                
+                self.userRef.child(self.order.object(forKey: "deliveryPerson") as! String).observeSingleEvent(of: .value, with: { (snapshot) in
+                    let value = snapshot.value as! NSDictionary
+                    let balance = Double(value.object(forKey: "balance") as! String)!
+                    self.userRef.child(self.order.object(forKey: "deliveryPerson") as! String).child("balance").setValue(String(format:"%.2f",balance+price))
+                })
+                
+                
                 self.userRef.child(self.order.object(forKey: "deliveryPerson") as! String).child("delivery orders").child("done").child(key).setValue("received")
                 self.userRef.child(self.order.object(forKey: "deliveryPerson") as! String).child("delivery orders").child("in progress").child(key).setValue(nil)
 

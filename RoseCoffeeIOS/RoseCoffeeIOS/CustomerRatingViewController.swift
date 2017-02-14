@@ -50,7 +50,6 @@ class CustomerRatingViewController : UIViewController {
                
                 self.userRef.child(self.order.object(forKey: "customer") as! String).child("customer orders").child("in progress").child(key).setValue("delivered")
                 
-                
                 claimedRef.removeObserver(withHandle: 0)
             }
         })

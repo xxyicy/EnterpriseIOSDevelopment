@@ -35,6 +35,7 @@ class MyOrderHistoryViewController: UITableViewController{
         let historyRef = userRef.child(username).child(order).child("done")
         
         historyRef.observe(FIRDataEventType.value, with: { (snapshot) in
+            self.receivedArray = []
             if (snapshot.exists()) {
                 let list = snapshot.value as! NSDictionary
                 let dispatch = DispatchGroup()
@@ -57,6 +58,8 @@ class MyOrderHistoryViewController: UITableViewController{
                 dispatch.notify(queue: DispatchQueue.main, execute: {
                     self.tableView.reloadData()
                 })
+            }else{
+                self.tableView.reloadData()
             }
         })
         print(self.receivedArray)
