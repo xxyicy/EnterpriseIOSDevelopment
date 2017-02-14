@@ -22,11 +22,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Rose" translatesAutoresizingMaskIntoConstraints="NO" id="EoO-Ga-0Wl">
-                                <rect key="frame" x="103" y="240" width="168" height="187"/>
+                                <rect key="frame" x="59" y="153" width="256" height="316"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.49194753170013428" green="0.07569112628698349" blue="0.091909758746623993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.50293064117431641" green="0.0038074248004704714" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -35,6 +35,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Rose" width="194" height="221"/>
+        <image name="Rose" width="400" height="400"/>
     </resources>
 </document>
