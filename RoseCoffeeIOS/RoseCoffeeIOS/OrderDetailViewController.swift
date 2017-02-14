@@ -125,6 +125,25 @@ class OrderDetailViewController : UIViewController, UITableViewDataSource,UITabl
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            if (indexPath.row >= self.drinks.count){
+                self.snacks.remove(at: indexPath.row-self.drinks.count)
+                self.snackPrices.remove(at: indexPath.row-self.drinks.count)
+            }else{
+                self.drinkComments.remove(at: indexPath.row)
+                self.drinks.remove(at: indexPath.row)
+                self.drinkSizes.remove(at: indexPath.row)
+                self.drinkPrices.remove(at: indexPath.row)
+            }
+            self.tableView.reloadData()
+        }
+    }
+    
     @IBAction func backToLocationAndTime(_ sender: UIButton) {
         _ = self.navigationController?.popViewController(animated: true)
     }

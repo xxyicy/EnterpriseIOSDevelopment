@@ -47,6 +47,11 @@ class AccountInfoViewController: UIViewController, UIImagePickerControllerDelega
             self.appDelegate.balance = Double(snapshot.value as! String)!
             self.balanceLabel.text = String(format: "%.2f",self.appDelegate.balance!)
         })
+        
+        if let image = appDelegate.profileImage {
+            profileImageView.contentMode = .scaleAspectFill
+            profileImageView.image = image
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

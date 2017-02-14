@@ -131,22 +131,5 @@ class MyOrderHistoryViewController: UITableViewController{
         self.navigationController?.pushViewController(orderInfoViewController, animated: true)
         
     }
-    
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
-            let defaults = UserDefaults.standard
-            let username = defaults.object(forKey: "username") as! String
-            var order: String = ""
-            if (appDelegate.isDelivery)!{
-                order = "delivery orders"
-            }else{
-                order = "customer orders"
-            }
-            userRef.child(username).child(order).child("done").child(String(indexPath.row)).removeValue()
-        }
-    }
+
 }
