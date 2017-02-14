@@ -80,7 +80,7 @@ class LocationAndTimeViewController : UIViewController, UITableViewDataSource,UI
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,16 +88,13 @@ class LocationAndTimeViewController : UIViewController, UITableViewDataSource,UI
         cell.accessoryType = .disclosureIndicator
         let defaults = UserDefaults.standard
         if indexPath.row == 0 {
-            cell.textLabel?.text = "Quick Order"
-            cell.detailTextLabel?.text = "Lakeside 203 at 9 pm"
-        }else if indexPath.row == 1 {
             cell.textLabel?.text = "Building"
             cell.detailTextLabel?.text = ""
             if defaults.object(forKey: "location") != nil {
                 cell.detailTextLabel?.text = defaults.object(forKey: "location") as! String?
             }
             
-        }else if indexPath.row == 2 {
+        }else if indexPath.row == 1 {
             cell.textLabel?.text = "Room"
             cell.detailTextLabel?.text = ""
             if defaults.object(forKey: "room") != nil {
@@ -114,13 +111,13 @@ class LocationAndTimeViewController : UIViewController, UITableViewDataSource,UI
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (indexPath.row == 1){
+        if (indexPath.row == 0){
             selectBuilding()
         }
-        if (indexPath.row == 2){
+        if (indexPath.row == 1){
             selectRoom()
         }
-        if (indexPath.row == 3){
+        if (indexPath.row == 2){
             selectTime()
         }
     }
