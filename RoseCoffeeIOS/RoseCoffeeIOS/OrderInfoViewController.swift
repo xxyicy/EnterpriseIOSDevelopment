@@ -16,7 +16,7 @@ class OrderInfoViewController : UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var orderLabel: UILabel!
-    @IBOutlet weak var commentsTextView: UITextView!
+    
     
     @IBOutlet weak var rateButton: UIButton!
     
@@ -40,8 +40,8 @@ class OrderInfoViewController : UIViewController {
             let value = snapshot.value as! NSDictionary
             self.customerLabel.text = value.object(forKey: "name") as! String?
             if (self.orderConfirmed){
-                let price = self.order.object(forKey: "total price") as! Float
-                let balance = value.object(forKey: "balance") as! Float
+                let price = self.order.object(forKey: "total price") as! Double
+                let balance = Double(value.object(forKey: "balance") as! String)!
                 self.userRef.child(self.order.object(forKey: "customer") as! String).child("balance").setValue(String(format: "%.2f", balance-price))
             }
         })
@@ -55,7 +55,7 @@ class OrderInfoViewController : UIViewController {
             
             if (self.orderConfirmed){
                 let price = self.order.object(forKey: "total price") as! Double
-                let balance = value.object(forKey: "balance") as! Double
+                let balance = Double(value.object(forKey: "balance") as! String)!
                 self.userRef.child(self.order.object(forKey: "deliveryPerson") as! String).child("balance").setValue(String(format: "%.2f", balance+price))
             }
 
@@ -86,11 +86,6 @@ class OrderInfoViewController : UIViewController {
             }
         }
         orderLabel.text = orderDetail
-        if let comment = order.object(forKey: "comment") as! String? {
-            commentsTextView.text = comment
-        }else{
-            commentsTextView.text = "No comment"
-        }
         
         if isDone {
             customerRating.text = String(order.object(forKey: "ratingForCustomer") as! Double)
