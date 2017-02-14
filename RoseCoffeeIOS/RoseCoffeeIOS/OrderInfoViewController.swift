@@ -15,7 +15,8 @@ class OrderInfoViewController : UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var orderLabel: UILabel!
+    
+    @IBOutlet var orderTextView: UITextView!
     
     
     @IBOutlet weak var rateButton: UIButton!
@@ -78,7 +79,7 @@ class OrderInfoViewController : UIViewController {
                 orderDetail = orderDetail + "\n"
             }
         }
-        orderLabel.text = orderDetail
+        orderTextView.text = orderDetail
         
         if isDone {
             customerRating.text = String(order.object(forKey: "ratingForCustomer") as! Double)

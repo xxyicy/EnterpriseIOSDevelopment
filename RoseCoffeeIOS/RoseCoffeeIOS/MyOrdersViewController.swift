@@ -112,31 +112,39 @@ class MyOrdersViewController: UITableViewController{
 
         cell.timeLabel?.text = value.object(forKey: "time") as! String?
         cell.locationLabel?.text = value.object(forKey: "location") as! String?
-        let drinkList = value.object(forKey: "drinks")
-    
-        var menus: String = ""
-        if (drinkList != nil) {
-            for (key,_) in (drinkList as! NSDictionary) {
-                menus = menus + (key as! String) + ", "
+        
+        let drink = value.object(forKey: "drink quantity")
+        let snack = value.object(forKey: "snack quantity")
+        if let drink = (drink as? NSInteger), let snack = (snack as? NSInteger) {
+            switch drink {
+            case 0:
+                switch snack {
+                case 0:
+                    cell.menuLabel?.text = "No order!"
+                case 1:
+                    cell.menuLabel?.text = "1 snack"
+                default:
+                    cell.menuLabel?.text = "\(snack) snacks"
+                }
+            case 1:
+                switch snack {
+                case 0:
+                    cell.menuLabel?.text = "1 drink"
+                case 1:
+                    cell.menuLabel?.text = "1 drink, 1 snack"
+                default:
+                    cell.menuLabel?.text = "1 drink, \(snack) snacks"
+                }
+                
+            default:
+                switch snack {
+                case 1:
+                    cell.menuLabel?.text = "\(drink) drinks, 1 snack"
+                default:
+                    cell.menuLabel?.text = "\(drink) drinks, \(snack) snacks"
+                }
             }
         }
-        
-        let snackList = value.object(forKey: "snacks")
-
-        if (snackList != nil) {
-            for key in (snackList as! NSArray) {
-                menus = menus + (key as! String) + ", "
-            }
-        }
-        
-        //let strIndex:NSInteger = menus.characters.count
-        //let menuIndex = menus.index(menus.startIndex, offsetBy: strIndex-3)
-        //menus = menus.substring(to: menuIndex)
-        
-        cell.menuLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        cell.menuLabel?.text = menus
-
-        cell.menuLabel?.numberOfLines = 0
     
         return cell
     }

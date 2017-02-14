@@ -331,7 +331,7 @@
                                     <action selector="SignInAction:" destination="PdD-LV-eWF" eventType="touchUpInside" id="z20-YH-fve"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Coffee" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd7-qH-nAb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffee" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd7-qH-nAb">
                                 <rect key="frame" x="171" y="166" width="94" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="IKu-9K-YDi"/>
@@ -345,13 +345,13 @@
                         <color key="backgroundColor" red="0.50293064117431641" green="0.0038074248004704714" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qaS-S6-LTq" firstAttribute="leading" secondItem="9U7-Ar-JFt" secondAttribute="leadingMargin" constant="63" id="40B-9w-XR0"/>
-                            <constraint firstItem="Zd7-qH-nAb" firstAttribute="leading" secondItem="qaS-S6-LTq" secondAttribute="trailing" constant="30" id="7ES-bR-6Y0"/>
-                            <constraint firstItem="Zd7-qH-nAb" firstAttribute="top" secondItem="sGA-ni-taS" secondAttribute="bottom" constant="130" id="JG5-ub-InS"/>
+                            <constraint firstItem="Zd7-qH-nAb" firstAttribute="leading" secondItem="qaS-S6-LTq" secondAttribute="trailing" constant="8" id="7ES-bR-6Y0"/>
+                            <constraint firstItem="Zd7-qH-nAb" firstAttribute="top" secondItem="sGA-ni-taS" secondAttribute="bottom" constant="146" id="JG5-ub-InS"/>
                             <constraint firstItem="gv4-xZ-rzJ" firstAttribute="centerX" secondItem="9U7-Ar-JFt" secondAttribute="centerX" id="L9W-Bt-GCU"/>
                             <constraint firstItem="qaS-S6-LTq" firstAttribute="top" secondItem="sGA-ni-taS" secondAttribute="bottom" constant="106" id="P1x-L9-hEw"/>
                             <constraint firstItem="gv4-xZ-rzJ" firstAttribute="centerY" secondItem="9U7-Ar-JFt" secondAttribute="centerY" id="gYO-aq-Uur"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gv4-xZ-rzJ" secondAttribute="trailing" constant="45" id="slf-Rn-OWX"/>
-                            <constraint firstItem="Zd7-qH-nAb" firstAttribute="centerY" secondItem="qaS-S6-LTq" secondAttribute="centerY" id="wFa-hW-QyY"/>
+                            <constraint firstItem="Zd7-qH-nAb" firstAttribute="centerY" secondItem="qaS-S6-LTq" secondAttribute="centerY" constant="16" id="wFa-hW-QyY"/>
                             <constraint firstItem="gv4-xZ-rzJ" firstAttribute="leading" secondItem="9U7-Ar-JFt" secondAttribute="leadingMargin" constant="45" id="yJP-er-9ve"/>
                         </constraints>
                     </view>
@@ -461,7 +461,7 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MCG-aj-8ZL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.49019607840000001" green="0.074509803920000006" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.50293064117431641" green="0.0038074248004704714" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection id="6Sd-Q6-Qm9">
                                 <cells>
@@ -1017,7 +1017,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OlK-uW-PIn">
-                                <rect key="frame" x="16" y="28" width="47" height="21"/>
+                                <rect key="frame" x="16" y="57" width="47" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
@@ -1303,13 +1303,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="order" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4j-aA-UlN">
-                                <rect key="frame" x="139" y="320" width="220" height="100"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cln-d1-Os8">
                                 <rect key="frame" x="102" y="599" width="170" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1321,6 +1314,13 @@
                                     <action selector="confirmPressed:" destination="fSW-LZ-zsX" eventType="touchUpInside" id="vIP-z9-6dK"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YIR-e8-sTT">
+                                <rect key="frame" x="129" y="323" width="240" height="257"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1331,7 +1331,7 @@
                         <outlet property="deliveryPersonLabel" destination="2Fo-lJ-fXV" id="abw-MH-Seb"/>
                         <outlet property="deliveryPersonRating" destination="7Oz-mV-50i" id="XBc-03-SNa"/>
                         <outlet property="locationLabel" destination="8X2-eg-x6U" id="NbA-lf-ZR2"/>
-                        <outlet property="orderLabel" destination="Q4j-aA-UlN" id="SEg-Bg-BT5"/>
+                        <outlet property="orderTextView" destination="YIR-e8-sTT" id="6kf-ge-CrS"/>
                         <outlet property="priceLabel" destination="y7z-8Z-l1v" id="N8k-gy-Uyr"/>
                         <outlet property="rateButton" destination="Cln-d1-Os8" id="w8l-Tf-8Pa"/>
                         <outlet property="timeLabel" destination="pZF-rz-0je" id="fBq-8s-JnP"/>

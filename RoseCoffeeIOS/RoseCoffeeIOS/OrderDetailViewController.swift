@@ -116,6 +116,7 @@ class OrderDetailViewController : UIViewController, UITableViewDataSource,UITabl
                 tempText = tempText.substring(to: index) + ".."
             }
             cell.textLabel?.text = tempText + " - " + drinkSizes[indexPath.row]
+            cell.detailTextLabel?.text = ""
             if (drinkComments[indexPath.row] != "") {
                 cell.detailTextLabel?.text = self.drinkComments[indexPath.row]
             } else {
